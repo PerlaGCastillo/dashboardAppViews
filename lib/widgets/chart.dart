@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:managment/data/model/add_date.dart';
-import 'package:managment/data/utlity.dart';
+import 'package:dgapd/data/model/add_date.dart';
+import 'package:dgapd/data/utlity.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class Chart extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:managment/Screens/home.dart';
-import 'package:managment/Screens/statistics.dart';
-import 'package:managment/widgets/bottomnavigationbar.dart';
+import 'package:dgapd/Screens/home.dart';
+import 'package:dgapd/Screens/statistics.dart';
+import 'package:dgapd/widgets/bottomnavigationbar.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 /*import 'package:syncfusion_flutter_xlsio/xlsio.dart';
 import 'package:path_provider/path_provider.dart';

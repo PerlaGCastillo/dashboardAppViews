@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(DataScreen());
+  runApp(BtnList());
 }
 
-class DataScreen extends StatelessWidget {
+class BtnList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'DGAPD',
       debugShowCheckedModeBanner: false,
       theme:
-      ThemeData(primarySwatch: Colors.blue, platform: TargetPlatform.iOS),
-      home: StaticDataPage(),
+      ThemeData(primaryColor: Color(0xff10312b), platform: TargetPlatform.iOS),
+      home: BtnListPage(),
     );
   }
 }
 
-class StaticDataPage extends StatelessWidget {
-  const StaticDataPage({Key? key}) : super(key: key);
+class BtnListPage extends StatelessWidget {
+  const BtnListPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

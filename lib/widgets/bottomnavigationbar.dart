@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:managment/Screens/profile.dart';
-import 'package:managment/Screens/search.dart';
-import 'package:managment/Screens/home.dart';
-import 'package:managment/Screens/statistics.dart';
-import 'package:managment/Screens/staticdatascreen.dart';
-//import 'package:managment/Screens\login.dart/';
+import 'package:dgapd/Screens/profile.dart';
+import 'package:dgapd/Screens/search.dart';
+import 'package:dgapd/Screens/home.dart';
+import 'package:dgapd/Screens/statistics.dart';
+import 'package:dgapd/Screens/inquiryBtn.dart';
+//import 'package:dgapd/Screens\login.dart/';
 
 class Bottom extends StatefulWidget {
   const Bottom({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index_color = 0;
-  List Screen = [Home(), ListData(),ProfileScreen()];
+  List Screen = [Home(), BtnList() , Statistics(), ProfileScreen()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,24 +55,12 @@ class _BottomState extends State<Bottom> {
                   });
                 },
                 child: Icon(
-                  Icons.person_outlined,
-                  size: 30,
-                  color: index_color == 3 ? Color(0xffbc955c) : Colors.grey,
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    index_color = 2;
-                  });
-                },
-                child: Icon(
-                  Icons.content_paste_search_outlined,
+                  Icons.table_chart,
                   size: 30,
                   color: index_color == 1 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
-              SizedBox(width: 10),
+             SizedBox(width: 17),
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -80,9 +68,21 @@ class _BottomState extends State<Bottom> {
                   });
                 },
                 child: Icon(
-                  Icons.pin_outlined,
+                  Icons.pie_chart,
                   size: 30,
                   color: index_color == 2 ? Color(0xffbc955c) : Colors.grey,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    index_color = 3;
+                  });
+                },
+                child: Icon(
+                  Icons.person_outlined,
+                  size: 30,
+                  color: index_color == 3 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
             ],
