@@ -15,8 +15,7 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index_color = 0;
-//  List Screen = [Home(), Statistics(), StaticDataPage(), ProfileScreen()];
-  List Screen = [Home(),ProfileScreen()];
+  List Screen = [Home(), ListData(),ProfileScreen()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,14 +48,26 @@ class _BottomState extends State<Bottom> {
                   color: index_color == 0 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
-              /*GestureDetector(
+              GestureDetector(
                 onTap: () {
                   setState(() {
                     index_color = 1;
                   });
                 },
                 child: Icon(
-                  Icons.bar_chart_outlined,
+                  Icons.person_outlined,
+                  size: 30,
+                  color: index_color == 3 ? Color(0xffbc955c) : Colors.grey,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    index_color = 2;
+                  });
+                },
+                child: Icon(
+                  Icons.content_paste_search_outlined,
                   size: 30,
                   color: index_color == 1 ? Color(0xffbc955c) : Colors.grey,
                 ),
@@ -72,18 +83,6 @@ class _BottomState extends State<Bottom> {
                   Icons.pin_outlined,
                   size: 30,
                   color: index_color == 2 ? Color(0xffbc955c) : Colors.grey,
-                ),
-              ),*/
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    index_color = 3;
-                  });
-                },
-                child: Icon(
-                  Icons.person_outlined,
-                  size: 30,
-                  color: index_color == 3 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
             ],
