@@ -1,4 +1,4 @@
-import 'package:managment/data/1.dart';
+import 'package:management/data/1.dart';
 
 List<money> geter_top() {
   money snap_food = money();
