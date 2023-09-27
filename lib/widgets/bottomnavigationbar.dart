@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:managment/Screens/profile.dart';
-import 'package:managment/Screens/search.dart';
-import 'package:managment/Screens/home.dart';
-import 'package:managment/Screens/statistics.dart';
-import 'package:managment/Screens/staticdatascreen.dart';
-//import 'package:managment/Screens\login.dart/';
+import 'package:management/Screens/profile.dart';
+import 'package:management/Screens/search.dart';
+import 'package:management/Screens/home.dart';
+import 'package:management/Screens/statistics.dart';
+import 'package:management/Screens/staticdatascreen.dart';
+import 'package:management/Screens/recordsScreen.dart';
 
 class Bottom extends StatefulWidget {
   const Bottom({Key? key}) : super(key: key);
@@ -16,7 +16,8 @@ class Bottom extends StatefulWidget {
 class _BottomState extends State<Bottom> {
   int index_color = 0;
 //  List Screen = [Home(), Statistics(), StaticDataPage(), ProfileScreen()];
-  List Screen = [Home(),ProfileScreen()];
+  List Screen = [Home(), ListData()];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,35 +50,10 @@ class _BottomState extends State<Bottom> {
                   color: index_color == 0 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
-              /*GestureDetector(
+              GestureDetector(
                 onTap: () {
                   setState(() {
                     index_color = 1;
-                  });
-                },
-                child: Icon(
-                  Icons.bar_chart_outlined,
-                  size: 30,
-                  color: index_color == 1 ? Color(0xffbc955c) : Colors.grey,
-                ),
-              ),
-              SizedBox(width: 10),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    index_color = 2;
-                  });
-                },
-                child: Icon(
-                  Icons.pin_outlined,
-                  size: 30,
-                  color: index_color == 2 ? Color(0xffbc955c) : Colors.grey,
-                ),
-              ),*/
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    index_color = 3;
                   });
                 },
                 child: Icon(

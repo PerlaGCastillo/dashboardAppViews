@@ -1,4 +1,4 @@
-import 'package:managment/data/historicoClass.dart';
+import 'package:management/data/historicoClass.dart';
 
 List<historico> geter(){
   historico total =  historico();
