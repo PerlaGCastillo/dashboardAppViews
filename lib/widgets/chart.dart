@@ -4,8 +4,8 @@ import 'package:dgapd/data/utlity.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class Chart extends StatefulWidget {
-  int indexx;
-  Chart({Key? key, required this.indexx}) : super(key: key);
+  int index;
+  Chart({Key? key, required this.index}) : super(key: key);
 
   @override
   State<Chart> createState() => _ChartState();
@@ -17,7 +17,7 @@ class _ChartState extends State<Chart> {
   bool j = true;
   @override
   Widget build(BuildContext context) {
-    switch (widget.indexx) {
+    switch (widget.index) {
       case 0:
         a = today();
         b = true;

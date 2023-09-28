@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 name: dgapd
 description: A new Flutter project.
+=======
+name: management
+description: a data visualization results for JCF government project.
+>>>>>>> f1143f4b18ae2f6b5d47242e9933658291049c21
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+<<<<<<< HEAD
 
+=======
+>>>>>>> f1143f4b18ae2f6b5d47242e9933658291049c21
 version: 1.0.0+1
 
 environment:
@@ -31,15 +39,28 @@ dev_dependencies:
   build_runner: ^2.2.0
 
 flutter:
+<<<<<<< HEAD
+=======
+
+>>>>>>> f1143f4b18ae2f6b5d47242e9933658291049c21
   uses-material-design: true
 
   assets:
+    - assets/porGeneroAnioPresupuestal.json
     - images/
   #   - images/a_dot_ham.jpeg
+<<<<<<< HEAD
+=======
+
+>>>>>>> f1143f4b18ae2f6b5d47242e9933658291049c21
   fonts:
     - family: 's'
       fonts:
         - asset: fonts/Roboto-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
+<<<<<<< HEAD
   #         weight: 700
+=======
+  #         weight: 700
+>>>>>>> f1143f4b18ae2f6b5d47242e9933658291049c21
