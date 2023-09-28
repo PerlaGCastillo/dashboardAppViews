@@ -1,13 +1,11 @@
-import 'package:dgapd/Screens/inquiryEntityList.dart';
 import 'package:flutter/material.dart';
 import 'package:dgapd/Screens/profile.dart';
 import 'package:dgapd/Screens/search.dart';
 import 'package:dgapd/Screens/home.dart';
 import 'package:dgapd/Screens/statistics.dart';
 import 'package:dgapd/Screens/inquiryBtn.dart';
-//import 'package:dgapd/Screens\login.dart/';
 import 'package:dgapd/Screens/entityList.dart';
-//import 'package:dgapd/Screens/inquiryEntityList.dart';
+//import 'package:dgapd/Screens\login.dart/';
 
 class Bottom extends StatefulWidget {
   const Bottom({Key? key}) : super(key: key);

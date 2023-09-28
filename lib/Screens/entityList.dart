@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(EntityListPage());
+void main() => runApp(EntityList());
 
-class EntityListPage extends StatelessWidget {
+class EntityList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
