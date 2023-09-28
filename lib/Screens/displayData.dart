@@ -40,7 +40,7 @@ class _displayDataState extends State<displayData> {
                   color: Color(0xf8959595),
                   child: ListTile(
                     leading: Text(_records[index]["cve_edo"]),
-                    title: Text(_records[index]["hombres"]),
+                    title: Text(_records[index]["estado"]),
                     subtitle: Text(_records[index]["mujeres"]),
                   ),
                 );
