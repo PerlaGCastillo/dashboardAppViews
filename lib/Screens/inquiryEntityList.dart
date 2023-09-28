@@ -46,13 +46,18 @@ class _EntityListState extends State<EntityList> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  void initState(){
     fetchRecords().then((value){
       setState(() {
         _records.addAll(value);
       });
     });
-    
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
     return MaterialApp(
       title: 'Json List vista de prueba',
       home: Scaffold(
