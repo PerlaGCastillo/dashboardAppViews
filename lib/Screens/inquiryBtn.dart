@@ -53,7 +53,7 @@ class SecondPage extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
-              "Content goes here",
+              "despliega resultados",
               style: Theme.of(context).textTheme.headline5,
             ),
           )

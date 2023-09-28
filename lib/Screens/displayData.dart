@@ -25,29 +25,34 @@ class _displayDataState extends State<displayData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _records.isNotEmpty?Expanded(
-          child: ListView.builder(
+      body: Column(
+        children: [
+          _records.isNotEmpty?Expanded(
+            child: ListView.builder(
               itemCount: _records.length,
               itemBuilder: (context, index) {
                 return Card(
                   key: ValueKey(_records[index]["estado"]),
-                    margin: const EdgeInsets.all(10),
-                    color: Color(0xff10312b),
-                    child: ListTile(
-                      leading: Text(_records[index]["cve_edo"]),
-                      title: Text(_records[index]["hombres"]),
-                      subtitle: Text(_records[index]["mujeres"]),
-                    )
+                  margin: const EdgeInsets.all(10),
+                  color: Color(0xf8959595),
+                  child: ListTile(
+                    leading: Text(_records[index]["cve_edo"]),
+                    title: Text(_records[index]["hombres"]),
+                    subtitle: Text(_records[index]["mujeres"]),
+                  ),
                 );
-              })
-      ): ElevatedButton(
-        onPressed: (){
-          readJson();
-        },
-        child: Center(
-          child: Text('Mostrar Datos'),
-        )
-      )
+              },
+            ),
+          ): ElevatedButton(
+              onPressed: (){
+                readJson();
+              },
+              child: Center(
+                child: Text('Mostrar Datos'),
+              )
+          )
+        ],
+      ),
     );
   }
 }
