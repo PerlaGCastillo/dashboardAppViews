@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class displayData extends StatefulWidget {
@@ -15,12 +16,21 @@ class _displayDataState extends State<displayData> {
     final String response = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
     final data = await json.decode(response);
     setState(() {
-      _records = data['records'];
+      _records = data["records"];
     });
   }
   
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: ElevatedButton(
+        onPressed: (){
+          readJson();
+        },
+        child: Center(
+          child: Text('Mostrar Datos'),
+        )
+      )
+    );
   }
 }

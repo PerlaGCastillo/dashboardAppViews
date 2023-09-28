@@ -1,3 +1,4 @@
+import 'package:dgapd/Screens/displayData.dart';
 import 'package:flutter/material.dart';
 import 'package:dgapd/Screens/profile.dart';
 import 'package:dgapd/Screens/search.dart';
@@ -5,6 +6,7 @@ import 'package:dgapd/Screens/home.dart';
 import 'package:dgapd/Screens/statistics.dart';
 import 'package:dgapd/Screens/inquiryBtn.dart';
 import 'package:dgapd/Screens/entityList.dart';
+import 'package:dgapd/Screens/displayData.dart';
 //import 'package:dgapd/Screens\login.dart/';
 
 class Bottom extends StatefulWidget {
@@ -16,7 +18,7 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index_color = 0;
-  List Screen = [Home(), BtnList() , EntityList(), ProfileScreen()];
+  List Screen = [Home(), BtnList() , displayData(), ProfileScreen()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
