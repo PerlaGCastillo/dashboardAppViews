@@ -16,4 +16,12 @@ class Records {
   id_estado = json ['id_estado'];
   año_presupuestal = json ['año_presupuestal'];
   }
+  Map<String, dynamic> toJson() => {
+    'estado': estado,
+    'cve_edo': cve_edo,
+    'hombres' : hombres,
+    'mujeres' : mujeres,
+    'id_estado' : id_estado,
+    'año_presupuestal': año_presupuestal,
+  };
 }

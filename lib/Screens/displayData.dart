@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -9,7 +11,6 @@ class displayData extends StatefulWidget {
 }
 
 class _displayDataState extends State<displayData> {
-  
   List _records = [];
   
   Future<void> readJson() async{
@@ -17,13 +18,29 @@ class _displayDataState extends State<displayData> {
     final data = await json.decode(response);
     setState(() {
       _records = data["records"];
+      print('objects ${_records.length}');
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ElevatedButton(
+      body: _records.isNotEmpty?Expanded(
+          child: ListView.builder(
+              itemCount: _records.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  key: ValueKey(_records[index]["estado"]),
+                    margin: const EdgeInsets.all(10),
+                    color: Color(0xff10312b),
+                    child: ListTile(
+                      leading: Text(_records[index]["cve_edo"]),
+                      title: Text(_records[index]["hombres"]),
+                      subtitle: Text(_records[index]["mujeres"]),
+                    )
+                );
+              })
+      ): ElevatedButton(
         onPressed: (){
           readJson();
         },
