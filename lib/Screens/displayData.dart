@@ -26,6 +26,9 @@ class _displayDataState extends State<displayData> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           _records.isNotEmpty?Expanded(
             child: ListView.builder(
@@ -49,7 +52,8 @@ class _displayDataState extends State<displayData> {
               },
               child: Center(
                 child: Text('Mostrar Datos'),
-              )
+              ),
+
           )
         ],
       ),
