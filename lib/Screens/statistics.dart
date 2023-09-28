@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:dgapd/data/utlity.dart';
+import 'package:dgapd/widgets/chart.dart';
+
 import '../data/model/add_date.dart';
 import '../data/top.dart';
 
@@ -94,7 +96,7 @@ class _StatisticsState extends State<Statistics> {
               ),
               SizedBox(height: 20),
               Chart(
-                index: index_color,
+                indexx: index_color,
               ),
               SizedBox(height: 20),
               Padding(
