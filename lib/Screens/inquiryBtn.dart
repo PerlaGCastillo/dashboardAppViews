@@ -11,9 +11,7 @@ class BtnList extends StatelessWidget {
       title: 'DGAPD',
       debugShowCheckedModeBanner: false,
       theme:
-      ThemeData(
-          primaryColor: Color(0xff10312b)
-      ),
+      ThemeData(primaryColor: Color(0xff10312b), platform: TargetPlatform.iOS),
       home: BtnListPage(),
     );
   }
@@ -25,11 +23,13 @@ class BtnListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Consulta Histórica")),
+      appBar: AppBar(title: Text("DGAPD")),
       body: ListView.builder(
+       // itemCount: _images.length,
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
-            title: Text('Histórico $index'),
+            title: Text('Concepto $index'),
+
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => SecondPage(heroTag: index)));
@@ -48,7 +48,7 @@ class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Concepto Beneficiarios Histórico")),
+      appBar: AppBar(title: Text("CONCEPTO BENEFICIARIOS HISTÓRICO")),
       body: Column(
         children: [
           Expanded(
@@ -63,16 +63,3 @@ class SecondPage extends StatelessWidget {
   }
 }
 
-final List<String> _historicalBtn = [
-  'Acumulado',
-  'Por género, por edad',
-  'Por mes pagado',
-  'Por grupos vulnerables',
-  'Centros con beneficiarios',
-  'Por entidad',
-  'Por área de interés',
-  'Por escolaridad',
-  'Vinculados en capacitación',
-  'Por municipio',
-  'Por sector'
-];
