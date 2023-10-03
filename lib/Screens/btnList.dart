@@ -31,7 +31,19 @@ class _btnListState extends State<btnList> {
         final item = _itemsBtn[index];
 
         return ListTile(
-            title: Text( '${item}')
+            title:Column(
+              children: <Widget>[
+                ElevatedButton(
+                    child: Text( '${item}'),
+                    onPressed: (){}
+                )
+              ],
+            ),
+
+
+         // tileColor: Color(0xffe7e7e7),
+         // minVerticalPadding: 15,
+          //minLeadingWidth: 120,
         );
       },
     );
