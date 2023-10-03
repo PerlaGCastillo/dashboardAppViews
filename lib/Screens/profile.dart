@@ -30,11 +30,13 @@ class ProfileScreen extends StatelessWidget {
                         ?.copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 16),
-
                 ],
               ),
             ),
           ),
+
+
+
         ],
       ),
     );
@@ -80,10 +82,12 @@ class _TopPortion extends StatelessWidget {
                   decoration: const BoxDecoration(
                     color: Color(0xff1d1d1d),
                     shape: BoxShape.circle,
+                   /*
                     image: DecorationImage(
                         fit: BoxFit.cover,
                         image: NetworkImage(
                             'https://iconduck.com/icons/180867/profile-circle')),
+                    */
                   ),
                 ),
                 Positioned(
@@ -99,6 +103,7 @@ class _TopPortion extends StatelessWidget {
                     ),
                   ),
                 ),
+                
               ],
             ),
           ),
