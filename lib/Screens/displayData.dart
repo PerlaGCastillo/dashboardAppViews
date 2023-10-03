@@ -28,6 +28,7 @@ class _displayDataState extends State<displayData> {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
+
         children: [
           _records.isNotEmpty?Expanded(
             child: ListView.builder(
@@ -50,11 +51,10 @@ class _displayDataState extends State<displayData> {
                 readJson();
               },
               child: Center(
-                child: Text('Mostrar Datos'),
+                child: Text('Acumulado'),
+                ),
               ),
-
-          )
-        ],
+],
       ),
     );
   }

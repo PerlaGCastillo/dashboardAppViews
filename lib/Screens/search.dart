@@ -126,7 +126,6 @@ class _Add_ScreenState extends State<Add_Screen> {
       ),
     );
   }
-
   GestureDetector save() {
     return GestureDetector(
       onTap: () {
