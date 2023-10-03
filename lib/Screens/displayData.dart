@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -37,7 +36,7 @@ class _displayDataState extends State<displayData> {
                 return Card(
                   key: ValueKey(_records[index]["estado"]),
                   margin: const EdgeInsets.all(10),
-                  color: Color(0xf8959595),
+                  color: Color(0xFF959595),
                   child: ListTile(
                     leading: Text(_records[index]["cve_edo"]),
                     title: Text(_records[index]["estado"]),
