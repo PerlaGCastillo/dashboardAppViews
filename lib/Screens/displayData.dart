@@ -37,7 +37,7 @@ class _displayDataState extends State<displayData> {
                 return Card(
                   key: ValueKey(_records[index]["estado"]),
                   margin: const EdgeInsets.all(10),
-                  color: Color(0xFF959595),
+                  color: Color(0xF8C9C9C9),
                   child: ListTile(
                     leading: Text(_records[index]["cve_edo"]),
                     title: Text(_records[index]["estado"]),
