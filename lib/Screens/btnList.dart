@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class btnList extends StatefulWidget {
@@ -31,19 +32,26 @@ class _btnListState extends State<btnList> {
         final item = _itemsBtn[index];
 
         return ListTile(
-            title:Column(
-              children: <Widget>[
-                ElevatedButton(
-                    child: Text( '${item}'),
+          contentPadding: EdgeInsets.only(top:7, left: 17, right: 17,),
+          title:Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  //SizedBox(height: 8),
+                  ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(400, 37),
+                    backgroundColor: Color(0xFFBC955C),
+            ),
+                    child: Text( '${item}',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 17,),
+                    ),
                     onPressed: (){}
                 )
               ],
             ),
-
-
-         // tileColor: Color(0xffe7e7e7),
-         // minVerticalPadding: 15,
-          //minLeadingWidth: 120,
         );
       },
     );

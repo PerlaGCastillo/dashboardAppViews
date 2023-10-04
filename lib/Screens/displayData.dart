@@ -28,7 +28,6 @@ class _displayDataState extends State<displayData> {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-
         children: [
           _records.isNotEmpty?Expanded(
             child: ListView.builder(
@@ -47,6 +46,9 @@ class _displayDataState extends State<displayData> {
               },
             ),
           ): ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              fixedSize: const Size( 350,37 ),
+              backgroundColor: Color(0xFFBC955C), ),
               onPressed: (){
                 readJson();
               },
