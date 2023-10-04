@@ -18,7 +18,7 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index_color = 0;
-  List Screen = [Home(),  displayData(), btnList(), ProfileScreen()];
+  List Screen = [Home(),  displayData(), btnList()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,18 +74,6 @@ class _BottomState extends State<Bottom> {
                   Icons.pie_chart,
                   size: 30,
                   color: index_color == 2 ? Color(0xffbc955c) : Colors.grey,
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    index_color = 3;
-                  });
-                },
-                child: Icon(
-                  Icons.person_outlined,
-                  size: 30,
-                  color: index_color == 3 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
             ],

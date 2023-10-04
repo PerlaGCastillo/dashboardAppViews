@@ -11,7 +11,7 @@ class displayData extends StatefulWidget {
 
 class _displayDataState extends State<displayData> {
   List _records = [];
-  
+
   Future<void> readJson() async{
     final String response = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
     final data = await json.decode(response);
@@ -27,8 +27,7 @@ class _displayDataState extends State<displayData> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.max,
-
+        //mainAxisSize: MainAxisSize.min,
         children: [
           _records.isNotEmpty?Expanded(
             child: ListView.builder(
@@ -48,18 +47,16 @@ class _displayDataState extends State<displayData> {
             ),
           ): ElevatedButton(
             style: ElevatedButton.styleFrom(
-              fixedSize: const Size(460,37),
-              alignment: Alignment.center,
-              backgroundColor: Color(0xFFBC955C),
+              fixedSize: const Size( 350,37 ),
+              alignment: Alignment.center,  backgroundColor: Color(0xFFBC955C), ),
+            onPressed: (){
+              readJson();
+            },
+            child: Center(
+              child: Text('Acumulado'),
             ),
-              onPressed: (){
-                readJson();
-              },
-              child: Center(
-                child: Text('Acumulado'),
-                ),
-              ),
-],
+          ),
+        ],
       ),
     );
   }
