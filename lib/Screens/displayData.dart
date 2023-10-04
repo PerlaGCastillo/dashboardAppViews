@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:dgapd/Screens/btnList.dart';
+
 
 class displayData extends StatefulWidget {
   const displayData({super.key});
@@ -53,7 +55,7 @@ class _displayDataState extends State<displayData> {
               readJson();
             },
             child: Center(
-              child: Text('Acumulado'),
+              child: Text('Acumulado (json)'),
             ),
           ),
         ],
