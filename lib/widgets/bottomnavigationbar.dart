@@ -1,13 +1,8 @@
 import 'package:dgapd/Screens/displayData.dart';
-import 'package:dgapd/Screens/btnList.dart';
 import 'package:flutter/material.dart';
-import 'package:dgapd/Screens/profile.dart';
 import 'package:dgapd/Screens/search.dart';
 import 'package:dgapd/Screens/home.dart';
-import 'package:dgapd/Screens/statistics.dart';
-import 'package:dgapd/Screens/entityList.dart';
-import 'package:dgapd/Screens/displayData.dart';
-//import 'package:dgapd/Screens\login.dart/';
+
 
 class Bottom extends StatefulWidget {
   const Bottom({Key? key}) : super(key: key);
@@ -18,7 +13,7 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index_color = 0;
-  List Screen = [Home(),  displayData(), btnList()];
+  List Screen = [Home(),  dataView()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +46,7 @@ class _BottomState extends State<Bottom> {
                   color: index_color == 0 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
+              SizedBox(width: 17),
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -61,19 +57,6 @@ class _BottomState extends State<Bottom> {
                   Icons.table_chart,
                   size: 30,
                   color: index_color == 1 ? Color(0xffbc955c) : Colors.grey,
-                ),
-              ),
-             SizedBox(width: 17),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    index_color = 2;
-                  });
-                },
-                child: Icon(
-                  Icons.pie_chart,
-                  size: 30,
-                  color: index_color == 2 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
             ],

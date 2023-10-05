@@ -4,6 +4,19 @@ import 'package:flutter/services.dart';
 import 'package:dgapd/Screens/btnList.dart';
 
 
+class dataView extends StatelessWidget {
+  const dataView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return displayData();
+  }
+}
+
+
+
+
+
 class displayData extends StatefulWidget {
   const displayData({super.key});
 
@@ -26,10 +39,12 @@ class _displayDataState extends State<displayData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Consulta Histórico'),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        //mainAxisSize: MainAxisSize.min,
         children: [
           _records.isNotEmpty?Expanded(
             child: ListView.builder(
@@ -51,15 +66,70 @@ class _displayDataState extends State<displayData> {
             style: ElevatedButton.styleFrom(
               fixedSize: const Size( 350,37 ),
               alignment: Alignment.center,  backgroundColor: Color(0xFFBC955C), ),
-            onPressed: (){
-              readJson();
-            },
+            onPressed: (){ readJson(); },
             child: Center(
-              child: Text('Acumulado (json)'),
+              child: Text('Acumulado'),
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class btnList extends StatefulWidget {
+  const btnList({super.key});
+
+  @override
+  State<btnList> createState() => _btnListState();
+}
+
+class _btnListState extends State<btnList> {
+
+  final List<String> _itemsBtn = [
+    'Acumulado',
+    "Por género, por edad",
+    "Por mes pagado",
+    "Por grupos vulnerables",
+    "Centros con beneficiarios",
+    "Por entidad",
+    "Por área de interés",
+    "Por escolaridad",
+    "Vinculados en capacitación",
+    "Por municipio",
+    "Por sector"
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: _itemsBtn.length,
+      itemBuilder: (context, index) {
+        final item = _itemsBtn[index];
+
+        return ListTile(
+          contentPadding: EdgeInsets.only(top:7, left: 17, right: 17,),
+          title:Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              //SizedBox(height: 8),
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(400, 37),
+                    backgroundColor: Color(0xFFBC955C),
+                  ),
+                  child: Text( '${item}',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 17,),
+                  ),
+                  onPressed: (){}
+              )
+            ],
+          ),
+        );
+      },
     );
   }
 }
