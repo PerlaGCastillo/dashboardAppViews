@@ -39,7 +39,7 @@ class _displayDataState extends State<displayData> {
 
   Future<void> readJson() async {
     final String response =
-        await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
     final data = await json.decode(response);
     setState(() {
       _records = data["records"];
@@ -59,92 +59,52 @@ class _displayDataState extends State<displayData> {
         children: [
           _records.isNotEmpty
               ? Expanded(
-                  child: ListView.builder(
-                    itemCount: _records.length,
-                    itemBuilder: (context, index) {
-                      return Card(
-                        key: ValueKey(_records[index]["estado"]),
-                        margin: const EdgeInsets.all(10),
-                        color: Color(0xFF959595),
-                        child: ListTile(
-                          leading: Text(_records[index]["cve_edo"]),
-                          title: Text(_records[index]["estado"]),
-                          subtitle: Text(_records[index]["mujeres"]),
-                        ),
-                      );
-                    },
+            child: ListView.builder(
+              itemCount: _records.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  key: ValueKey(_records[index]["estado"]),
+                  margin: const EdgeInsets.all(10),
+                  color: Color(0xFF959595),
+                  child: ListTile(
+                    leading: Text(_records[index]["cve_edo"]),
+                    title: Text(_records[index]["estado"]),
+                    subtitle: Text(_records[index]["mujeres"]),
                   ),
-                ): ElevatedButton(
-                  onPressed: (){ readJson(); },
-                  style: ElevatedButton.styleFrom(
-                    fixedSize: const Size( 320,680 ),
-                    alignment: Alignment.center,
-                    backgroundColor:Colors.white,
-                  ),
-                  child: Center(
-                    child:btnList(),
+                );
+              },
             ),
-          ),
+          ): Expanded(child: ListView.builder(
+            itemCount: _itemsBtn.length,
+            itemBuilder: (context, index) {
+              final item = _itemsBtn[index];
+
+              return ListTile(
+                contentPadding: EdgeInsets.only(top:7, left: 17, right: 17,),
+                title:Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    //SizedBox(height: 8),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: const Size(400, 37),
+                        backgroundColor: Color(0xFFBC955C),
+                      ),
+                      child: Text( '${item}',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,),
+                      ),
+                      onPressed: (){ readJson(); },
+                    )
+                  ],
+                ),
+              );
+            },
+          ),),
         ],
       ),
-    );
-  }
-}
-
-
-class btnList extends StatefulWidget {
-  const btnList({super.key});
-
-  @override
-  State<btnList> createState() => _btnListState();
-}
-
-class _btnListState extends State<btnList> {
-
-  final List<String> _itemsBtn = [
-    'Acumulado',
-    "Por género, por edad",
-    "Por mes pagado",
-    "Por grupos vulnerables",
-    "Centros con beneficiarios",
-    "Por entidad",
-    "Por área de interés",
-    "Por escolaridad",
-    "Vinculados en capacitación",
-    "Por municipio",
-    "Por sector"
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: _itemsBtn.length,
-      itemBuilder: (context, index) {
-        final item = _itemsBtn[index];
-
-        return ListTile(
-          contentPadding: EdgeInsets.only(top:7, left: 17, right: 17,),
-          title:Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              //SizedBox(height: 8),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(400, 37),
-                    backgroundColor: Color(0xFFBC955C),
-                  ),
-                  child: Text( '${item}',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 17,),
-                  ),
-                  onPressed: (){}
-              )
-            ],
-          ),
-        );
-      },
     );
   }
 }
