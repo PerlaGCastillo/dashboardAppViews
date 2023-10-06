@@ -77,8 +77,10 @@ class _displayDataState extends State<displayData> {
                 ): ElevatedButton(
                   onPressed: (){ readJson(); },
                   style: ElevatedButton.styleFrom(
-                    fixedSize: const Size( 320,520 ),
-                    alignment: Alignment.center,  backgroundColor:Colors.red, ),
+                    fixedSize: const Size( 320,680 ),
+                    alignment: Alignment.center,
+                    backgroundColor:Colors.white,
+                  ),
                   child: Center(
                     child:btnList(),
             ),
