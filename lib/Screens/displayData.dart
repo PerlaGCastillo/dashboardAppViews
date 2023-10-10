@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-
 import 'package:flutter/services.dart';
 
 class dataView extends StatelessWidget {
@@ -57,7 +56,7 @@ class _displayDataState extends State<displayData> {
         //TODO: make it work
         leading: GestureDetector(
           onTap: () {
-            Navigator.of(context).pop();
+            Navigator.pop(context,true);
           },
           child: Icon(Icons.arrow_back, color: Colors.white),
         ),
@@ -70,6 +69,7 @@ class _displayDataState extends State<displayData> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+
           _records.isNotEmpty
               ? Expanded(
             child: ListView.builder(
