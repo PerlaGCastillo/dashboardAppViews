@@ -50,7 +50,21 @@ class _displayDataState extends State<displayData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff10312b),
+        centerTitle: true,
+        titleSpacing: 10.0,
         title: Text('Consulta Histórico'),
+        //TODO: make it work
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.of(context).pop();
+          },
+          child: Icon(Icons.arrow_back, color: Colors.white),
+        ),
+        /*leading: new IconButton(
+          icon: new Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.of(context).pop(),
+        ),*/
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
