@@ -4,4 +4,3 @@ class historico {
   String? cantidad;
   bool? archivo;
 }
-
