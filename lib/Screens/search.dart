@@ -14,9 +14,7 @@ class _SearchScreenState extends State<SearchScreen> {
   DateTime date = new DateTime.now();
   String? selctedItem;
   String? selctedItemi;
-  final TextEditingController expalin_C = TextEditingController();
-  FocusNode ex = FocusNode();
-  final TextEditingController amount_c = TextEditingController();
+   final TextEditingController amount_c = TextEditingController();
   FocusNode amount_ = FocusNode();
   final List<String> _item = [
     "Beneficiarios",
@@ -67,9 +65,7 @@ class _SearchScreenState extends State<SearchScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    ex.addListener(() {
-      setState(() {});
-    });
+
     amount_.addListener(() {
       setState(() {});
     });
@@ -104,21 +100,21 @@ class _SearchScreenState extends State<SearchScreen> {
       child: Column(
         children: [
           SizedBox(height: 25),
-          name(),
+          beneficiarios(),
           SizedBox(height: 25),
           date_time(),
           SizedBox(height: 25),
-          amount(),
+          entidad(),
           SizedBox(height: 25),
-          How(),
+          sectores(),
           SizedBox(height: 25),
-          explain(),
+          aprendices(),
           SizedBox(height: 25),
-          enterprise(),
+          empresa(),
           SizedBox(height: 25),
-          gender(),
+          genero(),
           SizedBox(height: 25),
-          age(),
+          edad(),
           Spacer(),
           save(),
           SizedBox(height: 25),
@@ -130,7 +126,7 @@ class _SearchScreenState extends State<SearchScreen> {
     return GestureDetector(
       onTap: () {
         var add = Add_data(
-            selctedItemi!, amount_c.text, date, expalin_C.text, selctedItem!);
+            selctedItemi!, amount_c.text, date, selctedItem!);
         box.add(add);
         Navigator.of(context).pop();
       },
@@ -155,7 +151,7 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 
-  Padding age() {
+  Padding edad() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
@@ -197,7 +193,7 @@ class _SearchScreenState extends State<SearchScreen> {
           ))
               .toList(),
           hint: Padding(
-            padding: const EdgeInsets.only(top: 12),
+            padding: const EdgeInsets.all(5),
             child: Text(
               'Edad:',
               style: TextStyle(color: Colors.grey),
@@ -211,7 +207,7 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 
-  Padding gender() {
+  Padding genero() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
@@ -253,7 +249,7 @@ class _SearchScreenState extends State<SearchScreen> {
           ))
               .toList(),
           hint: Padding(
-            padding: const EdgeInsets.only(top: 12),
+            padding: const EdgeInsets.all(5),
             child: Text(
               'Género:',
               style: TextStyle(color: Colors.grey),
@@ -268,7 +264,7 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
 
-  Padding enterprise() {
+  Padding empresa() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
@@ -310,7 +306,7 @@ class _SearchScreenState extends State<SearchScreen> {
           ))
               .toList(),
           hint: Padding(
-            padding: const EdgeInsets.only(top: 12),
+            padding: const EdgeInsets.all(5),
             child: Text(
               'Tipo de Empresa:',
               style: TextStyle(color: Colors.grey),
@@ -324,7 +320,7 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 
-  Padding explain() {
+  Padding aprendices() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
@@ -366,7 +362,7 @@ class _SearchScreenState extends State<SearchScreen> {
           ))
               .toList(),
           hint: Padding(
-            padding: const EdgeInsets.only(top: 12),
+            padding: const EdgeInsets.all(5),
             child: Text(
               'Aprendices:',
               style: TextStyle(color: Colors.grey),
@@ -380,7 +376,7 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 
-  Padding How() {
+  Padding sectores() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
@@ -422,7 +418,7 @@ class _SearchScreenState extends State<SearchScreen> {
           ))
               .toList(),
           hint: Padding(
-            padding: const EdgeInsets.only(top: 12),
+            padding: const EdgeInsets.all(5),
             child: Text(
               ' Sectores:',
               style: TextStyle(color: Colors.grey),
@@ -436,7 +432,7 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 
-  Padding amount() {
+  Padding entidad() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
@@ -478,7 +474,7 @@ class _SearchScreenState extends State<SearchScreen> {
           ))
               .toList(),
           hint: Padding(
-            padding: const EdgeInsets.only(top: 12),
+            padding: const EdgeInsets.all(5),
             child: Text(
               'Selecciona una entidad:',
               style: TextStyle(color: Colors.grey),
@@ -499,7 +495,7 @@ class _SearchScreenState extends State<SearchScreen> {
           borderRadius: BorderRadius.circular(8),
           border: Border.all(width: 2, color: Color(0xffC5C5C5))),
       width: 300,
-      height: 45,
+      height:50,
       child: TextButton(
         onPressed: () async {
           DateTime? newDate = await showDatePicker(
@@ -512,18 +508,21 @@ class _SearchScreenState extends State<SearchScreen> {
             date = newDate!;
           });
         },
-        child: Text(
-          'Período : ${date.year} / ${date.day} / ${date.month}',
-          style: TextStyle(
-            fontSize: 15,
-            color: Colors.grey,
+        child: Padding(
+          padding: const EdgeInsets.only(bottom:12.0, left: 5.0),
+          child: Text(
+            'Período : ${date.year} / ${date.day} / ${date.month}',
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.grey,
+            ),
           ),
         ),
       ),
     );
   }
 
-  Padding name() {
+  Padding beneficiarios() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
@@ -549,10 +548,6 @@ class _SearchScreenState extends State<SearchScreen> {
                       alignment: Alignment.center,
                       child: Row(
                         children: [
-                          Container(
-                            width: 40,
-                          ),
-                          SizedBox(width: 10),
                           Text(
                             e,
                             style: TextStyle(fontSize: 18),
@@ -566,16 +561,12 @@ class _SearchScreenState extends State<SearchScreen> {
           selectedItemBuilder: (BuildContext context) => _item
               .map((e) => Row(
                     children: [
-                      Container(
-                        width: 42,
-                      ),
-                      SizedBox(width: 5),
                       Text(e)
                     ],
                   ))
               .toList(),
           hint: Padding(
-            padding: const EdgeInsets.only(top: 12),
+            padding: const EdgeInsets.all(5),
             child: Text(
               'Beneficiarios o Egresados:',
               style: TextStyle(color: Colors.grey),
