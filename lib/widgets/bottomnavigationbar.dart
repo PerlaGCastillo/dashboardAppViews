@@ -21,7 +21,7 @@ class _BottomState extends State<Bottom> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => Add_Screen()));
+              .push(MaterialPageRoute(builder: (context) => SearchScreen()));
         },
         child: Icon(Icons.search),
         backgroundColor: Color(0xc3959595),
@@ -36,6 +36,7 @@ class _BottomState extends State<Bottom> {
             children: [
               GestureDetector(
                 onTap: () {
+
                   setState(() {
                     index_color = 0;
                   });

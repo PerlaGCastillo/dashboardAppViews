@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:dgapd/data/model/add_date.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-class Add_Screen extends StatefulWidget {
-  const Add_Screen({super.key});
+class SearchScreen extends StatefulWidget {
+  const SearchScreen({super.key});
 
   @override
-  State<Add_Screen> createState() => _Add_ScreenState();
+  State<SearchScreen> createState() => _SearchScreenState();
 }
 
-class _Add_ScreenState extends State<Add_Screen> {
+class _SearchScreenState extends State<SearchScreen> {
   final box = Hive.box<Add_data>('data');
   DateTime date = new DateTime.now();
   String? selctedItem;
