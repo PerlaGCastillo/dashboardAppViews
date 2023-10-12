@@ -11,6 +11,7 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   final box = Hive.box<Add_data>('data');
+  //DateTimeRange date = new DateTimeRange.from;
   DateTime date = new DateTime.now();
   String? selctedItem;
   //String? selctedItemi;
@@ -514,6 +515,17 @@ class _SearchScreenState extends State<SearchScreen> {
           setState(() {
             date = newDate!;
           });
+
+          /*
+          * DateTime startDate = new DateTime(2020, 3, 2);
+            DateTime endDate = new DateTime(2020, 3, 10);
+            List<DateTime> days = [];
+            DateTime tmp = DateTime(startDate.year, startDate.month, startDate.day, 12);
+            while(DateTime(tmp.year, tmp.month, tmp.day) != endDate){
+              days.add(DateTime(tmp.year, tmp.month, tmp.day));
+              tmp = tmp.add(new Duration(days: 1));
+            }
+          * */
         },
         child: Padding(
           padding: const EdgeInsets.only(bottom:12.0, left: 5.0),
