@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:dgapd/data/model/add_date.dart';
-import 'package:dgapd/data/utlity.dart';
+//import 'package:dgapd/data/utlity.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -232,8 +232,8 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.only(left: 15),
                   child: Row(
                     children: [
-                      Text(
-                        '${total()}',
+                      Text('total',
+                        //'${total()}',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 25,
@@ -302,8 +302,8 @@ class _HomeState extends State<Home> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        '${income()}',
+                      Text('x',
+                        //'${income()}',
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 17,
@@ -311,7 +311,8 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       Text(
-                        '${expenses()}',
+                        'z',
+                        //'${expenses()}',
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 17,
