@@ -13,10 +13,17 @@ class _SearchScreenState extends State<SearchScreen> {
   final box = Hive.box<Add_data>('data');
   DateTime date = new DateTime.now();
   String? selctedItem;
+  //String? selctedItemi;
+  String? selctedItembeneficia;
+  String? selctedItementidad;
   String? selctedItemi;
+  String? selctedItemaprendiz;
+  String? selctedItemempresa;
+  String? selctedItemgenero;
+  String? selcterItemedad;
    final TextEditingController amount_c = TextEditingController();
   FocusNode amount_ = FocusNode();
-  final List<String> _item = [
+  final List<String> _itembeneficia = [
     "Beneficiarios",
     "Egresados"
   ];
@@ -558,7 +565,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     value: e,
                   ))
               .toList(),
-          selectedItemBuilder: (BuildContext context) => _item
+          selectedItemBuilder: (BuildContext context) => _itembeneficia
               .map((e) => Row(
                     children: [
                       Text(e)
