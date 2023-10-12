@@ -14,16 +14,16 @@ class _SearchScreenState extends State<SearchScreen> {
   //DateTimeRange date = new DateTimeRange.from;
   DateTime date = new DateTime.now();
   String? selctedItem;
-  //String? selctedItemi;
+  String? selctedItemi;
   String? selctedItembeneficia;
   String? selctedItementidad;
-  String? selctedItemi;
+  String? selctedItemsectores;
   String? selctedItemaprendiz;
   String? selctedItemempresa;
   String? selctedItemgenero;
   String? selcterItemedad;
-   final TextEditingController amount_c = TextEditingController();
-  FocusNode amount_ = FocusNode();
+   //final TextEditingController amount_c = TextEditingController();
+  //FocusNode amount_ = FocusNode();
   final List<String> _itembeneficia = [
     "Beneficiarios",
     "Egresados"
@@ -34,7 +34,7 @@ class _SearchScreenState extends State<SearchScreen> {
     "Oaxaca",
     'CDMX'
   ];
-  final List<String> _itemei = [
+  final List<String> _itemsectores = [
     'Público',
     "Privado",
   ];
@@ -74,9 +74,9 @@ class _SearchScreenState extends State<SearchScreen> {
     // TODO: implement initState
     super.initState();
 
-    amount_.addListener(() {
-      setState(() {});
-    });
+    //amount_.addListener(() {
+     // setState(() {});
+   // });
   }
 
   Widget build(BuildContext context) {
@@ -134,7 +134,12 @@ class _SearchScreenState extends State<SearchScreen> {
     return GestureDetector(
       onTap: () {
         var add = Add_data(
-            selctedItemi!, amount_c.text, date, selctedItem!);
+          selctedItemi!, selctedItembeneficia.text , date, selctedItementidad.text,
+            selctedItemsectores.text, selctedItemaprendiz.text, selctedItemempresa.text,
+            selctedItemgenero.text, selctedItemedad.text, ,selctedItem!
+        //    selctedItemi!, amount_c.text, date, selctedItem!
+        );
+
         box.add(add);
         Navigator.of(context).pop();
       },
@@ -195,7 +200,7 @@ class _SearchScreenState extends State<SearchScreen> {
             value: e,
           ))
               .toList(),
-          selectedItemBuilder: (BuildContext context) => _itemei
+          selectedItemBuilder: (BuildContext context) => _itemedad
               .map((e) => Row(
             children: [Text(e)],
           ))
@@ -251,7 +256,7 @@ class _SearchScreenState extends State<SearchScreen> {
             value: e,
           ))
               .toList(),
-          selectedItemBuilder: (BuildContext context) => _itemei
+          selectedItemBuilder: (BuildContext context) => _itemgenero
               .map((e) => Row(
             children: [Text(e)],
           ))
@@ -364,7 +369,7 @@ class _SearchScreenState extends State<SearchScreen> {
             value: e,
           ))
               .toList(),
-          selectedItemBuilder: (BuildContext context) => _itemei
+          selectedItemBuilder: (BuildContext context) => _itemaprendiz
               .map((e) => Row(
             children: [Text(e)],
           ))
@@ -404,7 +409,7 @@ class _SearchScreenState extends State<SearchScreen> {
               selctedItemi = value!;
             });
           }),
-          items: _itemei
+          items: _itemsectores
               .map((e) => DropdownMenuItem(
             child: Container(
               alignment: Alignment.center,
@@ -420,7 +425,7 @@ class _SearchScreenState extends State<SearchScreen> {
             value: e,
           ))
               .toList(),
-          selectedItemBuilder: (BuildContext context) => _itemei
+          selectedItemBuilder: (BuildContext context) => _itemsectores
               .map((e) => Row(
             children: [Text(e)],
           ))
@@ -476,7 +481,7 @@ class _SearchScreenState extends State<SearchScreen> {
             value: e,
           ))
               .toList(),
-          selectedItemBuilder: (BuildContext context) => _itemei
+          selectedItemBuilder: (BuildContext context) => _itementidad
               .map((e) => Row(
             children: [Text(e)],
           ))
@@ -561,7 +566,7 @@ class _SearchScreenState extends State<SearchScreen> {
               selctedItem = value!;
             });
           }),
-          items: _item
+          items: _itembeneficia
               .map((e) => DropdownMenuItem(
                     child: Container(
                       alignment: Alignment.center,
