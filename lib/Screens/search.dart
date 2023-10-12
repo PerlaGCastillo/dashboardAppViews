@@ -21,7 +21,7 @@ class _SearchScreenState extends State<SearchScreen> {
   String? selctedItemaprendiz;
   String? selctedItemempresa;
   String? selctedItemgenero;
-  String? selcterItemedad;
+  String? selctedItemedad;
    //final TextEditingController amount_c = TextEditingController();
   //FocusNode amount_ = FocusNode();
   final List<String> _itembeneficia = [
@@ -133,13 +133,10 @@ class _SearchScreenState extends State<SearchScreen> {
   GestureDetector save() {
     return GestureDetector(
       onTap: () {
-        var add = Add_data(
-          selctedItemi!, selctedItembeneficia.text , date, selctedItementidad.text,
-            selctedItemsectores.text, selctedItemaprendiz.text, selctedItemempresa.text,
-            selctedItemgenero.text, selctedItemedad.text, ,selctedItem!
-        //    selctedItemi!, amount_c.text, date, selctedItem!
+        var add = Add_data( selctedItembeneficia! , date,
+            selctedItementidad!, selctedItemsectores!, selctedItemaprendiz!,
+            selctedItemempresa!, selctedItemgenero!, selctedItemedad!
         );
-
         box.add(add);
         Navigator.of(context).pop();
       },
@@ -276,7 +273,6 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 
-
   Padding empresa() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -313,7 +309,8 @@ class _SearchScreenState extends State<SearchScreen> {
             value: e,
           ))
               .toList(),
-          selectedItemBuilder: (BuildContext context) => _itemei
+          selectedItemBuilder: (BuildContext context) => _itemempresa
+          // selectedItemBuilder: (BuildContext context) => _itemei
               .map((e) => Row(
             children: [Text(e)],
           ))

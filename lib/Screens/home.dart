@@ -89,7 +89,7 @@ class _HomeState extends State<Home> {
        // child: Image.asset('images/${history.name}.png', height: 40),
       ),
       title: Text(
-        history.name,
+        history.beneficiarios,
         style: TextStyle(
           fontSize: 17,
           fontWeight: FontWeight.w600,
@@ -102,13 +102,19 @@ class _HomeState extends State<Home> {
         ),
       ),
       trailing: Text(
-        history.amount,
+        history.entidad,
+        style: TextStyle(
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+      /*trailing: Text(
+        history.entidad,
         style: TextStyle(
           fontWeight: FontWeight.w600,
           fontSize: 19,
           color: history.IN == 'Income' ? Color(0xff10312b) :  Color(0xff691c32),
         ),
-      ),
+      ),*/
     );
   }
 
