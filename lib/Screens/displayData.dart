@@ -49,7 +49,44 @@ class _displayDataState extends State<displayData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff10312b),
+        flexibleSpace: Column(
+          children: [
+            Container(
+        width: double.infinity,
+      height: 240,
+      decoration: BoxDecoration(
+        color: Color(0xff10312b),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20),
+        ),
+      ),
+      child: Column(
+          children: [
+          SizedBox(height: 40),
+      Padding(
+        padding: EdgeInsets.symmetric(horizontal: 15),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GestureDetector(
+              onTap: (){
+                //Navigator.of(context).pop();
+                Scaffold.of(context).openEndDrawer();
+              },
+              child: Icon(
+                  Icons.arrow_back, color: Colors.white),
+            ),
+            Text('Consulta Histórica',
+              style: TextStyle(
+                  fontSize: 21,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white),
+            ),
+          ],
+        ),
+        /*backgroundColor: Color(0xff10312b),
         centerTitle: true,
         titleSpacing: 10.0,
         title: Text('Consulta Histórico'),
@@ -59,20 +96,153 @@ class _displayDataState extends State<displayData> {
             Navigator.pop(context,true);
           },
           child: Icon(Icons.arrow_back, color: Colors.white),
-        ),
+        ),*/
         /*leading: new IconButton(
           icon: new Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),*/
       ),
-      body: Column(
+
+          ],
+        ),
+      ),
+      ],
+    ),
+    ),
+    body: SafeArea(
+      child: Stack(
+        alignment: AlignmentDirectional.center,
+        children: [
+         background_containr(context),
+          Positioned(
+            top: 90,
+            child: main_containr(),
+          )
+        ]
+      ),
+    ),
+    );
+  }
+}
+
+Container main_containr() {
+  return Container(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(20),
+      color: Colors.white,
+    ),
+    height: 700,
+    width: 340,
+    child: Column(
+        children: [
+          SizedBox(height: 20),
+          botonconsulta(),
+          SizedBox(height: 20),
+        ]
+    ),
+  );
+}
+Padding botonconsulta(){
+  return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+  child: Container(
+  child: Column(
+  mainAxisAlignment: MainAxisAlignment.spaceAround,
+  crossAxisAlignment: CrossAxisAlignment.stretch,
+  children: [
+
+  ], ),),);
+}
+
+
+//================================================================
+Column background_containr(BuildContext context) {
+  return Column(
+    children: [
+      Container(
+        width: double.infinity,
+        height: 240,
+        decoration: BoxDecoration(
+          color: Color(0xff10312b),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          ),
+        ),
+        child: Column(
+          children: [
+            SizedBox(height: 40),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Icon(Icons.arrow_back, color: Colors.white),
+                  ),
+                  Text(
+                    'Consulta histórica',
+                    style: TextStyle(
+                        fontSize: 21,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white),
+                  ),
+                  Icon(
+                    Icons.download_rounded,
+                    color: Colors.white,
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    ],
+  );
+}
+
+
+
+
+//====
+
+/*
+*
+*
+*
+* body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-
-          _records.isNotEmpty
-              ? Expanded(
-            child: ListView.builder(
+        children: [ _records.isNotEmpty ? Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Text(_records[index]["estado"],
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w200
+                  ), ),
+                Text(_records[index]["cve_edo"]),
+                Text('Clave estado'),
+                Text(_records[index]["mujeres"]),
+                Text('Mujeres'),
+                Text(_records[index]["hombres"]),
+                Text('Hombres'),
+                Text(_records[index]["total"]),
+                Text('Total'),
+                Text(_records[index]["año_presupuestal"]),
+                Text('Año presupuestal'),
+              ],
+            ),
+          ),
+           /* child: ListView.builder(
               itemCount: _records.length,
               itemBuilder: (context, index) {
                 return Card(
@@ -86,7 +256,7 @@ class _displayDataState extends State<displayData> {
                   ),
                 );
               },
-            ),
+            ),*/
           ): Expanded(child: ListView.builder(
             itemCount: _itemsBtn.length,
             itemBuilder: (context, index) {
@@ -118,6 +288,5 @@ class _displayDataState extends State<displayData> {
           ),),
         ],
       ),
-    );
-  }
-}
+*
+* */
