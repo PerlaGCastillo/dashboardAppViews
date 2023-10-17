@@ -79,11 +79,28 @@ class _displayDataState extends State<displayData> {
                   key: ValueKey(_records[index]["estado"]),
                   margin: const EdgeInsets.all(10),
                   color: Color(0xF8E4E4E4),
-                  child: ListTile(
-                    leading: Text(_records[index]["cve_edo"]),
-                    title: Text(_records[index]["estado"]),
-                    subtitle: Text(_records[index]["mujeres"]),
+                  child:Column(
+                    children: <Widget>[
+                      Text(_records[index]["estado"],
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w200,
+                      ),),
+                      Text(_records[index]["cve_edo"]),
+                      Text('Clave del estado'),
+                      Text(_records[index]["mujeres"]),
+                      Text('Mujeres'),
+                      Text(_records[index]["hombres"]),
+                      Text('Hombres'),
+                      Text(_records[index][""]),
+
+                    ],
                   ),
+                  // child: ListTile(
+                  //   leading: Text(_records[index]["cve_edo"]),
+                  //   title: Text(_records[index]["estado"]),
+                  //   subtitle: Text(_records[index]["mujeres"]),
+                  // ),
                 );
               },
             ),
