@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:dgapd/Screens/home.dart';
-import 'package:dgapd/Screens/statistics.dart';
+//import 'package:management/Screens/home.dart';
 import 'package:dgapd/widgets/bottomnavigationbar.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-/*import 'package:syncfusion_flutter_xlsio/xlsio.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:open_file/open_file.dart';
-import 'package:io/io.dart';*/
 
 import 'data/model/add_date.dart';
 

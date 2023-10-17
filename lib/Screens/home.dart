@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:dgapd/data/listdata.dart';
 import 'package:dgapd/data/model/add_date.dart';
-import 'package:dgapd/data/utlity.dart';
+//import 'package:dgapd/data/utlity.dart';
 
 
 class Home extends StatefulWidget {
@@ -92,7 +90,7 @@ class _HomeState extends State<Home> {
        // child: Image.asset('images/${history.name}.png', height: 40),
       ),
       title: Text(
-        history.name,
+        history.beneficiarios,
         style: TextStyle(
           fontSize: 17,
           fontWeight: FontWeight.w600,
@@ -105,13 +103,19 @@ class _HomeState extends State<Home> {
         ),
       ),
       trailing: Text(
-        history.amount,
+        history.entidad,
+        style: TextStyle(
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+      /*trailing: Text(
+        history.entidad,
         style: TextStyle(
           fontWeight: FontWeight.w600,
           fontSize: 19,
           color: history.IN == 'Income' ? Color(0xff10312b) :  Color(0xff691c32),
         ),
-      ),
+      ),*/
     );
   }
 
@@ -229,8 +233,8 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.only(left: 15),
                   child: Row(
                     children: [
-                      Text(
-                        '${total()}',
+                      Text('total',
+                        //'${total()}',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 25,
@@ -299,8 +303,8 @@ class _HomeState extends State<Home> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        '${income()}',
+                      Text('x',
+                        //'${income()}',
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 17,
@@ -308,7 +312,8 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       Text(
-                        '${expenses()}',
+                        'z',
+                        //'${expenses()}',
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 17,
