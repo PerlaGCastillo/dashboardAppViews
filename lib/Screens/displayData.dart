@@ -49,27 +49,91 @@ class _displayDataState extends State<displayData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff10312b),
-        centerTitle: true,
-        titleSpacing: 10.0,
-        title: Text('Consulta Histórico'),
-        //TODO: make it work
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context,true);
-          },
-          child: Icon(Icons.arrow_back, color: Colors.white),
+        flexibleSpace: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              height: 240,
+              decoration: BoxDecoration(
+                color: Color(0xff10312b),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                ),
+              ),
+              child: Column(
+                children: [
+                  SizedBox(height: 40),
+                  Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.of(context).pop();
+                          },
+                          child: Icon(
+                            Icons.arrow_back, color: Colors.white),
+                        ),
+                        Text('Consulta Histórica',
+                          style: TextStyle(
+                            fontSize: 21,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-        /*leading: new IconButton(
-          icon: new Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.of(context).pop(),
-        ),*/
       ),
-      body: Column(
+      body: SafeArea(
+        child: Stack(
+          alignment: AlignmentDirectional.center,
+          children: [
+            background_container(context),
+            Positioned(
+              top: 90,
+              child: mainContainer(),
+            )
+          ],
+        ),
+      )
+    );
+  }
+}
+
+
+Container mainContainer(){
+  return Container(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(20),
+      color: Colors.white,
+    ),
+    height: 700,
+    width: 340,
+    child: Column(
+      children: [
+        SizedBox(height: 20),
+        botonconsulta(),
+        SizedBox(height: 20),
+      ]
+    ),
+  );
+}
+Padding botonconsulta(){
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 15),
+    child: Container(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-
           _records.isNotEmpty
               ? Expanded(
             child: ListView.builder(
@@ -86,10 +150,10 @@ class _displayDataState extends State<displayData> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
                         Text(_records[index]["estado"],
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w200,
-                        ),),
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),),
                         Text(_records[index]["cve_edo"]),
                         Text('Clave del estado'),
                         Text(_records[index]["mujeres"]),
@@ -102,12 +166,11 @@ class _displayDataState extends State<displayData> {
                         Text('Id estado'),
                         Text(_records[index]["año_presupuestal"]),
                         Text('Año presupuestal'),
-
                       ],
                     ),
                   ),
 
-                  /* child: ListTile(
+/* child: ListTile(
                      leading: Text(_records[index]["cve_edo"]),
                      title: Text(_records[index]["estado"]),
                      subtitle: Text(_records[index]["mujeres"]),
@@ -126,7 +189,7 @@ class _displayDataState extends State<displayData> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    //SizedBox(height: 8),
+//SizedBox(height: 8),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         fixedSize: const Size(400, 37),
@@ -146,6 +209,7 @@ class _displayDataState extends State<displayData> {
           ),),
         ],
       ),
-    );
-  }
+    ),
+  );
 }
+
