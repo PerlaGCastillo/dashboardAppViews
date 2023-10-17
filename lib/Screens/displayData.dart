@@ -92,7 +92,6 @@ class _displayDataState extends State<displayData> {
                       Text('Mujeres'),
                       Text(_records[index]["hombres"]),
                       Text('Hombres'),
-                      Text(_records[index][""]),
 
                     ],
                   ),
