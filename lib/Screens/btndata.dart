@@ -12,7 +12,7 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   final box = Hive.box<Add_data>('data');
   //DateTimeRange date = new DateTimeRange.from;
-  DateTime date = new DateTime.now();
+  DateTime danavte = new DateTime.now();
   String? selctedItem;
   String? selctedItemi;
   String? selctedItembeneficia;
@@ -138,7 +138,9 @@ class _SearchScreenState extends State<SearchScreen> {
             selctedItemempresa!, selctedItemgenero!, selctedItemedad!
         );
         box.add(add);
-        Navigator.of(context).pop();
+        Scaffold.of(context).openEndDrawer();
+
+//        Navigator.of(context).pop();
       },
       child: Container(
         alignment: Alignment.center,
@@ -626,6 +628,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).pop();
+                        //Scaffold.of(context).openEndDrawer();
                       },
                       child: Icon(Icons.arrow_back, color: Colors.white),
                     ),
@@ -636,10 +639,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           fontWeight: FontWeight.w600,
                           color: Colors.white),
                     ),
-                    Icon(
-                      Icons.download_rounded,
-                      color: Colors.white,
-                    )
+
                   ],
                 ),
               )

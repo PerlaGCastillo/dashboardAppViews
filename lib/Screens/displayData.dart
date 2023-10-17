@@ -8,8 +8,7 @@ class dataView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return displayData();
-  }
-}
+
 
 class displayData extends StatefulWidget {
   const displayData({super.key});
@@ -48,62 +47,63 @@ class _displayDataState extends State<displayData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        flexibleSpace: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              height: 240,
-              decoration: BoxDecoration(
-                color: Color(0xff10312b),
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
+        appBar: AppBar(
+          flexibleSpace: Column(
+            children: [
+              Container(
+                width: double.infinity,
+                height: 240,
+                decoration: BoxDecoration(
+                  color: Color(0xff10312b),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    SizedBox(height: 40),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          GestureDetector(
+                            onTap: (){
+                              Scaffold.of(context).openEndDrawer();
+                              //Navigator.of(context).pop();
+                            },
+                            child: Icon(
+                                Icons.arrow_back, color: Colors.white),
+                          ),
+                          Text('Consulta Histórica',
+                            style: TextStyle(
+                                fontSize: 21,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              child: Column(
-                children: [
-                  SizedBox(height: 40),
-                  Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        GestureDetector(
-                          onTap: (){
-                            Navigator.of(context).pop();
-                          },
-                          child: Icon(
-                            Icons.arrow_back, color: Colors.white),
-                        ),
-                        Text('Consulta Histórica',
-                          style: TextStyle(
-                            fontSize: 21,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-      body: SafeArea(
-        child: Stack(
-          alignment: AlignmentDirectional.center,
-          children: [
-            background_container(context),
-            Positioned(
-              top: 90,
-              child: mainContainer(),
-            )
-          ],
-        ),
-      )
+        body: SafeArea(
+          child: Stack(
+            alignment: AlignmentDirectional.center,
+            children: [
+              background_container(context),
+              Positioned(
+                top: 90,
+                child: mainContainer(),
+              )
+            ],
+          ),
+        )
     );
   }
 }
@@ -118,11 +118,11 @@ Container mainContainer(){
     height: 700,
     width: 340,
     child: Column(
-      children: [
-        SizedBox(height: 20),
-        botonconsulta(),
-        SizedBox(height: 20),
-      ]
+        children: [
+          SizedBox(height: 20),
+          botonconsulta(),
+          SizedBox(height: 20),
+        ]
     ),
   );
 }
