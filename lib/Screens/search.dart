@@ -632,12 +632,12 @@ class _SearchScreenState extends State<SearchScreen> {
                     Text(
                       'Consulta histórica',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 21,
                           fontWeight: FontWeight.w600,
                           color: Colors.white),
                     ),
                     Icon(
-                      Icons.attach_file_outlined,
+                      Icons.download_rounded,
                       color: Colors.white,
                     )
                   ],
