@@ -508,7 +508,7 @@ class _SearchScreenState extends State<SearchScreen> {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           border: Border.all(width: 2, color: Color(0xffC5C5C5))),
-      width: MediaQuery.of(context).size.width*0.9,
+      width: MediaQuery.of(context).size.width*0.79,
       height:50,
       child: TextButton(
         onPressed: () async {
