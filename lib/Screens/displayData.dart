@@ -33,18 +33,6 @@ class _displayDataState extends State<displayData> {
     "Por sector"
   ];
 
-  List _records = [];
-
-  Future<void> readJson() async {
-    final String response =
-    await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
-    final data = await json.decode(response);
-    setState(() {
-      _records = data["records"];
-      print('objects ${_records.length}');
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
