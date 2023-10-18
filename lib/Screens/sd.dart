@@ -2,23 +2,23 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class dataView extends StatelessWidget {
-  const dataView({super.key});
+class dataBtn extends StatelessWidget {
+  const dataBtn({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return displayData();
+    return displayBtn();
   }
 }
 
-class displayData extends StatefulWidget {
-  const displayData({super.key});
+class displayBtn extends StatefulWidget {
+  const displayBtn({super.key});
 
   @override
-  State<displayData> createState() => _displayDataState();
+  State<displayBtn> createState() => _displayBtnState();
 }
 
-class _displayDataState extends State<displayData> {
+class _displayBtnState extends State<displayBtn> {
   final List<String> _itemsBtn = [
     'Acumulado',
     "Por género, por edad",
@@ -79,28 +79,11 @@ class _displayDataState extends State<displayData> {
                   key: ValueKey(_records[index]["estado"]),
                   margin: const EdgeInsets.all(10),
                   color: Color(0xF8E4E4E4),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(_records[index]["estado"]),
-                      Text('Estado'),
-                      Text(_records[index]["cve_edo"]),
-                      Text('Clave de estado'),
-                      Text(_records[index]["mujeres"]),
-                      Text('Mujeres'),
-                      Text(_records[index]["Hombres"]),
-                      Text('Hombres'),
-                      Text(_records[index]["total"]),
-                      Text('Total'),
-                      Text(_records[index]["año_presupuestal"]),
-                      Text('Año Presupuestal'),
-                    ],
-                  ),
-                  /*child: ListTile(
+                  child: ListTile(
                     leading: Text(_records[index]["cve_edo"]),
                     title: Text(_records[index]["estado"]),
                     subtitle: Text(_records[index]["mujeres"]),
-                  ),*/
+                  ),
                 );
               },
             ),
