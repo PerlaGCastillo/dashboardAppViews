@@ -189,3 +189,63 @@ Column background_containr(BuildContext context) {
     ],
   );
 }
+
+
+
+
+/*
+
+
+Column(
+mainAxisAlignment: MainAxisAlignment.spaceAround,
+crossAxisAlignment: CrossAxisAlignment.stretch,
+children: [
+
+_records.isNotEmpty
+? Expanded(
+child: ListView.builder(
+itemCount: _records.length,
+itemBuilder: (context, index) {
+return Card(
+key: ValueKey(_records[index]["estado"]),
+margin: const EdgeInsets.all(10),
+color: Color(0xF8E4E4E4),
+child: ListTile(
+leading: Text(_records[index]["cve_edo"]),
+title: Text(_records[index]["estado"]),
+subtitle: Text(_records[index]["mujeres"]),
+),
+);
+},
+),
+): Expanded(child: ListView.builder(
+itemCount: _itemsBtn.length,
+itemBuilder: (context, index) {
+final item = _itemsBtn[index];
+
+return ListTile(
+contentPadding: EdgeInsets.only(top:7, left: 17, right: 17,),
+title:Column(
+crossAxisAlignment: CrossAxisAlignment.center,
+mainAxisAlignment: MainAxisAlignment.spaceBetween,
+children: <Widget>[
+//SizedBox(height: 8),
+ElevatedButton(
+style: ElevatedButton.styleFrom(
+fixedSize: const Size(400, 37),
+backgroundColor: Color(0xFFBC955C),
+),
+child: Text( '${item}',
+style: TextStyle(
+fontWeight: FontWeight.w400,
+fontSize: 17,),
+),
+onPressed: (){ readJson(); },
+)
+],
+),
+);
+},
+),),
+],
+),*/
