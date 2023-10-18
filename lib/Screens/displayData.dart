@@ -45,6 +45,30 @@ class _displayDataState extends State<displayData> {
     });
   }
 
+
+  /*
+  *
+  * https://copyprogramming.com/howto/load-multiple-json-files-in-flutter
+  * Future> loadJson() async {
+  final jsonA = await DefaultAssetBundle.of(context).loadString('assets/fileA');
+  final jsonB = await DefaultAssetBundle.of(context).loadString('assets/fileB');
+  return {
+    'fileA': jsonA,
+    'fileB': jsonB,
+  };
+}
+...
+FutureBuilder(
+  future: loadJson(),
+  builder: (context, snapshot) {
+    if (!snapshot.hasData) {
+      return CircularProgressIndicator();
+    }
+    var fileA = snapshot.data['fileA'];
+    var fileB = snapshot.data['fileB'];
+    ...
+    *
+  * */
   @override
   Widget build(BuildContext context) {
     return Scaffold(
