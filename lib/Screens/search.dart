@@ -101,7 +101,7 @@ class _SearchScreenState extends State<SearchScreen> {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Colors.white,
+        color: Color(0xfff4f4f4),
       ),
       height: 700,
       width: 340,
@@ -209,7 +209,7 @@ class _SearchScreenState extends State<SearchScreen> {
               style: TextStyle(color: Colors.grey),
             ),
           ),
-          dropdownColor: Colors.white,
+          dropdownColor: Color(0xfff4f4f4),
           isExpanded: true,
           underline: Container(),
         ),
@@ -265,7 +265,8 @@ class _SearchScreenState extends State<SearchScreen> {
               style: TextStyle(color: Colors.grey),
             ),
           ),
-          dropdownColor: Colors.white,
+          dropdownColor: Color(0xfff4f4f4),
+
           isExpanded: true,
           underline: Container(),
         ),
@@ -322,7 +323,7 @@ class _SearchScreenState extends State<SearchScreen> {
               style: TextStyle(color: Colors.grey),
             ),
           ),
-          dropdownColor: Colors.white,
+          dropdownColor: Color(0xfff4f4f4),
           isExpanded: true,
           underline: Container(),
         ),
@@ -378,7 +379,7 @@ class _SearchScreenState extends State<SearchScreen> {
               style: TextStyle(color: Colors.grey),
             ),
           ),
-          dropdownColor: Colors.white,
+          dropdownColor: Color(0xfff4f4f4),
           isExpanded: true,
           underline: Container(),
         ),
@@ -434,7 +435,8 @@ class _SearchScreenState extends State<SearchScreen> {
               style: TextStyle(color: Colors.grey),
             ),
           ),
-          dropdownColor: Colors.white,
+          dropdownColor: Color(0xfff4f4f4),
+
           isExpanded: true,
           underline: Container(),
         ),
@@ -490,7 +492,8 @@ class _SearchScreenState extends State<SearchScreen> {
               style: TextStyle(color: Colors.grey),
             ),
           ),
-          dropdownColor: Colors.white,
+          dropdownColor: Color(0xfff4f4f4),
+
           isExpanded: true,
           underline: Container(),
         ),
@@ -593,7 +596,8 @@ class _SearchScreenState extends State<SearchScreen> {
               style: TextStyle(color: Colors.grey),
             ),
           ),
-          dropdownColor: Colors.white,
+          dropdownColor: Color(0xfff4f4f4),
+
           isExpanded: true,
           underline: Container(),
         ),
@@ -627,7 +631,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       onTap: () {
                         Navigator.of(context).pop();
                       },
-                      child: Icon(Icons.arrow_back, color: Colors.white),
+                      child: Icon(Icons.arrow_back,color: Color(0xfff4f4f4),),
                     ),
                     Text(
                       'Consulta histórica',
