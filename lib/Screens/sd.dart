@@ -65,58 +65,80 @@ class _displayBtnState extends State<displayBtn> {
           onPressed: () => Navigator.of(context).pop(),
         ),*/
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-
-          _records.isNotEmpty
-              ? Expanded(
-            child: ListView.builder(
-              itemCount: _records.length,
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _records.isNotEmpty
+                ? Expanded(
+              child: ListView.builder(
+                itemCount: _records.length,
+                itemBuilder: (context, index) {
+                  return Card(
+                    child:Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment:CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(_records[index]["estado"],
+                            style: TextStyle(fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                            ),),
+                          Text(_records[index]["cve_edo"]),
+                          Text('Clave'),
+                          Text(_records[index]["mujeres"]),
+                          Text("mujeres"),
+                          Text(_records[index]["hombres"]),
+                          Text("hombres"),
+                          Text(_records[index]["año_presupuestal"]),
+                          Text("año presupuestal"),
+                        ],
+                      ),
+                    ),
+                   /* key: ValueKey(_records[index]["estado"]),
+                    margin: const EdgeInsets.all(10),
+                    color: Color(0xF8E4E4E4),
+                    child: ListTile(
+                      leading: Text(_records[index]["cve_edo"]),
+                      title: Text(_records[index]["estado"]),
+                      subtitle: Text(_records[index]["mujeres"]),
+                    ),*/
+                  );
+                },
+              ),
+            ): Expanded(child: ListView.builder(
+              itemCount: _itemsBtn.length,
               itemBuilder: (context, index) {
-                return Card(
-                  key: ValueKey(_records[index]["estado"]),
-                  margin: const EdgeInsets.all(10),
-                  color: Color(0xF8E4E4E4),
-                  child: ListTile(
-                    leading: Text(_records[index]["cve_edo"]),
-                    title: Text(_records[index]["estado"]),
-                    subtitle: Text(_records[index]["mujeres"]),
+                final item = _itemsBtn[index];
+
+                return ListTile(
+                  contentPadding: EdgeInsets.only(top:7, left: 17, right: 17,),
+                  title:Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      //SizedBox(height: 8),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          fixedSize: const Size(400, 37),
+                          backgroundColor: Color(0xFFBC955C),
+                        ),
+                        child: Text( '${item}',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 17,),
+                        ),
+                        onPressed: (){ readJson(); },
+                      )
+                    ],
                   ),
                 );
               },
-            ),
-          ): Expanded(child: ListView.builder(
-            itemCount: _itemsBtn.length,
-            itemBuilder: (context, index) {
-              final item = _itemsBtn[index];
-
-              return ListTile(
-                contentPadding: EdgeInsets.only(top:7, left: 17, right: 17,),
-                title:Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    //SizedBox(height: 8),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        fixedSize: const Size(400, 37),
-                        backgroundColor: Color(0xFFBC955C),
-                      ),
-                      child: Text( '${item}',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 17,),
-                      ),
-                      onPressed: (){ readJson(); },
-                    )
-                  ],
-                ),
-              );
-            },
-          ),),
-        ],
+            ),),
+          ],
+        ),
       ),
     );
   }
