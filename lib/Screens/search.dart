@@ -103,8 +103,9 @@ class _SearchScreenState extends State<SearchScreen> {
         borderRadius: BorderRadius.circular(20),
         color: Color(0xfff4f4f4),
       ),
-      height: 700,
-      width: 340,
+      height: MediaQuery.of(context).size.height*0.83,
+      width: MediaQuery.of(context).size.width-50,
+
       child: Column(
         children: [
           SizedBox(height: 25),
@@ -143,11 +144,11 @@ class _SearchScreenState extends State<SearchScreen> {
       child: Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(7),
           color: Color(0xffbc955c),
         ),
-        width: 120,
-        height: 50,
+        height: MediaQuery.of(context).size.height*0.05,
+        width: MediaQuery.of(context).size.width*0.77,
         child: Text(
           'Consultar',
           style: TextStyle(
@@ -166,7 +167,7 @@ class _SearchScreenState extends State<SearchScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 15),
-        width: 300,
+        width: MediaQuery.of(context).size.width-50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
@@ -222,7 +223,7 @@ class _SearchScreenState extends State<SearchScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 15),
-        width: 300,
+        width: MediaQuery.of(context).size.width-50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
@@ -279,7 +280,7 @@ class _SearchScreenState extends State<SearchScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 15),
-        width: 300,
+        width: MediaQuery.of(context).size.width-50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
@@ -336,7 +337,7 @@ class _SearchScreenState extends State<SearchScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 15),
-        width: 300,
+        width: MediaQuery.of(context).size.width-50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
@@ -392,7 +393,7 @@ class _SearchScreenState extends State<SearchScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 15),
-        width: 300,
+        width: MediaQuery.of(context).size.width-50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
@@ -449,7 +450,7 @@ class _SearchScreenState extends State<SearchScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 15),
-        width: 300,
+        width: MediaQuery.of(context).size.width-50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
@@ -507,7 +508,7 @@ class _SearchScreenState extends State<SearchScreen> {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           border: Border.all(width: 2, color: Color(0xffC5C5C5))),
-      width: 300,
+      width: MediaQuery.of(context).size.width*0.9,
       height:50,
       child: TextButton(
         onPressed: () async {
@@ -533,7 +534,7 @@ class _SearchScreenState extends State<SearchScreen> {
           * */
         },
         child: Padding(
-          padding: const EdgeInsets.only(bottom:12.0, left: 5.0),
+          padding: const EdgeInsets.only(bottom:12.0, left: 8.0),
           child: Text(
             'Período : ${date.year} / ${date.day} / ${date.month}',
             style: TextStyle(
@@ -551,7 +552,7 @@ class _SearchScreenState extends State<SearchScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 15),
-        width: 300,
+        width: MediaQuery.of(context).size.width-50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
@@ -610,7 +611,7 @@ class _SearchScreenState extends State<SearchScreen> {
       children: [
         Container(
           width: double.infinity,
-          height: 240,
+          height: MediaQuery.of(context).size.height/4,
           decoration: BoxDecoration(
             color: Color(0xff10312b),
             borderRadius: BorderRadius.only(

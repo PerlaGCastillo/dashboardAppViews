@@ -71,8 +71,8 @@ class _displayDataState extends State<displayData> {
         borderRadius: BorderRadius.circular(19.0),
         color: Color(0xfff4f4f4),
       ),
-      height: 660,
-      width: 342,
+      height: MediaQuery.of(context).size.height-180,
+      width: MediaQuery.of(context).size.width-40,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -131,7 +131,8 @@ class _displayDataState extends State<displayData> {
                     //SizedBox(height: 8),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        fixedSize: const Size(390, 37),
+                        //fixedSize: const Size(390, 37),
+                        minimumSize: Size.fromHeight(42),
                         backgroundColor: Color(0xFFBC955C),
                       ),
                       child: Text('${item}',
