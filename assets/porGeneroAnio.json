@@ -1,0 +1,502 @@
+{
+  "records": [
+    {
+      "estado": "Aguascalientes",
+      "total": "6141",
+      "id_estado": "1",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Baja California",
+      "total": "2800",
+      "id_estado": "2",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Baja California Sur",
+      "total": "4214",
+      "id_estado": "3",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Campeche",
+      "total": "27446",
+      "id_estado": "4",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Chiapas",
+      "total": "151925",
+      "id_estado": "7",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Chihuahua",
+      "total": "12208",
+      "id_estado": "8",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Ciudad de México",
+      "total": "48645",
+      "id_estado": "9",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Coahuila de Zaragoza",
+      "total": "7218",
+      "id_estado": "5",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Colima",
+      "total": "9045",
+      "id_estado": "6",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Durango",
+      "total": "9912",
+      "id_estado": "10",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Guanajuato",
+      "total": "14387",
+      "id_estado": "11",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Guerrero",
+      "total": "79388",
+      "id_estado": "12",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Hidalgo",
+      "total": "26971",
+      "id_estado": "13",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Jalisco",
+      "total": "22794",
+      "id_estado": "14",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "México",
+      "total": "100300",
+      "id_estado": "15",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Michoacán de Ocampo",
+      "total": "67455",
+      "id_estado": "16",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Morelos",
+      "total": "39232",
+      "id_estado": "17",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Nayarit",
+      "total": "13892",
+      "id_estado": "18",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Nuevo León",
+      "total": "5485",
+      "id_estado": "19",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Oaxaca",
+      "total": "52291",
+      "id_estado": "20",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Puebla",
+      "total": "33270",
+      "id_estado": "21",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Querétaro",
+      "total": "11320",
+      "id_estado": "22",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Quintana Roo",
+      "total": "15471",
+      "id_estado": "23",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "San Luis Potosí",
+      "total": "14907",
+      "id_estado": "24",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Sinaloa",
+      "total": "15048",
+      "id_estado": "25",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Sonora",
+      "total": "6157",
+      "id_estado": "26",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Tabasco",
+      "total": "115431",
+      "id_estado": "27",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Tamaulipas",
+      "total": "21770",
+      "id_estado": "28",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Tlaxcala",
+      "total": "27656",
+      "id_estado": "29",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Veracruz",
+      "total": "116067",
+      "id_estado": "30",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Yucatán",
+      "total": "23405",
+      "id_estado": "31",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Zacatecas",
+      "total": "18336",
+      "id_estado": "32",
+      "anio_presupuestal": "2019"
+    },
+    {
+      "estado": "Aguascalientes",
+      "total": "7854",
+      "id_estado": "1",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Baja California",
+      "total": "2820",
+      "id_estado": "2",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Baja California Sur",
+      "total": "5962",
+      "id_estado": "3",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Campeche",
+      "total": "35530",
+      "id_estado": "4",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Chiapas",
+      "total": "165642",
+      "id_estado": "7",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Chihuahua",
+      "total": "14067",
+      "id_estado": "8",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Ciudad de México",
+      "total": "42317",
+      "id_estado": "9",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Coahuila de Zaragoza",
+      "total": "7770",
+      "id_estado": "5",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Colima",
+      "total": "8403",
+      "id_estado": "6",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Durango",
+      "total": "11800",
+      "id_estado": "10",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Guanajuato",
+      "total": "14681",
+      "id_estado": "11",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Guerrero",
+      "total": "87304",
+      "id_estado": "12",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Hidalgo",
+      "total": "27508",
+      "id_estado": "13",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Jalisco",
+      "total": "23887",
+      "id_estado": "14",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "México",
+      "total": "94589",
+      "id_estado": "15",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Michoacán de Ocampo",
+      "total": "75883",
+      "id_estado": "16",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Morelos",
+      "total": "39954",
+      "id_estado": "17",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Nayarit",
+      "total": "15035",
+      "id_estado": "18",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Nuevo León",
+      "total": "5802",
+      "id_estado": "19",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Oaxaca",
+      "total": "61047",
+      "id_estado": "20",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Puebla",
+      "total": "38268",
+      "id_estado": "21",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Querétaro",
+      "total": "12585",
+      "id_estado": "22",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Quintana Roo",
+      "total": "18440",
+      "id_estado": "23",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "San Luis Potosí",
+      "total": "16025",
+      "id_estado": "24",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Sinaloa",
+      "total": "16010",
+      "id_estado": "25",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Sonora",
+      "total": "6217",
+      "id_estado": "26",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Tabasco",
+      "total": "138796",
+      "id_estado": "27",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Tamaulipas",
+      "total": "23472",
+      "id_estado": "28",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Tlaxcala",
+      "total": "32685",
+      "id_estado": "29",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Veracruz",
+      "total": "131517",
+      "id_estado": "30",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Yucatán",
+      "total": "29341",
+      "id_estado": "31",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Zacatecas",
+      "total": "22994",
+      "id_estado": "32",
+      "anio_presupuestal": "2020"
+    },
+    {
+      "estado": "Aguascalientes",
+      "total": "7843",
+      "id_estado": "1",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Baja California",
+      "total": "1986",
+      "id_estado": "2",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Baja California Sur",
+      "total": "7120",
+      "id_estado": "3",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Campeche",
+      "total": "27793",
+      "id_estado": "4",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Chiapas",
+      "total": "101407",
+      "id_estado": "7",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Chihuahua",
+      "total": "11455",
+      "id_estado": "8",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Ciudad de México",
+      "total": "38071",
+      "id_estado": "9",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Coahuila de Zaragoza",
+      "total": "6206",
+      "id_estado": "5",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Colima",
+      "total": "5476",
+      "id_estado": "6",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Durango",
+      "total": "13241",
+      "id_estado": "10",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Guanajuato",
+      "total": "12084",
+      "id_estado": "11",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Guerrero",
+      "total": "61795",
+      "id_estado": "12",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Hidalgo",
+      "total": "19093",
+      "id_estado": "13",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Jalisco",
+      "total": "17411",
+      "id_estado": "14",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "México",
+      "total": "65377",
+      "id_estado": "15",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Michoacán de Ocampo",
+      "total": "53491",
+      "id_estado": "16",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Morelos",
+      "total": "29628",
+      "id_estado": "17",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Nayarit",
+      "total": "10199",
+      "id_estado": "18",
+      "anio_presupuestal": "2021"
+    },
+    {
+      "estado": "Nuevo León",
+      "total": "4317",
+      "id_estado": "19",
+      "anio_presupuestal": "2021"
+    }
+  ]
+}

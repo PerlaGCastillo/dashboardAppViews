@@ -33,32 +33,22 @@ class _displayDataState extends State<displayData> {
     "Por sector"
   ];
 
-  List _records = [];
+List _records = [];
 
   //one option is to place both calls within an asynchronous method and subsequently await it
+ Future<Map<String, dynamic>> loadJson() async{
+    final jsonA = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
+    final jsonB = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
+    final jsonResult = json.decode(jsonA);
 
-  /*Future loadJson() async{
-    final jsonA = await DefaultAssetBundle.of(context).loadString('assets/fileA');
-    final jsonB = await DefaultAssetBundle.of(context).loadString('assets/fileB');
     return{
       'fileA': jsonA,
       'fileB': jsonB,
-    }
+    };
   }
-   FutureBuilder(
-      future: loadJson(),
-      builder: (context, snapshot){
-        if(!snapshot.hasData){
-          return CircularProgressIndicator();
-  }
-        var fileA  = snapshot.data['fileA'];
-        var fileB = snapshot.data['fileB'];
-  }
-      );*/
 
   Future<void> readJson() async {
-    final String response =
-    await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    final String response = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
     final data = await json.decode(response);
     setState(() {
       _records = data["records"];
@@ -98,23 +88,25 @@ class _displayDataState extends State<displayData> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _records.isNotEmpty
-              ? Expanded(
+          _records.isNotEmpty ? Expanded(
             child: ListView.builder(
               padding: EdgeInsets.all(9.0),
               itemCount: _records.length,
               itemBuilder: (context, index) {
+                // return FutureBuilder(
+                //     future: loadJson(),
+                //     builder: (context, snapshot) {
+                //       if(!snapshot.hasData){
+                //         return CircularProgressIndicator();
+                //       }
+                //       var fileA  = snapshot.data['fileA'];
+                //       var fileB = snapshot.data['fileB'];
+                //     }
+                // );
+// /*
                 return Card(
                   color: Color(0xF8E4E4E4),
                   margin: const EdgeInsets.all(10),
-                  /* key: ValueKey(_records[index]["estado"]),
-                  margin: const EdgeInsets.all(10),
-                  color: Color(0xF8E4E4E4),
-                  child: ListTile(
-                    leading: Text(_records[index]["cve_edo"]),
-                    title: Text(_records[index]["estado"]),
-                    subtitle: Text(_records[index]["mujeres"]),
-                  ),*/
                   child:Padding(
                     padding: const EdgeInsets.all(19.0),
                     child: Column(
@@ -136,9 +128,11 @@ class _displayDataState extends State<displayData> {
                     ),
                   ),
                 );
+// */
               },
             ),
-          ) : Expanded(child: ListView.builder(
+          )
+      : Expanded( child: ListView.builder(
             itemCount: _itemsBtn.length,
             itemBuilder: (context, index) {
               final item = _itemsBtn[index];
