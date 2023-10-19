@@ -34,27 +34,50 @@ class _displayDataState extends State<displayData> {
   ];
 
 List _records = [];
+//TODO check it up and check it off"
+// https://copyprogramming.com/howto/load-multiple-json-files-in-flutter
+// https://stackoverflow.com/questions/61228977/how-to-pass-multiple-data-fetched-from-json-to-next-screen-in-flutter
+// https://stackoverflow.com/questions/75250664/flutter-multiple-json-data-nested
 
-  //one option is to place both calls within an asynchronous method and subsequently await it
+//one option is to place both calls within an asynchronous method and subsequently await it
  Future<Map<String, dynamic>> loadJson() async{
     final jsonA = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
     final jsonB = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonResult = json.decode(jsonA);
-
+    final jsonC = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
+    final jsonD = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
+    final jsonE = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
+    final jsonF = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
+    final jsonG = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
+    final jsonH = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
+    final jsonI = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
+    final jsonJ = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
+    final jsonK = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
+    //final jsonResult = json.decode(jsonA);
+//  for (var record in _records.entry) {
+//    print('${entry.key}: ${entry.value}'):}
     return{
       'fileA': jsonA,
       'fileB': jsonB,
+      'fileC': jsonC,
+      'fileD': jsonD,
+      'fileE': jsonE,
+      'fileF': jsonF,
+      'fileG': jsonG,
+      'fileH': jsonH,
+      'fileI': jsonI,
+      'fileJ': jsonJ,
+      'fileK': jsonK,
     };
   }
-
-  Future<void> readJson() async {
+/*
+Future<void> readJson() async {
     final String response = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
     final data = await json.decode(response);
     setState(() {
       _records = data["records"];
       print('objects ${_records.length}');
     });
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -112,10 +135,13 @@ List _records = [];
                     child: Column(
                       crossAxisAlignment:CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(_records[index]["estado"],
+                //Records.map<Widget>((index)=> Column [
+                        //Text((_records[index]['estado'] != null) ? _records['estado'] : 'estado',
+                        Text((_records[index]['estado']),
                           style: TextStyle(fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),),
+                        //).toList(),
                         Text(_records[index]["cve_edo"]),
                         Text('Clave'),
                         Text(_records[index]["mujeres"]),
@@ -155,8 +181,52 @@ List _records = [];
                           fontSize: 17,),
                       ),
                       onPressed: () {
-                        readJson();
-                      },
+                        //readJson();
+                        loadJson();
+                        setState(() {
+                        _records = jsonA['records'];
+                        print('objects ${_records.length}');
+                        });
+                        setState(() {
+                        _records = jsonB['records'];
+                        print('objects ${_records.length}');
+                        });
+                        setState(() {
+                        _records = jsonC['records'];
+                        print('objects ${_records.length}');
+                        });
+                        setState(() {
+                        _records = jsonD['records'];
+                        print('objects ${_records.length}');
+                        });
+                        setState(() {
+                        _records = jsonE['records'];
+                        print('objects ${_records.length}');
+                        });
+                        setState(() {
+                        _records = jsonF['records'];
+                        print('objects ${_records.length}');
+                        });
+                        setState(() {
+                        _records = jsonG['records'];
+                        print('objects ${_records.length}');
+                        });
+                        setState(() {
+                        _records = jsonH['records'];
+                        print('objects ${_records.length}');
+                        });
+                        setState(() {
+                        _records = jsonI['records'];
+                        print('objects ${_records.length}');
+                        });
+                        setState(() {
+                        _records = jsonJ['records'];
+                        print('objects ${_records.length}');
+                        });
+                        setState(() {
+                        _records = jsonK['records'];
+                        print('objects ${_records.length}');
+                        });                    },
                     )
                   ],
                 ),
@@ -190,12 +260,12 @@ List _records = [];
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    GestureDetector(
+                    /*GestureDetector(
                       onTap: () {
                         Navigator.of(context).pop();
                       },
                       child: Icon(Icons.arrow_back, color: Colors.white),
-                    ),
+                    ),*/
                     Text(
                       'Consulta histórica',
                       style: TextStyle(
@@ -203,10 +273,12 @@ List _records = [];
                           fontWeight: FontWeight.w600,
                           color: Colors.white),
                     ),
+/*
                     Icon(
                       Icons.download_rounded,
                       color: Colors.white,
                     )
+*/
                   ],
                 ),
               )
