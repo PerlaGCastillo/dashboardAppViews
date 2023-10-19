@@ -1,4 +1,4 @@
-import 'package:dgapd/data/historicoClass.dart';
+import 'package:dgapd/data/historicalClass.dart';
 
 List<historico> geter(){
   historico total =  historico();

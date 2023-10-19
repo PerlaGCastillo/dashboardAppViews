@@ -35,6 +35,27 @@ class _displayDataState extends State<displayData> {
 
   List _records = [];
 
+  //one option is to place both calls within an asynchronous method and subsequently await it
+
+  /*Future loadJson() async{
+    final jsonA = await DefaultAssetBundle.of(context).loadString('assets/fileA');
+    final jsonB = await DefaultAssetBundle.of(context).loadString('assets/fileB');
+    return{
+      'fileA': jsonA,
+      'fileB': jsonB,
+    }
+  }
+   FutureBuilder(
+      future: loadJson(),
+      builder: (context, snapshot){
+        if(!snapshot.hasData){
+          return CircularProgressIndicator();
+  }
+        var fileA  = snapshot.data['fileA'];
+        var fileB = snapshot.data['fileB'];
+  }
+      );*/
+
   Future<void> readJson() async {
     final String response =
     await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
@@ -109,7 +130,7 @@ class _displayDataState extends State<displayData> {
                         Text("mujeres"),
                         Text(_records[index]["hombres"]),
                         Text("hombres"),
-                        Text(_records[index]["año_presupuestal"]),
+                        Text(_records[index]["anio_presupuestal"]),
                         Text("año presupuestal"),
                       ],
                     ),
@@ -121,7 +142,6 @@ class _displayDataState extends State<displayData> {
             itemCount: _itemsBtn.length,
             itemBuilder: (context, index) {
               final item = _itemsBtn[index];
-
               return ListTile(
                 contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
                 title: Column(
