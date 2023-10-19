@@ -69,7 +69,7 @@ List _records = [];
       'fileK': jsonK,
     };
   }
-/*
+
 Future<void> readJson() async {
     final String response = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
     final data = await json.decode(response);
@@ -77,7 +77,7 @@ Future<void> readJson() async {
       _records = data["records"];
       print('objects ${_records.length}');
     });
-  }*/
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -181,9 +181,16 @@ Future<void> readJson() async {
                           fontSize: 17,),
                       ),
                       onPressed: () {
-                        //readJson();
-                        loadJson();
-                        setState(() {
+                        readJson();
+                        /*for x in loadJson(){
+                          file+=  //fileA, fileB, fileC, etc...
+                          setState(() {
+                            _records = file['records'];
+                            print('objects ${_records.length}');
+                          });
+                          }*/
+                        //loadJson();
+                       /* setState(() {
                         _records = jsonA['records'];
                         print('objects ${_records.length}');
                         });
@@ -226,7 +233,8 @@ Future<void> readJson() async {
                         setState(() {
                         _records = jsonK['records'];
                         print('objects ${_records.length}');
-                        });                    },
+                        });     */
+                      },
                     )
                   ],
                 ),
