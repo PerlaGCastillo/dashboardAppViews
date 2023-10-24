@@ -88,7 +88,7 @@ Future<void> readJson() async {
     final data = await json.decode(response);
     setState(() {
       _records = data["records"];
-      print('objects ${_records.length}');
+      print('registros ${_records.length}');
     });
   }
 
@@ -184,7 +184,8 @@ Future<void> readJson() async {
                           fontSize: 17,),
                       ),
                       onPressed: () {
-                        readJson();
+                        //readJson();
+                        loadJson();
                         },
                     )
                   ],
