@@ -34,13 +34,25 @@ class _displayDataState extends State<displayData> {
   ];
 
 List _records = [];
+
 //TODO check it up and check it off"
 // https://copyprogramming.com/howto/load-multiple-json-files-in-flutter
 // https://stackoverflow.com/questions/61228977/how-to-pass-multiple-data-fetched-from-json-to-next-screen-in-flutter
 // https://stackoverflow.com/questions/75250664/flutter-multiple-json-data-nested
 
 //one option is to place both calls within an asynchronous method and subsequently await it
- Future<Map<String, dynamic>> loadJson() async{
+ /*
+  Future<List<loadJson>> loadJsn(){
+   return get(_loadJson())
+       .then(response) => json.decode(response.body))
+       .then((parsed) => parsed.map(json) => )
+ }*/
+
+
+//https://stackoverflow.com/questions/68929912/convert-map-to-json-string-flutter
+
+//wrap calles in an asynchonous method and await on that
+  Future<Map<String, dynamic>> loadJson() async{
     final jsonA = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
     final jsonB = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
     final jsonC = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
@@ -53,9 +65,9 @@ List _records = [];
     final jsonJ = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
     final jsonK = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
     //final jsonResult = json.decode(jsonA);
-//  for (var record in _records.entry) {
-//    print('${entry.key}: ${entry.value}'):}
-    return{
+    //for (var record in _records.entry) {
+    //print('${entry.key}: ${entry.value}'):}
+    return {
       'fileA': jsonA,
       'fileB': jsonB,
       'fileC': jsonC,
@@ -70,6 +82,7 @@ List _records = [];
     };
   }
 
+
 Future<void> readJson() async {
     final String response = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
     final data = await json.decode(response);
@@ -78,6 +91,7 @@ Future<void> readJson() async {
       print('objects ${_records.length}');
     });
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -116,17 +130,6 @@ Future<void> readJson() async {
               padding: EdgeInsets.all(9.0),
               itemCount: _records.length,
               itemBuilder: (context, index) {
-                // return FutureBuilder(
-                //     future: loadJson(),
-                //     builder: (context, snapshot) {
-                //       if(!snapshot.hasData){
-                //         return CircularProgressIndicator();
-                //       }
-                //       var fileA  = snapshot.data['fileA'];
-                //       var fileB = snapshot.data['fileB'];
-                //     }
-                // );
-// /*
                 return Card(
                   color: Color(0xF8E4E4E4),
                   margin: const EdgeInsets.all(10),
@@ -135,7 +138,7 @@ Future<void> readJson() async {
                     child: Column(
                       crossAxisAlignment:CrossAxisAlignment.start,
                       children: <Widget>[
-                //Records.map<Widget>((index)=> Column [
+                        //Records.map<Widget>((index)=> Column [
                         //Text((_records[index]['estado'] != null) ? _records['estado'] : 'estado',
                         Text((_records[index]['estado']),
                           style: TextStyle(fontSize: 16,
@@ -154,7 +157,7 @@ Future<void> readJson() async {
                     ),
                   ),
                 );
-// */
+
               },
             ),
           )
@@ -182,59 +185,7 @@ Future<void> readJson() async {
                       ),
                       onPressed: () {
                         readJson();
-                        /*for x in loadJson(){
-                          file+=  //fileA, fileB, fileC, etc...
-                          setState(() {
-                            _records = file['records'];
-                            print('objects ${_records.length}');
-                          });
-                          }*/
-                        //loadJson();
-                       /* setState(() {
-                        _records = jsonA['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonB['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonC['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonD['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonE['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonF['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonG['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonH['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonI['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonJ['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonK['records'];
-                        print('objects ${_records.length}');
-                        });     */
-                      },
+                        },
                     )
                   ],
                 ),
