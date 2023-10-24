@@ -19,71 +19,9 @@ class displayData extends StatefulWidget {
 }
 
 class _displayDataState extends State<displayData> {
-  final List<String> _itemsBtn = [
-    'Acumulado',
-    "Por género, por edad",
-    "Por mes pagado",
-    "Por grupos vulnerables",
-    "Centros con beneficiarios",
-    "Por entidad",
-    "Por área de interés",
-    "Por escolaridad",
-    "Vinculados en capacitación",
-    "Por municipio",
-    "Por sector"
-  ];
-
 List _records = [];
 
-//TODO check it up and check it off"
-// https://copyprogramming.com/howto/load-multiple-json-files-in-flutter
-// https://stackoverflow.com/questions/61228977/how-to-pass-multiple-data-fetched-from-json-to-next-screen-in-flutter
-// https://stackoverflow.com/questions/75250664/flutter-multiple-json-data-nested
-
-//one option is to place both calls within an asynchronous method and subsequently await it
- /*
-  Future<List<loadJson>> loadJsn(){
-   return get(_loadJson())
-       .then(response) => json.decode(response.body))
-       .then((parsed) => parsed.map(json) => )
- }*/
-
-
-//https://stackoverflow.com/questions/68929912/convert-map-to-json-string-flutter
-
-//wrap calles in an asynchonous method and await on that
-  Future<Map<String, dynamic>> loadJson() async{
-    final jsonA = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    final jsonB = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonC = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    final jsonD = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonE = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    final jsonF = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonG = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    final jsonH = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonI = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    final jsonJ = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonK = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    //final jsonResult = json.decode(jsonA);
-    //for (var record in _records.entry) {
-    //print('${entry.key}: ${entry.value}'):}
-    return {
-      'fileA': jsonA,
-      'fileB': jsonB,
-      'fileC': jsonC,
-      'fileD': jsonD,
-      'fileE': jsonE,
-      'fileF': jsonF,
-      'fileG': jsonG,
-      'fileH': jsonH,
-      'fileI': jsonI,
-      'fileJ': jsonJ,
-      'fileK': jsonK,
-    };
-  }
-
-
-Future<void> readJson() async {
+Future<void> acumuladoJson() async {
     final String response = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
     final data = await json.decode(response);
     setState(() {
@@ -91,6 +29,99 @@ Future<void> readJson() async {
       print('registros ${_records.length}');
     });
   }
+
+
+  Future<void> generoJson() async {
+    final String response = await rootBundle.loadString('assets/porGeneroAnio.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('registros ${_records.length}');
+    });
+  }
+
+  Future<void> mespagadoJson() async {
+    final String response = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('registros ${_records.length}');
+    });
+  }
+
+
+  Future<void> gposvulneraJson() async {
+    final String response = await rootBundle.loadString('assets/porGeneroAnio.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('registros ${_records.length}');
+    });
+  }
+
+  Future<void> centrosbenefJson() async {
+    final String response = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('registros ${_records.length}');
+    });
+  }
+
+  Future<void> entidadJson() async {
+    final String response = await rootBundle.loadString('assets/porGeneroAnio.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('registros ${_records.length}');
+    });
+  }
+
+  Future<void> areainteresJson() async {
+    final String response = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('registros ${_records.length}');
+    });
+  }
+
+  Future<void> escolaridadJson() async {
+    final String response = await rootBundle.loadString(
+        'assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('registros ${_records.length}');
+    });
+  }
+
+    Future<void> vcapacitacionJson() async {
+    final String response = await rootBundle.loadString('assets/porGeneroAnio.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('registros ${_records.length}');
+    });
+  }
+
+  Future<void> municipioJson() async {
+    final String response = await rootBundle.loadString('assets/porGeneroAnio.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('registros ${_records.length}');
+    });
+  }
+
+    Future<void> sectorJson() async {
+      final String response = await rootBundle.loadString('assets/porGeneroAnio.json');
+      final data = await json.decode(response);
+      setState(() {
+        _records = data["records"];
+        print('registros ${_records.length}');
+      });
+    }
 
 
   @override
@@ -138,8 +169,6 @@ Future<void> readJson() async {
                     child: Column(
                       crossAxisAlignment:CrossAxisAlignment.start,
                       children: <Widget>[
-                        //Records.map<Widget>((index)=> Column [
-                        //Text((_records[index]['estado'] != null) ? _records['estado'] : 'estado',
                         Text((_records[index]['estado']),
                           style: TextStyle(fontSize: 16,
                             fontWeight: FontWeight.bold,
@@ -157,14 +186,12 @@ Future<void> readJson() async {
                     ),
                   ),
                 );
-
               },
             ),
           )
       : Expanded( child: ListView.builder(
-            itemCount: _itemsBtn.length,
+            //itemCount:10,
             itemBuilder: (context, index) {
-              final item = _itemsBtn[index];
               return ListTile(
                 contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
                 title: Column(
@@ -178,16 +205,143 @@ Future<void> readJson() async {
                         minimumSize: Size.fromHeight(42),
                         backgroundColor: Color(0xFFBC955C),
                       ),
-                      child: Text('${item}',
+                      child: Text('Acumulado',
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 17,),
                       ),
                       onPressed: () {
-                        //readJson();
-                        loadJson();
-                        },
-                    )
+                        acumuladoJson();
+                     },
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        //fixedSize: const Size(390, 37),
+                        minimumSize: Size.fromHeight(42),
+                        backgroundColor: Color(0xFFBC955C),
+                      ),
+                      child: Text('Por género, por edad',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,),
+                      ),
+                      onPressed: () {
+                       generoJson();
+                      },
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        //fixedSize: const Size(390, 37),
+                        minimumSize: Size.fromHeight(42),
+                        backgroundColor: Color(0xFFBC955C),
+                      ),
+                      child: Text('Por mes pagado',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,),
+                      ),
+                      onPressed: () {
+                        mespagadoJson();
+                      },
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size.fromHeight(42),
+                        backgroundColor: Color(0xFFBC955C),
+                      ),
+                      child: Text('Por grupos vulnerables',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,),
+                      ),
+                      onPressed: () {
+                       gposvulneraJson();
+                      },
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size.fromHeight(42),
+                        backgroundColor: Color(0xFFBC955C),
+                      ),
+                      child: Text('Centros con beneficiarios',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,),
+                      ),
+                      onPressed: () {
+                       centrosbenefJson();
+                      },
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size.fromHeight(42),
+                        backgroundColor: Color(0xFFBC955C),
+                      ),
+                      child: Text('Por entidad',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,),
+                      ),
+                      onPressed: () {
+                      entidadJson();
+                      },
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size.fromHeight(42),
+                        backgroundColor: Color(0xFFBC955C),
+                      ),
+                      child: Text('Por áreas de interés',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,),
+                      ),
+                      onPressed: () {
+                       areainteresJson();
+                      },
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size.fromHeight(42),
+                        backgroundColor: Color(0xFFBC955C),
+                      ),
+                      child: Text('Vinculados en capacitación',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,),
+                      ),
+                      onPressed: () {
+                       vcapacitacionJson();
+                      },
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size.fromHeight(42),
+                        backgroundColor: Color(0xFFBC955C),
+                      ),
+                      child: Text('Por municipio',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,),
+                      ),
+                      onPressed: () {
+                       municipioJson();
+                      },
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size.fromHeight(42),
+                        backgroundColor: Color(0xFFBC955C),
+                      ),
+                      child: Text('Por sector',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,),
+                      ),
+                      onPressed: () {
+                       sectorJson();
+                      },
+                    ),
                   ],
                 ),
               );
