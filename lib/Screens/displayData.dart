@@ -19,7 +19,7 @@ class displayData extends StatefulWidget {
 }
 
 class _displayDataState extends State<displayData> {
-  final List<String> _itemsBtn = [
+/*  final List<String> _itemsBtn = [
     'Acumulado',
     "Por género, por edad",
     "Por mes pagado",
@@ -31,11 +31,21 @@ class _displayDataState extends State<displayData> {
     "Vinculados en capacitación",
     "Por municipio",
     "Por sector"
-  ];
+  ];*/
 
   List _records = [];
 
-  Future<void> readJson() async {
+/*  Future<void> readJson() async {
+    final String response =
+    await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('objects ${_records.length}');
+    });
+  }*/
+
+  Future<void> acumuladoJson() async {
     final String response =
     await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
     final data = await json.decode(response);
@@ -45,8 +55,108 @@ class _displayDataState extends State<displayData> {
     });
   }
 
+  Future<void> generoJson() async {
+    final String response =
+    await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('objects ${_records.length}');
+    });
+  }
+
+  Future<void> mespagadoJson() async {
+    final String response =
+    await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('objects ${_records.length}');
+    });
+  }
+
+  Future<void> gposvulnerablesJson() async {
+    final String response =
+    await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('objects ${_records.length}');
+    });
+  }
+
+  Future<void> centrosbenefJson() async {
+    final String response =
+    await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('objects ${_records.length}');
+    });
+  }
+
+  Future<void> entidadJson() async {
+    final String response =
+    await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('objects ${_records.length}');
+    });
+  }
+
+  Future<void> areainteresJson() async {
+    final String response =
+    await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('objects ${_records.length}');
+    });
+  }
+
+  Future<void> escolaridadJson() async {
+    final String response =
+    await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('objects ${_records.length}');
+    });
+  }
+
+  Future<void> vincencapacitacionJson() async {
+    final String response =
+    await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('objects ${_records.length}');
+    });
+  }
+
+  Future<void> municipioJson() async {
+    final String response =
+    await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('objects ${_records.length}');
+    });
+  }
+
+  Future<void> sectorJson() async {
+    final String response =
+    await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('objects ${_records.length}');
+    });
+  }
 
   /*
+  https://stackoverflow.com/questions/56486159/load-multiple-json-files-in-flutter
   *
   * https://copyprogramming.com/howto/load-multiple-json-files-in-flutter
   * Future> loadJson() async {
@@ -178,6 +288,89 @@ FutureBuilder(
     );
   }
 
+
+
+  Column botones(BuildContext, context){
+    return Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _records.isNotEmpty
+              ? Expanded(
+            child: ListView.builder(
+              padding: EdgeInsets.all(9.0),
+              itemCount: _records.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  color: Color(0xF8E4E4E4),
+                  margin: const EdgeInsets.all(10),
+                  /* key: ValueKey(_records[index]["estado"]),
+                  margin: const EdgeInsets.all(10),
+                  color: Color(0xF8E4E4E4),
+                  child: ListTile(
+                    leading: Text(_records[index]["cve_edo"]),
+                    title: Text(_records[index]["estado"]),
+                    subtitle: Text(_records[index]["mujeres"]),
+                  ),*/
+                  child:Padding(
+                    padding: const EdgeInsets.all(19.0),
+                    child: Column(
+                      crossAxisAlignment:CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(_records[index]["estado"],
+                          style: TextStyle(fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),),
+                        Text(_records[index]["cve_edo"]),
+                        Text('Clave'),
+                        Text(_records[index]["mujeres"]),
+                        Text("mujeres"),
+                        Text(_records[index]["hombres"]),
+                        Text("hombres"),
+                        Text(_records[index]["año_presupuestal"]),
+                        Text("año presupuestal"),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ) : Expanded(child: ListView.builder(
+            itemCount: _itemsBtn.length,
+            itemBuilder: (context, index) {
+              final item = _itemsBtn[index];
+
+              return ListTile(
+                contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
+                title: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    //SizedBox(height: 8),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        //fixedSize: const Size(390, 37),
+                        minimumSize: Size.fromHeight(42),
+                        backgroundColor: Color(0xFFBC955C),
+                      ),
+                      child: Text('${item}',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,),
+                      ),
+                      onPressed: () {
+                        readJson();
+                      },
+                    )
+                  ],
+                ),
+              );
+            },
+          ),),
+        ],
+
+    );
+  }
   Column background_containr(BuildContext context) {
     return Column(
       children: [
