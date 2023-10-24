@@ -181,59 +181,14 @@ Future<void> readJson() async {
                           fontSize: 17,),
                       ),
                       onPressed: () {
-                        readJson();
-                        /*for x in loadJson(){
-                          file+=  //fileA, fileB, fileC, etc...
+                        //readJson();
+                        for x in loadJson(){
+                          file+=
                           setState(() {
                             _records = file['records'];
                             print('objects ${_records.length}');
                           });
-                          }*/
-                        //loadJson();
-                       /* setState(() {
-                        _records = jsonA['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonB['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonC['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonD['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonE['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonF['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonG['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonH['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonI['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonJ['records'];
-                        print('objects ${_records.length}');
-                        });
-                        setState(() {
-                        _records = jsonK['records'];
-                        print('objects ${_records.length}');
-                        });     */
+                        }
                       },
                     )
                   ],
