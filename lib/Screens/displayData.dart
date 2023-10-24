@@ -68,7 +68,16 @@ List _records = [];
       'fileJ': jsonJ,
       'fileK': jsonK,
     };
+  };
+  //FutureBuilder(context).loadString('assets/')
+  /*
+  Future getJsonList() async {
+    List<Records> jsonList = await loadJson();
+    return jsonList;
   }
+  */
+
+
 
 Future<void> readJson() async {
     final String response = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
@@ -182,13 +191,17 @@ Future<void> readJson() async {
                       ),
                       onPressed: () {
                         //readJson();
-                        for x in loadJson(){
+
+
+
+
+                        /*for x in loadJson(){
                           file+=
                           setState(() {
                             _records = file['records'];
                             print('objects ${_records.length}');
                           });
-                        }
+                        }*/
                       },
                     )
                   ],
@@ -251,4 +264,61 @@ Future<void> readJson() async {
       ],
     );
   }
+
+  /*
+  @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+   */
+
+
+Widget jsonList(){
+  /*return  FutureBuilder(
+      //future: loadJson(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return Container();
+        }
+        return ListView.builder(
+          itemCount: loadJson.data.length,
+            itemBuilder: (context, index){
+
+            }
+
+        )*/
+
+  return Future<List<String>> getData() async {
+    List<String> data = [];
+      data.add("fileA");
+      data.add("fileB");
+      data.add("fileC");
+      data.add("fileD");
+      data.add("fileE");
+      data.add("fileF");
+      data.add("fileG");
+      data.add("fileH");
+      data.add("fileI");
+      data.add("fileJ");
+      data.add("fileK");
+    await Future.delayed(const Duration(seconds: 2), () {});
+  }
+    /*future: loadJson(),
+    builder: (context, snapshot){
+      if(!snapshot.hasData) {
+        return CircularProgressIndicator();
+    }
+      var fileA = snapshot.data['fileA'];
+      var fileB = snapshot.data['fileB'];
+      var fileC = snapshot.data['fileC'];
+      var fileD = snapshot.data['fileD'];
+      var fileE = snapshot.data['fileE'];
+      var fileF = snapshot.data['fileF'];
+      var fileG = snapshot.data['fileG'];
+      var fileH = snapshot.data['fileH'];
+      var fileI = snapshot.data['fileI'];
+      var fileJ = snapshot.data['fileJ'];
+      var fileK = snapshot.data['fileK'];
+    } */
+
+  );
+}
 }
