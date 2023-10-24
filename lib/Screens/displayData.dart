@@ -33,29 +33,41 @@ class _displayDataState extends State<displayData> {
     "Por sector"
   ];
 
-List _records = [];
+  List _records = [];
+
 //TODO check it up and check it off"
 // https://copyprogramming.com/howto/load-multiple-json-files-in-flutter
 // https://stackoverflow.com/questions/61228977/how-to-pass-multiple-data-fetched-from-json-to-next-screen-in-flutter
 // https://stackoverflow.com/questions/75250664/flutter-multiple-json-data-nested
 
 //one option is to place both calls within an asynchronous method and subsequently await it
- Future<Map<String, dynamic>> loadJson() async{
-    final jsonA = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    final jsonB = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonC = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    final jsonD = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonE = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    final jsonF = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonG = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    final jsonH = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonI = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    final jsonJ = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonK = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
+  Future<Map<String, dynamic>> loadJson() async {
+    final jsonA = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnioPresupuestal.json');
+    final jsonB = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnio.json');
+    final jsonC = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnioPresupuestal.json');
+    final jsonD = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnio.json');
+    final jsonE = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnioPresupuestal.json');
+    final jsonF = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnio.json');
+    final jsonG = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnioPresupuestal.json');
+    final jsonH = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnio.json');
+    final jsonI = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnioPresupuestal.json');
+    final jsonJ = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnio.json');
+    final jsonK = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnioPresupuestal.json');
     //final jsonResult = json.decode(jsonA);
 //  for (var record in _records.entry) {
 //    print('${entry.key}: ${entry.value}'):}
-    return{
+    return {
       'fileA': jsonA,
       'fileB': jsonB,
       'fileC': jsonC,
@@ -68,19 +80,10 @@ List _records = [];
       'fileJ': jsonJ,
       'fileK': jsonK,
     };
-  };
-  //FutureBuilder(context).loadString('assets/')
-  /*
-  Future getJsonList() async {
-    List<Records> jsonList = await loadJson();
-    return jsonList;
-  }
-  */
 
-
-
-Future<void> readJson() async {
-    final String response = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString(
+        'assets/porGeneroAnioPresupuestal.json');
     final data = await json.decode(response);
     setState(() {
       _records = data["records"];
@@ -106,7 +109,7 @@ Future<void> readJson() async {
       ),
     );
   }
-
+}
 
   Container main_containr() {
     return Container(
@@ -303,4 +306,5 @@ Widget jsonList(){
             }
        )*/
 }
-};
+}
+}
