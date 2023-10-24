@@ -272,36 +272,8 @@ Future<void> readJson() async {
 
 
 Widget jsonList(){
-  /*return  FutureBuilder(
-      //future: loadJson(),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) {
-          return Container();
-        }
-        return ListView.builder(
-          itemCount: loadJson.data.length,
-            itemBuilder: (context, index){
-
-            }
-
-        )*/
-
-  return Future<List<String>> getData() async {
-    List<String> data = [];
-      data.add("fileA");
-      data.add("fileB");
-      data.add("fileC");
-      data.add("fileD");
-      data.add("fileE");
-      data.add("fileF");
-      data.add("fileG");
-      data.add("fileH");
-      data.add("fileI");
-      data.add("fileJ");
-      data.add("fileK");
-    await Future.delayed(const Duration(seconds: 2), () {});
-  }
-    /*future: loadJson(),
+  return FutureBuilder<List<Marker>> getData() async {
+    future: loadJson(),
     builder: (context, snapshot){
       if(!snapshot.hasData) {
         return CircularProgressIndicator();
@@ -317,8 +289,18 @@ Widget jsonList(){
       var fileI = snapshot.data['fileI'];
       var fileJ = snapshot.data['fileJ'];
       var fileK = snapshot.data['fileK'];
-    } */
-
+    }
   );
+    /*return  FutureBuilder(
+      //future: loadJson(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return Container();
+        }
+        return ListView.builder(
+          itemCount: loadJson.data.length,
+            itemBuilder: (context, index){
+            }
+       )*/
 }
-}
+};
