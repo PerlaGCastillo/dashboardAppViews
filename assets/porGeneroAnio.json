@@ -1,13 +1,12 @@
 {
-  "records": [
+  "generos": [
     {
       "estado": "Hidalgo",
       "cve_edo": "13",
       "hombres": "5372",
       "mujeres": "7596",
       "total": "12968",
-      "id_estado": "13",
-      "anio_presupuestal": "2022"
+      "id_estado": "13"
     },
     {
       "estado": "Jalisco",
@@ -15,8 +14,7 @@
       "hombres": "5308",
       "mujeres": "8518",
       "total": "13826",
-      "id_estado": "14",
-      "anio_presupuestal": "2022"
+      "id_estado": "14"
     },
     {
       "estado": "México",
@@ -24,8 +22,7 @@
       "hombres": "22692",
       "mujeres": "32772",
       "total": "55464",
-      "id_estado": "15",
-      "anio_presupuestal": "2022"
+      "id_estado": "15"
     },
     {
       "estado": "Michoacán de Ocampo",
@@ -33,8 +30,7 @@
       "hombres": "16172",
       "mujeres": "23480",
       "total": "39652",
-      "id_estado": "16",
-      "anio_presupuestal": "2022"
+      "id_estado": "16"
     },
     {
       "estado": "Morelos",
@@ -42,8 +38,7 @@
       "hombres": "9477",
       "mujeres": "12246",
       "total": "21723",
-      "id_estado": "17",
-      "anio_presupuestal": "2022"
+      "id_estado": "17"
     },
     {
       "estado": "Nayarit",
@@ -51,134 +46,7 @@
       "hombres": "3753",
       "mujeres": "5306",
       "total": "9059",
-      "id_estado": "18",
-      "anio_presupuestal": "2022"
-    },
-    {
-      "estado": "Nuevo León",
-      "cve_edo": "19",
-      "hombres": "1534",
-      "mujeres": "2365",
-      "total": "3899",
-      "id_estado": "19",
-      "anio_presupuestal": "2022"
-    },
-    {
-      "estado": "Oaxaca",
-      "cve_edo": "20",
-      "hombres": "12459",
-      "mujeres": "18334",
-      "total": "30793",
-      "id_estado": "20",
-      "anio_presupuestal": "2022"
-    },
-    {
-      "estado": "Puebla",
-      "cve_edo": "21",
-      "hombres": "12040",
-      "mujeres": "16935",
-      "total": "28975",
-      "id_estado": "21",
-      "anio_presupuestal": "2022"
-    },
-    {
-      "estado": "Querétaro",
-      "cve_edo": "22",
-      "hombres": "2650",
-      "mujeres": "4575",
-      "total": "7225",
-      "id_estado": "22",
-      "anio_presupuestal": "2022"
-    },
-    {
-      "estado": "Quintana Roo",
-      "cve_edo": "23",
-      "hombres": "5384",
-      "mujeres": "7539",
-      "total": "12923",
-      "id_estado": "23",
-      "anio_presupuestal": "2022"
-    },
-    {
-      "estado": "San Luis Potosí",
-      "cve_edo": "24",
-      "hombres": "4973",
-      "mujeres": "7943",
-      "total": "12916",
-      "id_estado": "24",
-      "anio_presupuestal": "2022"
-    },
-    {
-      "estado": "Sinaloa",
-      "cve_edo": "25",
-      "hombres": "4462",
-      "mujeres": "6217",
-      "total": "10679",
-      "id_estado": "25",
-      "anio_presupuestal": "2022"
-    },
-    {
-      "estado": "Sonora",
-      "cve_edo": "26",
-      "hombres": "1983",
-      "mujeres": "3012",
-      "total": "4995",
-      "id_estado": "26",
-      "anio_presupuestal": "2022"
-    },
-    {
-      "estado": "Tabasco",
-      "cve_edo": "27",
-      "hombres": "23587",
-      "mujeres": "33526",
-      "total": "57113",
-      "id_estado": "27",
-      "anio_presupuestal": "2022"
-    },
-    {
-      "estado": "Tamaulipas",
-      "cve_edo": "28",
-      "hombres": "5541",
-      "mujeres": "7941",
-      "total": "13482",
-      "id_estado": "28",
-      "anio_presupuestal": "2022"
-    },
-    {
-      "estado": "Tlaxcala",
-      "cve_edo": "29",
-      "hombres": "10125",
-      "mujeres": "15113",
-      "total": "25238",
-      "id_estado": "29",
-      "anio_presupuestal": "2022"
-    },
-    {
-      "estado": "Veracruz",
-      "cve_edo": "30",
-      "hombres": "28881",
-      "mujeres": "39351",
-      "total": "68232",
-      "id_estado": "30",
-      "anio_presupuestal": "2022"
-    },
-    {
-      "estado": "Yucatán",
-      "cve_edo": "31",
-      "hombres": "8998",
-      "mujeres": "13926",
-      "total": "22924",
-      "id_estado": "31",
-      "anio_presupuestal": "2022"
-    },
-    {
-      "estado": "Zacatecas",
-      "cve_edo": "32",
-      "hombres": "5655",
-      "mujeres": "8336",
-      "total": "13991",
-      "id_estado": "32",
-      "anio_presupuestal": "2022"
+      "id_estado": "18"
     }
   ]
 }
