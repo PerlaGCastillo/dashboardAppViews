@@ -35,16 +35,6 @@ class _displayDataState extends State<displayData> {
 
   List _records = [];
 
-/*  Future<void> readJson() async {
-    final String response =
-    await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
-    final data = await json.decode(response);
-    setState(() {
-      _records = data["records"];
-      print('objects ${_records.length}');
-    });
-  }*/
-
   Future<void> acumuladoJson() async {
     final String response =
     await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
@@ -155,34 +145,9 @@ class _displayDataState extends State<displayData> {
     });
   }
 
-  /*
-  https://stackoverflow.com/questions/56486159/load-multiple-json-files-in-flutter
-  *
-  * https://copyprogramming.com/howto/load-multiple-json-files-in-flutter
-  * Future> loadJson() async {
-  final jsonA = await DefaultAssetBundle.of(context).loadString('assets/fileA');
-  final jsonB = await DefaultAssetBundle.of(context).loadString('assets/fileB');
-  return {
-    'fileA': jsonA,
-    'fileB': jsonB,
-  };
-}
-...
-FutureBuilder(
-  future: loadJson(),
-  builder: (context, snapshot) {
-    if (!snapshot.hasData) {
-      return CircularProgressIndicator();
-    }
-    var fileA = snapshot.data['fileA'];
-    var fileB = snapshot.data['fileB'];
-    ...
-    *
-  * */
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SafeArea(
         child: Stack(
             alignment: AlignmentDirectional.center,
@@ -210,93 +175,21 @@ FutureBuilder(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _records.isNotEmpty
-              ? Expanded(
-            child: ListView.builder(
-              padding: EdgeInsets.all(9.0),
-              itemCount: _records.length,
-              itemBuilder: (context, index) {
-                return Card(
-                  color: Color(0xF8E4E4E4),
-                  margin: const EdgeInsets.all(10),
-                  /* key: ValueKey(_records[index]["estado"]),
-                  margin: const EdgeInsets.all(10),
-                  color: Color(0xF8E4E4E4),
-                  child: ListTile(
-                    leading: Text(_records[index]["cve_edo"]),
-                    title: Text(_records[index]["estado"]),
-                    subtitle: Text(_records[index]["mujeres"]),
-                  ),*/
-                  child:Padding(
-                    padding: const EdgeInsets.all(19.0),
-                    child: Column(
-                      crossAxisAlignment:CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(_records[index]["estado"],
-                          style: TextStyle(fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),),
-                        Text(_records[index]["cve_edo"]),
-                        Text('Clave'),
-                        Text(_records[index]["mujeres"]),
-                        Text("mujeres"),
-                        Text(_records[index]["hombres"]),
-                        Text("hombres"),
-                        Text(_records[index]["año_presupuestal"]),
-                        Text("año presupuestal"),
-                      ],
-                    ),
-                  ),
-                );
-              },
-            ),
-          ) : Expanded(child: ListView.builder(
-            itemCount: _itemsBtn.length,
-            itemBuilder: (context, index) {
-              final item = _itemsBtn[index];
+        children: [ Scaffold(
 
-              return ListTile(
-                contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
-                title: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    //SizedBox(height: 8),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        //fixedSize: const Size(390, 37),
-                        minimumSize: Size.fromHeight(42),
-                        backgroundColor: Color(0xFFBC955C),
-                      ),
-                      child: Text('${item}',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 17,),
-                      ),
-                      onPressed: () {
-                        readJson();
-                      },
-                    )
-                  ],
-                ),
-              );
-            },
-          ),),
+        ),
         ],
       ),
     );
   }
 
 
-
-  Column botones(BuildContext, context){
+  Column acumulado(BuildContext, context){
     return Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _records.isNotEmpty
-              ? Expanded(
+          _records.isNotEmpty ? Expanded(
             child: ListView.builder(
               padding: EdgeInsets.all(9.0),
               itemCount: _records.length,
@@ -304,14 +197,6 @@ FutureBuilder(
                 return Card(
                   color: Color(0xF8E4E4E4),
                   margin: const EdgeInsets.all(10),
-                  /* key: ValueKey(_records[index]["estado"]),
-                  margin: const EdgeInsets.all(10),
-                  color: Color(0xF8E4E4E4),
-                  child: ListTile(
-                    leading: Text(_records[index]["cve_edo"]),
-                    title: Text(_records[index]["estado"]),
-                    subtitle: Text(_records[index]["mujeres"]),
-                  ),*/
                   child:Padding(
                     padding: const EdgeInsets.all(19.0),
                     child: Column(
@@ -336,30 +221,25 @@ FutureBuilder(
               },
             ),
           ) : Expanded(child: ListView.builder(
-            itemCount: _itemsBtn.length,
             itemBuilder: (context, index) {
-              final item = _itemsBtn[index];
-
               return ListTile(
                 contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
                 title: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    //SizedBox(height: 8),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        //fixedSize: const Size(390, 37),
                         minimumSize: Size.fromHeight(42),
                         backgroundColor: Color(0xFFBC955C),
                       ),
-                      child: Text('${item}',
+                      child: Text('Acumulado',
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 17,),
                       ),
                       onPressed: () {
-                        readJson();
+                       acumuladoJson();
                       },
                     )
                   ],
@@ -368,9 +248,679 @@ FutureBuilder(
             },
           ),),
         ],
-
     );
   }
+
+  Column generoedad(BuildContext, context){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _records.isNotEmpty ? Expanded(
+          child: ListView.builder(
+            padding: EdgeInsets.all(9.0),
+            itemCount: _records.length,
+            itemBuilder: (context, index) {
+              return Card(
+                color: Color(0xF8E4E4E4),
+                margin: const EdgeInsets.all(10),
+                child:Padding(
+                  padding: const EdgeInsets.all(19.0),
+                  child: Column(
+                    crossAxisAlignment:CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(_records[index]["estado"],
+                        style: TextStyle(fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                      Text(_records[index]["cve_edo"]),
+                      Text('Clave'),
+                      Text(_records[index]["mujeres"]),
+                      Text("mujeres"),
+                      Text(_records[index]["hombres"]),
+                      Text("hombres"),
+                      Text(_records[index]["año_presupuestal"]),
+                      Text("año presupuestal"),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ) : Expanded(child: ListView.builder(
+          itemBuilder: (context, index) {
+            return ListTile(
+              contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
+              title: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size.fromHeight(42),
+                      backgroundColor: Color(0xFFBC955C),
+                    ),
+                    child: Text('Por género, por edad',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17,),
+                    ),
+                    onPressed: () {
+                      generoJson();
+                    },
+                  )
+                ],
+              ),
+            );
+          },
+        ),),
+      ],
+    );
+  }
+
+  Column mespagado(BuildContext, context){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _records.isNotEmpty ? Expanded(
+          child: ListView.builder(
+            padding: EdgeInsets.all(9.0),
+            itemCount: _records.length,
+            itemBuilder: (context, index) {
+              return Card(
+                color: Color(0xF8E4E4E4),
+                margin: const EdgeInsets.all(10),
+                child:Padding(
+                  padding: const EdgeInsets.all(19.0),
+                  child: Column(
+                    crossAxisAlignment:CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(_records[index]["estado"],
+                        style: TextStyle(fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                      Text(_records[index]["cve_edo"]),
+                      Text('Clave'),
+                      Text(_records[index]["mujeres"]),
+                      Text("mujeres"),
+                      Text(_records[index]["hombres"]),
+                      Text("hombres"),
+                      Text(_records[index]["año_presupuestal"]),
+                      Text("año presupuestal"),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ) : Expanded(child: ListView.builder(
+          itemBuilder: (context, index) {
+            return ListTile(
+              contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
+              title: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size.fromHeight(42),
+                      backgroundColor: Color(0xFFBC955C),
+                    ),
+                    child: Text('Por mes pagado',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17,),
+                    ),
+                    onPressed: () {
+                      mespagadoJson();
+                    },
+                  )
+                ],
+              ),
+            );
+          },
+        ),),
+      ],
+    );
+  }
+
+  Column gpovulnerable(BuildContext, context){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _records.isNotEmpty ? Expanded(
+          child: ListView.builder(
+            padding: EdgeInsets.all(9.0),
+            itemCount: _records.length,
+            itemBuilder: (context, index) {
+              return Card(
+                color: Color(0xF8E4E4E4),
+                margin: const EdgeInsets.all(10),
+                child:Padding(
+                  padding: const EdgeInsets.all(19.0),
+                  child: Column(
+                    crossAxisAlignment:CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(_records[index]["estado"],
+                        style: TextStyle(fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                      Text(_records[index]["cve_edo"]),
+                      Text('Clave'),
+                      Text(_records[index]["mujeres"]),
+                      Text("mujeres"),
+                      Text(_records[index]["hombres"]),
+                      Text("hombres"),
+                      Text(_records[index]["año_presupuestal"]),
+                      Text("año presupuestal"),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ) : Expanded(child: ListView.builder(
+          itemBuilder: (context, index) {
+            return ListTile(
+              contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
+              title: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size.fromHeight(42),
+                      backgroundColor: Color(0xFFBC955C),
+                    ),
+                    child: Text('Por grupos vulnerables',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17,),
+                    ),
+                    onPressed: () {
+                     gposvulnerablesJson();
+                    },
+                  )
+                ],
+              ),
+            );
+          },
+        ),),
+      ],
+    );
+  }
+
+  Column centrosbenef(BuildContext, context){
+    return Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _records.isNotEmpty ? Expanded(
+            child: ListView.builder(
+              padding: EdgeInsets.all(9.0),
+              itemCount: _records.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  color: Color(0xF8E4E4E4),
+                  margin: const EdgeInsets.all(10),
+                  child:Padding(
+                    padding: const EdgeInsets.all(19.0),
+                    child: Column(
+                      crossAxisAlignment:CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(_records[index]["estado"],
+                          style: TextStyle(fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),),
+                        Text(_records[index]["cve_edo"]),
+                        Text('Clave'),
+                        Text(_records[index]["mujeres"]),
+                        Text("mujeres"),
+                        Text(_records[index]["hombres"]),
+                        Text("hombres"),
+                        Text(_records[index]["año_presupuestal"]),
+                        Text("año presupuestal"),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ) : Expanded(child: ListView.builder(
+            itemBuilder: (context, index) {
+              return ListTile(
+                contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
+                title: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size.fromHeight(42),
+                        backgroundColor: Color(0xFFBC955C),
+                      ),
+                      child: Text('Centros con beneficiarios',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,),
+                      ),
+                      onPressed: () {
+                       centrosbenefJson();
+                      },
+                    )
+                  ],
+                ),
+              );
+            },
+          ),),
+        ],
+    );
+  }
+
+  Column entidad(BuildContext, context){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _records.isNotEmpty ? Expanded(
+          child: ListView.builder(
+            padding: EdgeInsets.all(9.0),
+            itemCount: _records.length,
+            itemBuilder: (context, index) {
+              return Card(
+                color: Color(0xF8E4E4E4),
+                margin: const EdgeInsets.all(10),
+                child:Padding(
+                  padding: const EdgeInsets.all(19.0),
+                  child: Column(
+                    crossAxisAlignment:CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(_records[index]["estado"],
+                        style: TextStyle(fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                      Text(_records[index]["cve_edo"]),
+                      Text('Clave'),
+                      Text(_records[index]["mujeres"]),
+                      Text("mujeres"),
+                      Text(_records[index]["hombres"]),
+                      Text("hombres"),
+                      Text(_records[index]["año_presupuestal"]),
+                      Text("año presupuestal"),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ) : Expanded(child: ListView.builder(
+          itemBuilder: (context, index) {
+            return ListTile(
+              contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
+              title: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size.fromHeight(42),
+                      backgroundColor: Color(0xFFBC955C),
+                    ),
+                    child: Text('Por entidad',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17,),
+                    ),
+                    onPressed: () {
+                      entidadJson();
+                    },
+                  )
+                ],
+              ),
+            );
+          },
+        ),),
+      ],
+    );
+  }
+
+  Column areainteres(BuildContext, context){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _records.isNotEmpty ? Expanded(
+          child: ListView.builder(
+            padding: EdgeInsets.all(9.0),
+            itemCount: _records.length,
+            itemBuilder: (context, index) {
+              return Card(
+                color: Color(0xF8E4E4E4),
+                margin: const EdgeInsets.all(10),
+                child:Padding(
+                  padding: const EdgeInsets.all(19.0),
+                  child: Column(
+                    crossAxisAlignment:CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(_records[index]["estado"],
+                        style: TextStyle(fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                      Text(_records[index]["cve_edo"]),
+                      Text('Clave'),
+                      Text(_records[index]["mujeres"]),
+                      Text("mujeres"),
+                      Text(_records[index]["hombres"]),
+                      Text("hombres"),
+                      Text(_records[index]["año_presupuestal"]),
+                      Text("año presupuestal"),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ) : Expanded(child: ListView.builder(
+          itemBuilder: (context, index) {
+            return ListTile(
+              contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
+              title: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size.fromHeight(42),
+                      backgroundColor: Color(0xFFBC955C),
+                    ),
+                    child: Text('Por área de interés',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17,),
+                    ),
+                    onPressed: () {
+                      areainteresJson();
+                    },
+                  )
+                ],
+              ),
+            );
+          },
+        ),),
+      ],
+    );
+  }
+
+  Column escolaridad(BuildContext, context){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _records.isNotEmpty ? Expanded(
+          child: ListView.builder(
+            padding: EdgeInsets.all(9.0),
+            itemCount: _records.length,
+            itemBuilder: (context, index) {
+              return Card(
+                color: Color(0xF8E4E4E4),
+                margin: const EdgeInsets.all(10),
+                child:Padding(
+                  padding: const EdgeInsets.all(19.0),
+                  child: Column(
+                    crossAxisAlignment:CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(_records[index]["estado"],
+                        style: TextStyle(fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                      Text(_records[index]["cve_edo"]),
+                      Text('Clave'),
+                      Text(_records[index]["mujeres"]),
+                      Text("mujeres"),
+                      Text(_records[index]["hombres"]),
+                      Text("hombres"),
+                      Text(_records[index]["año_presupuestal"]),
+                      Text("año presupuestal"),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ) : Expanded(child: ListView.builder(
+          itemBuilder: (context, index) {
+            return ListTile(
+              contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
+              title: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size.fromHeight(42),
+                      backgroundColor: Color(0xFFBC955C),
+                    ),
+                    child: Text('Escolaridad',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17,),
+                    ),
+                    onPressed: () {
+                     escolaridadJson();
+                    },
+                  )
+                ],
+              ),
+            );
+          },
+        ),),
+      ],
+    );
+  }
+
+  Column vinculadoscapacitacion(BuildContext, context){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _records.isNotEmpty ? Expanded(
+          child: ListView.builder(
+            padding: EdgeInsets.all(9.0),
+            itemCount: _records.length,
+            itemBuilder: (context, index) {
+              return Card(
+                color: Color(0xF8E4E4E4),
+                margin: const EdgeInsets.all(10),
+                child:Padding(
+                  padding: const EdgeInsets.all(19.0),
+                  child: Column(
+                    crossAxisAlignment:CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(_records[index]["estado"],
+                        style: TextStyle(fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                      Text(_records[index]["cve_edo"]),
+                      Text('Clave'),
+                      Text(_records[index]["mujeres"]),
+                      Text("mujeres"),
+                      Text(_records[index]["hombres"]),
+                      Text("hombres"),
+                      Text(_records[index]["año_presupuestal"]),
+                      Text("año presupuestal"),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ) : Expanded(child: ListView.builder(
+          itemBuilder: (context, index) {
+            return ListTile(
+              contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
+              title: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size.fromHeight(42),
+                      backgroundColor: Color(0xFFBC955C),
+                    ),
+                    child: Text('Vinculados en capacitación',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17,),
+                    ),
+                    onPressed: () {
+                      vincencapacitacionJson();
+                    },
+                  )
+                ],
+              ),
+            );
+          },
+        ),),
+      ],
+    );
+  }
+
+  Column municipio(BuildContext, context){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _records.isNotEmpty ? Expanded(
+          child: ListView.builder(
+            padding: EdgeInsets.all(9.0),
+            itemCount: _records.length,
+            itemBuilder: (context, index) {
+              return Card(
+                color: Color(0xF8E4E4E4),
+                margin: const EdgeInsets.all(10),
+                child:Padding(
+                  padding: const EdgeInsets.all(19.0),
+                  child: Column(
+                    crossAxisAlignment:CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(_records[index]["estado"],
+                        style: TextStyle(fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                      Text(_records[index]["cve_edo"]),
+                      Text('Clave'),
+                      Text(_records[index]["mujeres"]),
+                      Text("mujeres"),
+                      Text(_records[index]["hombres"]),
+                      Text("hombres"),
+                      Text(_records[index]["año_presupuestal"]),
+                      Text("año presupuestal"),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ) : Expanded(child: ListView.builder(
+          itemBuilder: (context, index) {
+            return ListTile(
+              contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
+              title: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size.fromHeight(42),
+                      backgroundColor: Color(0xFFBC955C),
+                    ),
+                    child: Text('Por municipio',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17,),
+                    ),
+                    onPressed: () {
+                      municipioJson();
+                    },
+                  )
+                ],
+              ),
+            );
+          },
+        ),),
+      ],
+    );
+  }
+
+  Column sector(BuildContext, context){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _records.isNotEmpty ? Expanded(
+          child: ListView.builder(
+            padding: EdgeInsets.all(9.0),
+            itemCount: _records.length,
+            itemBuilder: (context, index) {
+              return Card(
+                color: Color(0xF8E4E4E4),
+                margin: const EdgeInsets.all(10),
+                child:Padding(
+                  padding: const EdgeInsets.all(19.0),
+                  child: Column(
+                    crossAxisAlignment:CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(_records[index]["estado"],
+                        style: TextStyle(fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                      Text(_records[index]["cve_edo"]),
+                      Text('Clave'),
+                      Text(_records[index]["mujeres"]),
+                      Text("mujeres"),
+                      Text(_records[index]["hombres"]),
+                      Text("hombres"),
+                      Text(_records[index]["año_presupuestal"]),
+                      Text("año presupuestal"),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ) : Expanded(child: ListView.builder(
+          itemBuilder: (context, index) {
+            return ListTile(
+              contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
+              title: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size.fromHeight(42),
+                      backgroundColor: Color(0xFFBC955C),
+                    ),
+                    child: Text('Por sector',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17,),
+                    ),
+                    onPressed: () {
+                     sectorJson();
+                    },
+                  )
+                ],
+              ),
+            );
+          },
+        ),),
+      ],
+    );
+  }
+
   Column background_containr(BuildContext context) {
     return Column(
       children: [
