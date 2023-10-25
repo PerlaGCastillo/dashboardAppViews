@@ -19,9 +19,10 @@ class displayData extends StatefulWidget {
 }
 
 class _displayDataState extends State<displayData> {
+
 final List<String> _btnList = [
-    acumulado(BuildContext, context),
-    generoedad(BuildContext, context),
+  acumulado(BuildContext, context),
+  generoedad(BuildContext, context),
     mespagado(BuildContext, context),
     gpovulnerable(BuildContext, context),
     centrosbenef(BuildContext, context),
