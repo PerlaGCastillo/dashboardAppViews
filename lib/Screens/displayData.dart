@@ -19,19 +19,19 @@ class displayData extends StatefulWidget {
 }
 
 class _displayDataState extends State<displayData> {
-/*  final List<String> _itemsBtn = [
-    'Acumulado',
-    "Por género, por edad",
-    "Por mes pagado",
-    "Por grupos vulnerables",
-    "Centros con beneficiarios",
-    "Por entidad",
-    "Por área de interés",
-    "Por escolaridad",
-    "Vinculados en capacitación",
-    "Por municipio",
-    "Por sector"
-  ];*/
+final List<String> _btnList = [
+    acumulado(BuildContext, context),
+    generoedad(BuildContext, context),
+    mespagado(BuildContext, context),
+    gpovulnerable(BuildContext, context),
+    centrosbenef(BuildContext, context),
+    entidad(BuildContext, context),
+    areainteres(BuildContext, context),
+    escolaridad(BuildContext, context),
+    vinculadoscapacitacion(BuildContext, context),
+    municipio(BuildContext, context),
+    sector(BuildContext, context),
+  ];
 
   List _records = [];
 
@@ -163,7 +163,6 @@ class _displayDataState extends State<displayData> {
     );
   }
 
-
   Container main_containr() {
     return Container(
       decoration: BoxDecoration(
@@ -175,14 +174,12 @@ class _displayDataState extends State<displayData> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [ Scaffold(
-
-        ),
+        children: <Widget>[
+          _btnList(context),
         ],
       ),
     );
   }
-
 
   Column acumulado(BuildContext, context){
     return Column(
@@ -197,7 +194,7 @@ class _displayDataState extends State<displayData> {
                 return Card(
                   color: Color(0xF8E4E4E4),
                   margin: const EdgeInsets.all(10),
-                  child:Padding(
+                  child: Padding(
                     padding: const EdgeInsets.all(19.0),
                     child: Column(
                       crossAxisAlignment:CrossAxisAlignment.start,
