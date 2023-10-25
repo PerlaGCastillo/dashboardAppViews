@@ -128,12 +128,10 @@ class _displayDataState extends State<displayData> {
         borderRadius: BorderRadius.circular(19.0),
         color: Color(0xfff4f4f4),
       ),
-      height: MediaQuery
-          .of(context)
+      height: MediaQuery.of(context)
           .size
           .height - 180,
-      width: MediaQuery
-          .of(context)
+      width: MediaQuery.of(context)
           .size
           .width - 40,
       child: Column(
@@ -155,7 +153,6 @@ class _displayDataState extends State<displayData> {
                 //       var fileB = snapshot.data['fileB'];
                 //     }
                 // );
-// /*
                 return Card(
                   color: Color(0xF8E4E4E4),
                   margin: const EdgeInsets.all(10),
@@ -167,9 +164,7 @@ class _displayDataState extends State<displayData> {
                         //Records.map<Widget>((index)=> Column [
                         //Text((_records[index]['estado'] != null) ? _records['estado'] : 'estado',
                         Text((_records[index]['estado']),
-                          style: TextStyle(fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),),
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, ),),
                         //).toList(),
                         Text(_records[index]["cve_edo"]),
                         Text('Clave'),
@@ -183,11 +178,9 @@ class _displayDataState extends State<displayData> {
                     ),
                   ),
                 );
-// */
               },
             ),
-          )
-              : Expanded(child: ListView.builder(
+          ): Expanded(child: ListView.builder(
             itemCount: _itemsBtn.length,
             itemBuilder: (context, index) {
               final item = _itemsBtn[index];
@@ -197,7 +190,6 @@ class _displayDataState extends State<displayData> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    //SizedBox(height: 8),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size.fromHeight(42),
