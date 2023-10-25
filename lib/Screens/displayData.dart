@@ -33,29 +33,41 @@ class _displayDataState extends State<displayData> {
     "Por sector"
   ];
 
-List _records = [];
+  List _records = [];
+
 //TODO check it up and check it off"
 // https://copyprogramming.com/howto/load-multiple-json-files-in-flutter
 // https://stackoverflow.com/questions/61228977/how-to-pass-multiple-data-fetched-from-json-to-next-screen-in-flutter
 // https://stackoverflow.com/questions/75250664/flutter-multiple-json-data-nested
 
 //one option is to place both calls within an asynchronous method and subsequently await it
- Future<Map<String, dynamic>> loadJson() async{
-    final jsonA = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    final jsonB = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonC = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    final jsonD = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonE = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    final jsonF = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonG = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    final jsonH = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonI = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
-    final jsonJ = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnio.json');
-    final jsonK = await DefaultAssetBundle.of(context).loadString('assets/porGeneroAnioPresupuestal.json');
+  Future<Map<String, dynamic>> loadJson() async {
+    final jsonA = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnioPresupuestal.json');
+    final jsonB = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnio.json');
+    final jsonC = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnioPresupuestal.json');
+    final jsonD = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnio.json');
+    final jsonE = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnioPresupuestal.json');
+    final jsonF = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnio.json');
+    final jsonG = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnioPresupuestal.json');
+    final jsonH = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnio.json');
+    final jsonI = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnioPresupuestal.json');
+    final jsonJ = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnio.json');
+    final jsonK = await DefaultAssetBundle.of(context).loadString(
+        'assets/porGeneroAnioPresupuestal.json');
     //final jsonResult = json.decode(jsonA);
 //  for (var record in _records.entry) {
 //    print('${entry.key}: ${entry.value}'):}
-    return{
+    return {
       'fileA': jsonA,
       'fileB': jsonB,
       'fileC': jsonC,
@@ -68,9 +80,10 @@ List _records = [];
       'fileJ': jsonJ,
       'fileK': jsonK,
     };
-  };
-  //FutureBuilder(context).loadString('assets/')
-  /*
+  }
+
+//FutureBuilder(context).loadString('assets/')
+/*
   Future getJsonList() async {
     List<Records> jsonList = await loadJson();
     return jsonList;
@@ -78,15 +91,16 @@ List _records = [];
   */
 
 
-
-Future<void> readJson() async {
-    final String response = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString(
+        'assets/porGeneroAnioPresupuestal.json');
     final data = await json.decode(response);
     setState(() {
       _records = data["records"];
       print('objects ${_records.length}');
     });
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -114,8 +128,14 @@ Future<void> readJson() async {
         borderRadius: BorderRadius.circular(19.0),
         color: Color(0xfff4f4f4),
       ),
-      height: MediaQuery.of(context).size.height-180,
-      width: MediaQuery.of(context).size.width-40,
+      height: MediaQuery
+          .of(context)
+          .size
+          .height - 180,
+      width: MediaQuery
+          .of(context)
+          .size
+          .width - 40,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -139,12 +159,12 @@ Future<void> readJson() async {
                 return Card(
                   color: Color(0xF8E4E4E4),
                   margin: const EdgeInsets.all(10),
-                  child:Padding(
+                  child: Padding(
                     padding: const EdgeInsets.all(19.0),
                     child: Column(
-                      crossAxisAlignment:CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                //Records.map<Widget>((index)=> Column [
+                        //Records.map<Widget>((index)=> Column [
                         //Text((_records[index]['estado'] != null) ? _records['estado'] : 'estado',
                         Text((_records[index]['estado']),
                           style: TextStyle(fontSize: 16,
@@ -167,7 +187,7 @@ Future<void> readJson() async {
               },
             ),
           )
-      : Expanded( child: ListView.builder(
+              : Expanded(child: ListView.builder(
             itemCount: _itemsBtn.length,
             itemBuilder: (context, index) {
               final item = _itemsBtn[index];
@@ -193,8 +213,6 @@ Future<void> readJson() async {
                         //readJson();
 
 
-
-
                         /*for x in loadJson(){
                           file+=
                           setState(() {
@@ -213,85 +231,88 @@ Future<void> readJson() async {
       ),
     );
   }
+}
 
-  Column background_containr(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: double.infinity,
-          height: 240,
-          decoration: BoxDecoration(
-            color: Color(0xff10312b),
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(20),
-              bottomRight: Radius.circular(20),
-            ),
+Column background_containr(BuildContext context) {
+  return Column(
+    children: [
+      Container(
+        width: double.infinity,
+        height: 240,
+        decoration: BoxDecoration(
+          color: Color(0xff10312b),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
           ),
-          child: Column(
-            children: [
-              SizedBox(height: 40),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    /*GestureDetector(
+        ),
+        child: Column(
+          children: [
+            SizedBox(height: 40),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  /*GestureDetector(
                       onTap: () {
                         Navigator.of(context).pop();
                       },
                       child: Icon(Icons.arrow_back, color: Colors.white),
                     ),*/
-                    Text(
-                      'Consulta histórica',
-                      style: TextStyle(
-                          fontSize: 21,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white),
-                    ),
+                  Text(
+                    'Consulta histórica',
+                    style: TextStyle(
+                        fontSize: 21,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white),
+                  ),
 /*
                     Icon(
                       Icons.download_rounded,
                       color: Colors.white,
                     )
 */
-                  ],
-                ),
-              )
-            ],
-          ),
+                ],
+              ),
+            )
+          ],
         ),
-      ],
-    );
-  }
+      ),
+    ],
+  );
+}
 
-  /*
+/*
   @override
   dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
    */
 
 
+/*
 Widget jsonList(){
   return FutureBuilder<List<Marker>> getData() async {
     future: loadJson(),
     builder: (context, snapshot){
-      if(!snapshot.hasData) {
-        return CircularProgressIndicator();
+    if(!snapshot.hasData) {
+    return CircularProgressIndicator();
     }
-      var fileA = snapshot.data['fileA'];
-      var fileB = snapshot.data['fileB'];
-      var fileC = snapshot.data['fileC'];
-      var fileD = snapshot.data['fileD'];
-      var fileE = snapshot.data['fileE'];
-      var fileF = snapshot.data['fileF'];
-      var fileG = snapshot.data['fileG'];
-      var fileH = snapshot.data['fileH'];
-      var fileI = snapshot.data['fileI'];
-      var fileJ = snapshot.data['fileJ'];
-      var fileK = snapshot.data['fileK'];
-    }
-  );
-    /*return  FutureBuilder(
+    var fileA = snapshot.data['fileA'];
+    var fileB = snapshot.data['fileB'];
+    var fileC = snapshot.data['fileC'];
+    var fileD = snapshot.data['fileD'];
+    var fileE = snapshot.data['fileE'];
+    var fileF = snapshot.data['fileF'];
+    var fileG = snapshot.data['fileG'];
+    var fileH = snapshot.data['fileH'];
+    var fileI = snapshot.data['fileI'];
+    var fileJ = snapshot.data['fileJ'];
+    var fileK = snapshot.data['fileK'];
+    };
+    );
+    */
+/*return  FutureBuilder(
       //future: loadJson(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
@@ -301,6 +322,7 @@ Widget jsonList(){
           itemCount: loadJson.data.length,
             itemBuilder: (context, index){
             }
-       )*/
-}
-};
+       )*//*
+
+  };
+}*/
