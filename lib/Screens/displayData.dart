@@ -200,7 +200,6 @@ class _displayDataState extends State<displayData> {
                     //SizedBox(height: 8),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        //fixedSize: const Size(390, 37),
                         minimumSize: Size.fromHeight(42),
                         backgroundColor: Color(0xFFBC955C),
                       ),
@@ -210,9 +209,7 @@ class _displayDataState extends State<displayData> {
                           fontSize: 17,),
                       ),
                       onPressed: () {
-                        //readJson();
-
-
+                        readJson();
                         /*for x in loadJson(){
                           file+=
                           setState(() {
