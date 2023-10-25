@@ -21,17 +21,17 @@ class displayData extends StatefulWidget {
 class _displayDataState extends State<displayData> {
 
 final List<String> _btnList = [
-  acumulado(BuildContext, context),
-  generoedad(BuildContext, context),
-    mespagado(BuildContext, context),
-    gpovulnerable(BuildContext, context),
-    centrosbenef(BuildContext, context),
-    entidad(BuildContext, context),
-    areainteres(BuildContext, context),
-    escolaridad(BuildContext, context),
-    vinculadoscapacitacion(BuildContext, context),
-    municipio(BuildContext, context),
-    sector(BuildContext, context),
+    acumulado(),
+    generoedad(),
+    mespagado(),
+    gpovulnerable(),
+    centrosbenef(),
+    entidad(),
+    areainteres(),
+    escolaridad(),
+    vinculadoscapacitacion(),
+    municipio(),
+    sector(),
   ];
 
   List _records = [];
@@ -176,7 +176,21 @@ final List<String> _btnList = [
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          _btnList(context),
+          //==
+          Expanded(child: ListView.builder(
+            itemCount: _btnList.length,
+            itemBuilder: (context, index) {
+              final item = _btnList[index];
+              return ListTile(
+                contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
+                title: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                ),
+              );
+            },
+          ),
+        //===
         ],
       ),
     );
