@@ -21,8 +21,7 @@ class displayData extends StatefulWidget {
 class _displayDataState extends State<displayData> {
 List _records = [];
 List _generos = [];
-List _records = [];
-List _generos = [];
+
 
 Future<void> acumuladoJson() async {
     final String response = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
