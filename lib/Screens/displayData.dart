@@ -197,9 +197,9 @@ final List<String> _btnList = [
               final item = _btnList[index];
               return ListTile(
                 contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
-                title: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                title: ListView(
+                  //crossAxisAlignment: CrossAxisAlignment.center,
+                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Expanded(child: acumulado(BuildContext, context) ),
                       Expanded(child: generoedad(BuildContext, context)),
