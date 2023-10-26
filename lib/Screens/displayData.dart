@@ -21,6 +21,18 @@ class displayData extends StatefulWidget {
 class _displayDataState extends State<displayData> {
 
 final List<String> _btnList = [
+  ('Acumulado1'),
+  ('Por género, por edad1'),
+  ('Por mes pagado1'),
+  ('Por grupos vulnerables1'),
+  ('Centros con beneficiarios1'),
+  ('Por entidad1'),
+  ('Por área de interés1'),
+  ('Por escolaridad1'),
+  ('Vinculados en capacitación1'),
+  ('Por municipio1'),
+  ('Por sector1'),
+  /*
     acumulado(),
     generoedad(),
     mespagado(),
@@ -32,6 +44,9 @@ final List<String> _btnList = [
     vinculadoscapacitacion(),
     municipio(),
     sector(),
+
+ */
+
   ];
 
   List _records = [];
@@ -170,7 +185,7 @@ final List<String> _btnList = [
         borderRadius: BorderRadius.circular(19.0),
         color: Color(0xfff4f4f4),
       ),
-      height: MediaQuery.of(context).size.height-180,
+      height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width-40,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -185,6 +200,19 @@ final List<String> _btnList = [
                 title: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Expanded(child: acumulado(BuildContext, context) ),
+                      Expanded(child: generoedad(BuildContext, context)),
+                      Expanded(child: mespagado(BuildContext, context)),
+                      Expanded(child: gpovulnerable(BuildContext, context)),
+                      Expanded(child: centrosbenef(BuildContext, context)),
+                      Expanded(child: entidad(BuildContext, context)),
+                      Expanded(child: areainteres(BuildContext, context)),
+                      Expanded(child: escolaridad(BuildContext, context)),
+                      Expanded(child: vinculadoscapacitacion(BuildContext, context)),
+                      Expanded(child: municipio(BuildContext, context)),
+                      Expanded(child: sector(BuildContext, context)),
+                    ],
                 ),
               );
             },

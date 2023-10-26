@@ -19,6 +19,9 @@ class Records {
     año_presupuestal = json['año_presupuestal'];
   }
   Map<String, dynamic> toJson() => {
+    //https://docs.flutter.dev/data-and-backend/serialization/json
+    //"data": List<dynamic>.from(data.map((x)=>x.toMap())),
+    //"included": List<dynamic>.from(included.map((x)=>x.toMap())),
     'estado': estado,
     'cve_edo': cve_edo,
     'hombres' : hombres,
