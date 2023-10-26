@@ -5,9 +5,9 @@ class Records {
   String mujeres;
   String total;
   String id_estado;
-  String año_presupuestal;
+  String anio_presupuestal;
 
-  Records(this.estado, this.cve_edo, this.hombres, this.mujeres, this.total, this.id_estado, this.año_presupuestal);
+  Records(this.estado, this.cve_edo, this.hombres, this.mujeres, this.total, this.id_estado, this.anio_presupuestal);
 
   Records.fromJson(Map<String, dynamic> json){
     estado = json['estado'];
@@ -16,7 +16,7 @@ class Records {
     mujeres = json[' mujeres'];
     total = json['total'];
     id_estado = json['id_estado'];
-    año_presupuestal = json['año_presupuestal'];
+    anio_presupuestal = json['anio_presupuestal'];
   }
   Map<String, dynamic> toJson() => {
     //https://docs.flutter.dev/data-and-backend/serialization/json
@@ -27,6 +27,6 @@ class Records {
     'hombres' : hombres,
     'mujeres' : mujeres,
     'id_estado' : id_estado,
-    'año_presupuestal': año_presupuestal,
+    'anio_presupuestal': anio_presupuestal,
   };
 }
