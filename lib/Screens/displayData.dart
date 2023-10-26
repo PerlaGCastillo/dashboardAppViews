@@ -92,19 +92,19 @@ class _displayDataState extends State<displayData> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          AcumuladoBtn(context),
-          GeneroEdadBtn(context),
-          MesPagadoBtn(context),
-          GpoVulneraBtn(context),
-          CentrosBenefBtn(context),
-          EntidadBtn(context),
-          AreaInteresBtn(context),
-          EscolaridadBtn(context),
-          VinCapacitacionBtn(context),
-          MunicipioBtn(context),
-          SectorBtn(context),
-        ];
+        children:<Widget>[
+          AcumuladoBtn(),
+          GeneroEdadBtn(),
+          MesPagadoBtn(),
+          GpoVulneraBtn(),
+          CentrosBenefBtn(),
+          EntidadBtn(),
+          AreaInteresBtn(),
+          EscolaridadBtn(),
+          VinCapacitacionBtn(),
+          MunicipioBtn(),
+          SectorBtn(),
+        ]
       ),
     );
   }
