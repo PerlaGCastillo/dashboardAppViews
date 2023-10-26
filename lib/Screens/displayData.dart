@@ -1,4 +1,15 @@
 import 'dart:convert';
+import 'package:dgapd/Screens/btn/acumuladosbtn.dart';
+import 'package:dgapd/Screens/btn/areaint.dart';
+import 'package:dgapd/Screens/btn/centrosbenefbtn.dart';
+import 'package:dgapd/Screens/btn/entidadbtn.dart';
+import 'package:dgapd/Screens/btn/escolaridadbtn.dart';
+import 'package:dgapd/Screens/btn/generoedadbtn.dart';
+import 'package:dgapd/Screens/btn/gpovulnerablebtn.dart';
+import 'package:dgapd/Screens/btn/mespagadobtn.dart';
+import 'package:dgapd/Screens/btn/municipiobtn.dart';
+import 'package:dgapd/Screens/btn/sectorbtn.dart';
+import 'package:dgapd/Screens/btn/vinculadoscapacitacionbtn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -33,57 +44,7 @@ class _displayDataState extends State<displayData> {
     "Por sector"
   ];
 
-  List _records = [];
-
-  Future<Map<String, dynamic>> loadJson() async {
-    final jsonA = await DefaultAssetBundle.of(context).loadString(
-        'assets/porGeneroAnioPresupuestal.json');
-    final jsonB = await DefaultAssetBundle.of(context).loadString(
-        'assets/porGeneroAnio.json');
-    final jsonC = await DefaultAssetBundle.of(context).loadString(
-        'assets/porGeneroAnioPresupuestal.json');
-    final jsonD = await DefaultAssetBundle.of(context).loadString(
-        'assets/porGeneroAnio.json');
-    final jsonE = await DefaultAssetBundle.of(context).loadString(
-        'assets/porGeneroAnioPresupuestal.json');
-    final jsonF = await DefaultAssetBundle.of(context).loadString(
-        'assets/porGeneroAnio.json');
-    final jsonG = await DefaultAssetBundle.of(context).loadString(
-        'assets/porGeneroAnioPresupuestal.json');
-    final jsonH = await DefaultAssetBundle.of(context).loadString(
-        'assets/porGeneroAnio.json');
-    final jsonI = await DefaultAssetBundle.of(context).loadString(
-        'assets/porGeneroAnioPresupuestal.json');
-    final jsonJ = await DefaultAssetBundle.of(context).loadString(
-        'assets/porGeneroAnio.json');
-    final jsonK = await DefaultAssetBundle.of(context).loadString(
-        'assets/porGeneroAnioPresupuestal.json');
-    //final jsonResult = json.decode(jsonA);
-//  for (var record in _records.entry) {
-//    print('${entry.key}: ${entry.value}'):}
-    return {
-      'fileA': jsonA,
-      'fileB': jsonB,
-      'fileC': jsonC,
-      'fileD': jsonD,
-      'fileE': jsonE,
-      'fileF': jsonF,
-      'fileG': jsonG,
-      'fileH': jsonH,
-      'fileI': jsonI,
-      'fileJ': jsonJ,
-      'fileK': jsonK,
-    };
-  }
-
-//FutureBuilder(context).loadString('assets/')
-/*
-  Future getJsonList() async {
-    List<Records> jsonList = await loadJson();
-    return jsonList;
-  }
-  */
-
+  /*List _records = [];
 
   Future<void> readJson() async {
     final String response = await rootBundle.loadString(
@@ -94,7 +55,7 @@ class _displayDataState extends State<displayData> {
       print('objects ${_records.length}');
     });
   }
-
+*/
 
   @override
   Widget build(BuildContext context) {
@@ -132,78 +93,18 @@ class _displayDataState extends State<displayData> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _records.isNotEmpty ? Expanded(
-            child: ListView.builder(
-              padding: EdgeInsets.all(9.0),
-              itemCount: _records.length,
-              itemBuilder: (context, index) {
-                // return FutureBuilder(
-                //     future: loadJson(),
-                //     builder: (context, snapshot) {
-                //       if(!snapshot.hasData){
-                //         return CircularProgressIndicator();
-                //       }
-                //       var fileA  = snapshot.data['fileA'];
-                //       var fileB = snapshot.data['fileB'];
-                //     }
-                // );
-                return Card(
-                  color: Color(0xF8E4E4E4),
-                  margin: const EdgeInsets.all(10),
-                  child: Padding(
-                    padding: const EdgeInsets.all(19.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        //Records.map<Widget>((index)=> Column [
-                        //Text((_records[index]['estado'] != null) ? _records['estado'] : 'estado',
-                        Text((_records[index]['estado']),
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, ),),
-                        //).toList(),
-                        Text(_records[index]["cve_edo"]),
-                        Text('Clave'),
-                        Text(_records[index]["mujeres"]),
-                        Text("mujeres"),
-                        Text(_records[index]["hombres"]),
-                        Text("hombres"),
-                        Text(_records[index]["anio_presupuestal"]),
-                        Text("año presupuestal"),
-                      ],
-                    ),
-                  ),
-                );
-              },
-            ),
-          ): Expanded(child: ListView.builder(
-            itemCount: _itemsBtn.length,
-            itemBuilder: (context, index) {
-              final item = _itemsBtn[index];
-              return ListTile(
-                contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
-                title: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: Size.fromHeight(42),
-                        backgroundColor: Color(0xFFBC955C),
-                      ),
-                      child: Text('${item}',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 17,),
-                      ),
-                      onPressed: () {
-                        readJson();
-                      },
-                    )
-                  ],
-                ),
-              );
-            },
-          ),),
-        ],
+          AcumuladoBtn(context),
+          GeneroEdadBtn(context),
+          MesPagadoBtn(context),
+          GpoVulneraBtn(context),
+          CentrosBenefBtn(context),
+          EntidadBtn(context),
+          AreaInteresBtn(context),
+          EscolaridadBtn(context),
+          VinCapacitacionBtn(context),
+          MunicipioBtn(context),
+          SectorBtn(context),
+        ];
       ),
     );
   }
@@ -259,27 +160,3 @@ Column background_containr(BuildContext context) {
     ],
   );
 }
-
-/*
-Widget jsonList(){
-  return FutureBuilder<List<Marker>> getData() async {
-    future: loadJson(),
-    builder: (context, snapshot){
-    if(!snapshot.hasData) {
-    return CircularProgressIndicator();
-    }
-    var fileA = snapshot.data['fileA'];
-    var fileB = snapshot.data['fileB'];
-    var fileC = snapshot.data['fileC'];
-    var fileD = snapshot.data['fileD'];
-    var fileE = snapshot.data['fileE'];
-    var fileF = snapshot.data['fileF'];
-    var fileG = snapshot.data['fileG'];
-    var fileH = snapshot.data['fileH'];
-    var fileI = snapshot.data['fileI'];
-    var fileJ = snapshot.data['fileJ'];
-    var fileK = snapshot.data['fileK'];
-    };
-    );
-    */
-

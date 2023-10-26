@@ -1,6 +1,16 @@
-class acumuladoBtn extends StatelessWidget {
-  const acumuladoBtn({super.key});
+class EscolaridadBtn extends StatelessWidget {
+  const EscolaridadBtn({super.key});
+  List _records = [];
 
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString(
+        'assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('objects ${_records.length}');
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return const Container(
@@ -23,16 +33,6 @@ class acumuladoBtn extends StatelessWidget {
               padding: EdgeInsets.all(9.0),
               itemCount: _records.length,
               itemBuilder: (context, index) {
-                // return FutureBuilder(
-                //     future: loadJson(),
-                //     builder: (context, snapshot) {
-                //       if(!snapshot.hasData){
-                //         return CircularProgressIndicator();
-                //       }
-                //       var fileA  = snapshot.data['fileA'];
-                //       var fileB = snapshot.data['fileB'];
-                //     }
-                // );
                 return Card(
                   color: Color(0xF8E4E4E4),
                   margin: const EdgeInsets.all(10),
@@ -75,7 +75,7 @@ class acumuladoBtn extends StatelessWidget {
                         minimumSize: Size.fromHeight(42),
                         backgroundColor: Color(0xFFBC955C),
                       ),
-                      child: Text('${item}',
+                      child: Text('Por escolaridad',
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 17,),
