@@ -35,12 +35,6 @@ class _displayDataState extends State<displayData> {
 
   List _records = [];
 
-//TODO check it up and check it off"
-// https://copyprogramming.com/howto/load-multiple-json-files-in-flutter
-// https://stackoverflow.com/questions/61228977/how-to-pass-multiple-data-fetched-from-json-to-next-screen-in-flutter
-// https://stackoverflow.com/questions/75250664/flutter-multiple-json-data-nested
-
-//one option is to place both calls within an asynchronous method and subsequently await it
   Future<Map<String, dynamic>> loadJson() async {
     final jsonA = await DefaultAssetBundle.of(context).loadString(
         'assets/porGeneroAnioPresupuestal.json');
@@ -202,13 +196,6 @@ class _displayDataState extends State<displayData> {
                       ),
                       onPressed: () {
                         readJson();
-                        /*for x in loadJson(){
-                          file+=
-                          setState(() {
-                            _records = file['records'];
-                            print('objects ${_records.length}');
-                          });
-                        }*/
                       },
                     )
                   ],
@@ -274,12 +261,6 @@ Column background_containr(BuildContext context) {
 }
 
 /*
-  @override
-  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
-   */
-
-
-/*
 Widget jsonList(){
   return FutureBuilder<List<Marker>> getData() async {
     future: loadJson(),
@@ -301,17 +282,4 @@ Widget jsonList(){
     };
     );
     */
-/*return  FutureBuilder(
-      //future: loadJson(),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) {
-          return Container();
-        }
-        return ListView.builder(
-          itemCount: loadJson.data.length,
-            itemBuilder: (context, index){
-            }
-       )*//*
 
-  };
-}*/

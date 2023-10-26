@@ -18,6 +18,7 @@ class Records {
     id_estado = json['id_estado'];
     anio_presupuestal = json['anio_presupuestal'];
   }
+
   Map<String, dynamic> toJson() => {
     'estado': estado,
     'cve_edo': cve_edo,
