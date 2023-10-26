@@ -30,7 +30,7 @@ class displayData extends StatefulWidget {
 }
 
 class _displayDataState extends State<displayData> {
-  final List<String> _itemsBtn = [
+  /*final List<String> _itemsBtn = [
     'Acumulado',
     "Por género, por edad",
     "Por mes pagado",
@@ -42,7 +42,7 @@ class _displayDataState extends State<displayData> {
     "Vinculados en capacitación",
     "Por municipio",
     "Por sector"
-  ];
+  ];*/
 
   /*List _records = [];
 

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 Future<void> readJson() async {
   final String response = await rootBundle.loadString(
       'assets/porGeneroAnioPresupuestal.json');
@@ -13,7 +15,7 @@ class GpoVulneraBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Container(
+    return const Scaffold(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(19.0),
         color: Color(0xfff4f4f4),

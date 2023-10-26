@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class EntidadBtn extends StatelessWidget {
   const EntidadBtn({super.key});
 
@@ -15,7 +17,7 @@ class EntidadBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Container(
+    return const Scaffold(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(19.0),
         color: Color(0xfff4f4f4),

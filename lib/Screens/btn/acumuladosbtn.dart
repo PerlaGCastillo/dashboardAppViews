@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class AcumuladoBtn extends StatelessWidget {
   const AcumuladoBtn({super.key});
 
@@ -16,7 +18,7 @@ class AcumuladoBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Container(
+    return const Scaffold(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(19.0),
         color: Color(0xfff4f4f4),
