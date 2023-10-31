@@ -1,11 +1,11 @@
 import 'package:dgapd/data/historicalClass.dart';
 
-List<historico> geter_periodo(){
+List<historico> geterPeriodo(){
   historico total2019 =  historico();
   total2019.periodo = '01/01/2019 - 31/12/2022';
   total2019.concepto = 'Total de Inversión apoyo económico';
   total2019.cantidad = '\$ 23,520,931,200.00';
-  total2019.archivo = false;
+  total2019.archivo = true;
 
   historico total2020 =  historico();
   total2020.periodo = '01/01/2019 - 31/12/2022';

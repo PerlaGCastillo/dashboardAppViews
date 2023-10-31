@@ -1,6 +1,6 @@
 import 'package:dgapd/data/historicalClass.dart';
 
-List<historico> geter_genero() {
+List<historico> geterGenero() {
 
   historico hombres =  historico();
   hombres.periodo = '01/01/2019 - 31/12/2022';

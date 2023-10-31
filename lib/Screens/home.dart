@@ -1,3 +1,4 @@
+import 'package:dgapd/data/totalPeriodo.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:dgapd/data/model/add_date.dart';
@@ -31,11 +32,13 @@ class _HomeState extends State<Home> {
                 return CustomScrollView(
                   slivers: [
                     SliverToBoxAdapter(
-                      child: SizedBox(height: 340, child: _head()),
+                      child: SizedBox(height:
+                          MediaQuery.of(context).size.height*0.4,
+                          child: _head()),
                     ),
                     SliverToBoxAdapter(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        padding: const EdgeInsets.symmetric(horizontal: 15.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -43,7 +46,7 @@ class _HomeState extends State<Home> {
                               'Histórico',
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
-                                fontSize: 19,
+                                fontSize: 19.0,
                                 color: Color(0xff1d1d1d),
                               ),
                             ),
@@ -51,7 +54,7 @@ class _HomeState extends State<Home> {
                               'Ver todos',
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
-                                fontSize: 15,
+                                fontSize: 15.0,
                                 color: Colors.grey,
                               ),
                             ),
@@ -62,10 +65,34 @@ class _HomeState extends State<Home> {
                     SliverList(
                       delegate: SliverChildBuilderDelegate(
                         (context, index) {
-                          history = box.values.toList()[index];
-                          return getList(history, index);
+                          return ListTile(
+                            title: Column(
+                              children: [
+                                Text(
+                                  'Período'
+                                ),Text(
+                                  geterPeriodo()[index].periodo!,
+                                ),
+
+                                Text(
+                                  'Concepto'
+                                ),Text(
+                                  geterPeriodo()[index].concepto!,
+                                ),
+
+                                Text(
+                                  'Cantidad'
+                                ),Text(
+                                  geterPeriodo()[index].cantidad!,
+                                ),
+                                Divider(height: 1),
+                              ],
+                            ),
+                          );
+                        //  history = box.values.toList()[index];
+                         // return getList(history, index);
                         },
-                        childCount: box.length,
+                      childCount: geterPeriodo().length,
                       ),
                     )
                   ],
@@ -86,13 +113,13 @@ class _HomeState extends State<Home> {
   ListTile get(int index, Add_data history) {
     return ListTile(
       leading: ClipRRect(
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(5.0),
        // child: Image.asset('images/${history.name}.png', height: 40),
       ),
       title: Text(
         history.beneficiarios,
         style: TextStyle(
-          fontSize: 17,
+          fontSize: 17.0,
           fontWeight: FontWeight.w600,
         ),
       ),
@@ -126,35 +153,35 @@ class _HomeState extends State<Home> {
           children: [
             Container(
               width: double.infinity,
-              height: 240,
+              height: 240.0,
               decoration: BoxDecoration(
                 color: Color(0xc3959595),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(20.0),
+                  bottomRight: Radius.circular(20.0),
                 ),
               ),
               child: Stack(
                 children: [
                   Positioned(
-                    top: 35,
-                    right: 20,
+                    top: 35.0,
+                    right: 20.0,
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(7),
+                      borderRadius: BorderRadius.circular(7.0),
                       child: Container(
-                        height: 40,
-                        width: 45,
+                        height: 40.0,
+                        width: 45.0,
                         color: Color.fromRGBO(250, 250, 250, 0.1),
                         child: Icon(
                           Icons.notification_add_outlined,
-                          size: 30,
+                          size: 30.0,
                           color: Colors.white,
                         ),
                       ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 35, left: 15),
+                    padding: const EdgeInsets.only(top: 35.0, left: 15.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -162,7 +189,7 @@ class _HomeState extends State<Home> {
                           'Hola',
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
-                            fontSize: 16,
+                            fontSize: 16.0,
                             color: Color.fromARGB(255, 224, 223, 223),
                           ),
                         ),
@@ -170,7 +197,7 @@ class _HomeState extends State<Home> {
                           'Roger',
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: 20,
+                            fontSize: 20.0,
                             color: Colors.white,
                           ),
                         ),
@@ -183,8 +210,8 @@ class _HomeState extends State<Home> {
           ],
         ),
         Positioned(
-          top: 100,
-          left: 20,
+          top: 100.0,
+          left: 20.0,
           child: Container(
             height: MediaQuery.of(context).size.height/4,
             width: MediaQuery.of(context).size.width-40,
@@ -194,21 +221,21 @@ class _HomeState extends State<Home> {
                 BoxShadow(
                   color: Color.fromRGBO(16, 49, 43, 1.0),
                   offset: Offset(0, 1),
-                  blurRadius: 16,
-                  spreadRadius: 2,
+                  blurRadius: 16.0,
+                  spreadRadius: 2.0,
                 ),
               ],
               color: Color.fromARGB(255, 16, 49, 43),
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(15.0),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 10),
+                SizedBox(height: 10.0),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     mainAxisSize: MainAxisSize.max,
@@ -217,7 +244,7 @@ class _HomeState extends State<Home> {
                         'Balance Total',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
-                          fontSize: 16,
+                          fontSize: 16.0,
                           color: Colors.white,
                         ),
                       ),
@@ -230,30 +257,30 @@ class _HomeState extends State<Home> {
                 ),
                 SizedBox(height: 7),
                 Padding(
-                  padding: const EdgeInsets.only(left: 15),
+                  padding: const EdgeInsets.only(left: 15.0),
                   child: Row(
                     children: [
                       Text('total',
                         //'${total()}',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 25.0,
                           color: Colors.white,
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 25),
+                SizedBox(height: 25.0),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
                         children: [
                           CircleAvatar(
-                            radius: 13,
+                            radius: 13.0,
                             backgroundColor: Color.fromARGB(255, 0, 80, 70),
                             child: Icon(
                               Icons.perm_identity_sharp,
@@ -261,12 +288,12 @@ class _HomeState extends State<Home> {
                               size: 19,
                             ),
                           ),
-                          SizedBox(width: 7),
+                          SizedBox(width: 7.0),
                           Text(
                             'Jóvenes',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
-                              fontSize: 16,
+                              fontSize: 16.0,
                               color: Color.fromARGB(255, 216, 216, 216),
                             ),
                           ),
@@ -275,20 +302,20 @@ class _HomeState extends State<Home> {
                       Row(
                         children: [
                           CircleAvatar(
-                            radius: 13,
+                            radius: 13.0,
                             backgroundColor: Color.fromARGB(255, 0, 80, 70),
                             child: Icon(
                               Icons.pin_drop_outlined,
                               color: Colors.white,
-                              size: 19,
+                              size: 19.0,
                             ),
                           ),
-                          SizedBox(width: 7),
+                          SizedBox(width: 7.0),
                           Text(
                             'Municipios',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
-                              fontSize: 16,
+                              fontSize: 16.0,
                               color: Color.fromARGB(255, 216, 216, 216),
                             ),
                           ),
@@ -297,9 +324,9 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                 ),
-                SizedBox(height: 6),
+                SizedBox(height: 6.0),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  padding: const EdgeInsets.symmetric(horizontal: 30.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -307,7 +334,7 @@ class _HomeState extends State<Home> {
                         //'${income()}',
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
-                          fontSize: 17,
+                          fontSize: 17.0,
                           color: Colors.white,
                         ),
                       ),
@@ -316,7 +343,7 @@ class _HomeState extends State<Home> {
                         //'${expenses()}',
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
-                          fontSize: 17,
+                          fontSize: 17.0,
                           color: Colors.white,
                         ),
                       ),

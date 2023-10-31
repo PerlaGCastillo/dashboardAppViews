@@ -1,6 +1,6 @@
 import 'package:dgapd/data/historicalClass.dart';
 
-List<historico> geter_imss(){
+List<historico> geterImss(){
   historico imss19 =  historico();
   imss19.periodo = '2019';
   imss19.concepto = 'Total de Inversión IMSS';

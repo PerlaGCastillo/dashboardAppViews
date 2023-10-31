@@ -88,7 +88,7 @@ class _SearchScreenState extends State<SearchScreen> {
           children: [
             background_container(context),
             Positioned(
-              top: 90,
+              top: 90.0,
               child: main_container(),
             ),
           ],
