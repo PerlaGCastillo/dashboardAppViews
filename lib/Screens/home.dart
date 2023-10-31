@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
                     ),
                     SliverToBoxAdapter(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -67,25 +67,27 @@ class _HomeState extends State<Home> {
                         (context, index) {
                           return ListTile(
                             title: Column(
-                              children: [
+                                crossAxisAlignment: CrossAxisAlignment.start,
+
+                                children: <Widget>[
                                 Text(
-                                  'Período'
-                                ),Text(
                                   geterPeriodo()[index].periodo!,
-                                ),
+                                ), Text('Período'),
 
                                 Text(
-                                  'Concepto'
-                                ),Text(
                                   geterPeriodo()[index].concepto!,
-                                ),
+                                ),Text('Concepto'),
 
                                 Text(
-                                  'Cantidad'
-                                ),Text(
                                   geterPeriodo()[index].cantidad!,
+                                ),Text('Cantidad'),
+                                Divider(
+                                  height:  MediaQuery.of(context).size.height*0.04,
+                                  thickness: 1.0,
+                                  color: Color(0xff10312b),
+                                  indent: 1.0,
+                                  endIndent: 1.0,
                                 ),
-                                Divider(height: 1),
                               ],
                             ),
                           );
