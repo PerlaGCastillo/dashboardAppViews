@@ -65,7 +65,9 @@ class _HomeState extends State<Home> {
                     SliverList(
                       delegate: SliverChildBuilderDelegate(
                         (context, index) {
-                          return ListTile(
+                          history = box.values.toList()[index];
+                          return getList(history,index);
+                          /* return ListTile(
                             title: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
 
@@ -90,10 +92,7 @@ class _HomeState extends State<Home> {
                                 ),
                               ],
                             ),
-                          );
-                        //  history = box.values.toList()[index];
-                         // return getList(history, index);
-                        },
+                          );*/                        },
                       childCount: geterPeriodo().length,
                       ),
                     )
@@ -101,6 +100,24 @@ class _HomeState extends State<Home> {
                 );
               })),
     );
+  }
+
+  ListTile get(int index, Add_data history){
+    return ListTile(
+      title: Text(
+        history.periodo,
+        //  geterPeriodo()[index].periodo!,
+        style: TextStyle(
+          fontSize: 17.0,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+      subtitle: Text(
+        history.concepto,
+          //geterPeriodo()[index].concepto!,
+      ),
+    );
+
   }
 
   Widget getList(Add_data history, int index) {
