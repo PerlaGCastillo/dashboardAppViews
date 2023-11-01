@@ -92,8 +92,9 @@ class _HomeState extends State<Home> {
                                 ),
                               ],
                             ),
-                          );*/                        },
-                      childCount: geterPeriodo().length,
+                          );*/
+                        },
+                      childCount: box.length,
                       ),
                     )
                   ],
