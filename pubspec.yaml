@@ -24,6 +24,7 @@ dependencies:
   io: ^1.0.4
   http: ^0.13.5
   faker: ^2.1.0
+  json_table: ^2.0.1
 
 dev_dependencies:
   flutter_test:
