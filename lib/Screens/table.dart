@@ -12,16 +12,6 @@ class LocalTable extends StatefulWidget {
 class _LocalTableState extends State<LocalTable> {
   List? jsonSample;
 
-/*  Future<void> readJson() async {
-    final String response = await rootBundle.loadString(
-        'assets/porGeneroAnioPresupuestal.json');
-    final data = await json.decode(response);
-    setState(() {
-      _records = data["records"];
-      print('objects ${_records.length}');
-    });
-  }*/
-
   @override
   void initState() {
     super.initState();
@@ -34,11 +24,11 @@ class _LocalTableState extends State<LocalTable> {
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
         child: Container(
-          child: jsonSample == null
+          child: /*jsonSample == null
               ? Center(
             child: CircularProgressIndicator(),
           )
-              : Column(
+              :*/ Column(
             children: [
               JsonTable(
                 jsonSample!,
