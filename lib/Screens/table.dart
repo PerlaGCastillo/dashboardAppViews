@@ -12,6 +12,16 @@ class LocalTable extends StatefulWidget {
 class _LocalTableState extends State<LocalTable> {
   List? jsonSample;
 
+/*  Future<void> readJson() async {
+    final String response = await rootBundle.loadString(
+        'assets/porGeneroAnioPresupuestal.json');
+    final data = await json.decode(response);
+    setState(() {
+      _records = data["records"];
+      print('objects ${_records.length}');
+    });
+  }*/
+
   @override
   void initState() {
     super.initState();
@@ -53,12 +63,15 @@ class _LocalTableState extends State<LocalTable> {
     );
   }
 
-  String getPrettyJSONString(jsonObject) {
+/*  String getPrettyJSONString(jsonObject) {
     JsonEncoder encoder = new JsonEncoder.withIndent('  ');
     String jsonString = encoder.convert(json.decode(jsonObject));
     return jsonString;
+  }*/
+  String getPrettyJSONString(jsonObject){
+    var encoder = new JsonEncoder.withIndent("     ");
+    return encoder.convert(jsonObject);
   }
-
   void _initData() async {
     try {
       final jsonString = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
@@ -71,3 +84,14 @@ class _LocalTableState extends State<LocalTable> {
     }
   }
 }
+/*
+
+String name =  "{click_action: FLUTTER_NOTIFICATION_CLICK, sendByImage: https://ujjwalchef.staging-server.in/uploads/users/1636620532.png, status: done, sendByName: mohittttt, id: HM11}";
+List<String> str = name.replaceAll("{","").replaceAll("}","").split(",");
+Map<String,dynamic> result = {};
+for(int i=0;i<str.length;i++){
+List<String> s = str[i].split(":");
+result.putIfAbsent(s[0].trim(), () => s[1].trim());
+}
+print(result);
+}*/
