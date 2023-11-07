@@ -1,23 +1,24 @@
+import 'dart:convert';
+
 class Records {
-  String estado;
-  int cve_edo;
-  String hombres;
-  String mujeres;
-  String total;
-  String id_estado;
-  String anio_presupuestal;
+  String? estado;
+  String? cve_edo;
+  String? hombres;
+  String? mujeres;
+  String? total;
+  String? id_estado;
+  String? anio_presupuestal;
 
   Records(this.estado, this.cve_edo, this.hombres, this.mujeres, this.total, this.id_estado, this.anio_presupuestal);
 
-  Records.fromJson(Map<String, dynamic> decodedJson = jsonDecode(response.body)){
-  //Records.fromJson(Map<String, dynamic> json){
-    estado = decodedJson['estado'];
-    cve_edo = decodedJson['cve_edo'];
-    hombres = decodedJson['hombres'];
-    mujeres = decodedJson['mujeres'];
-    total = decodedJson['total'];
-    id_estado = decodedJson['id_estado'];
-    anio_presupuestal = decodedJson['anio_presupuestal'];
+  Records.fromJson(Map<String, dynamic> json){
+    estado = json['estado'];
+    cve_edo = json['cve_edo'];
+    hombres = json['hombres'];
+    mujeres = json['mujeres'];
+    total = json['total'];
+    id_estado = json['id_estado'];
+    anio_presupuestal = json['anio_presupuestal'];
   }
   Map<String, dynamic> toJson() => {
     'estado': estado,
@@ -28,10 +29,3 @@ class Records {
     'anio_presupuestal': anio_presupuestal,
   };
 }
-
-/*
-
-Map<String, dynamic> userMap = jsonDecode(jsonString);
-var records = Records.fromJson(userMap);
-
-print('hola, ${records.name}!');*/

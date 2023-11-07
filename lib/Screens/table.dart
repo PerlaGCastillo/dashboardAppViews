@@ -24,12 +24,13 @@ class _LocalTableState extends State<LocalTable> {
     return Scaffold(
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
-        child: Container(
+          child: Container(
           child: jsonSample == null
               ? Center(
             child: CircularProgressIndicator(),
           )
-              :Column(
+              :
+          Column(
             children: [
               //simply pass this json to JsonTable
               JsonTable(
@@ -63,7 +64,6 @@ class _LocalTableState extends State<LocalTable> {
       final String jsonString = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
       var data = json.decode(jsonString);
       print(data.runtimeType);
-
       if (mounted)
         setState(() {
           jsonSample = jsonDecode(jsonString) as List?;

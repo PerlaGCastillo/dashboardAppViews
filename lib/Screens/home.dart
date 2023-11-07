@@ -6,10 +6,6 @@ import 'package:dgapd/data/model/add_date.dart';
 
 
 class Home extends StatefulWidget {
-  /*await Hive.initFlutter();
-  Hive.registerAdapter(AdddataAdapter());
-  await Hive.openBox<Add_data>('data');
-  */
   const Home({Key? key}) : super(key: key);
 
   @override

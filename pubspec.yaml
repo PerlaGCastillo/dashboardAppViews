@@ -16,7 +16,7 @@ dependencies:
   syncfusion_flutter_charts: ^20.2.44
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  intl: ^0.17.0
+  intl: ^0.18.1
   cupertino_icons: ^1.0.2
   syncfusion_flutter_xlsio: ^20.4.54-beta
   path_provider: ^2.1.0
@@ -25,6 +25,9 @@ dependencies:
   http: ^0.13.5
   faker: ^2.1.0
   json_table: ^2.0.1
+ # json_table:
+  #  path: ../
+  rxdart: ^0.27.7
 
 dev_dependencies:
   flutter_test:
