@@ -25,15 +25,7 @@ class _LocalTableState extends State<LocalTable> {
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
           child: Container(
-          child: jsonSample == null
-              ? Center(
-            child: CircularProgressIndicator(),
-          )
-              :
-          Column(
-            children: [
-              //simply pass this json to JsonTable
-              JsonTable(
+          child:JsonTable(
                 jsonSample!,
                 showColumnToggle: true,
                 allowRowHighlight: true,
@@ -44,26 +36,20 @@ class _LocalTableState extends State<LocalTable> {
                   print(map);
                 },
               ),
-              SizedBox(
-                height: 40.0,
-              ),
-              //Text((_records[index]['estado']) ),
-            ],
-          ),
         ),
       ),
     );
   }
 
   String getPrettyJSONString(jsonObject){
-    var encoder = new JsonEncoder.withIndent("     ");
+    var encoder = new JsonEncoder.withIndent("   ");
     return encoder.convert(jsonObject);
   }
   void _initData() async {
     try {
       final String jsonString = await rootBundle.loadString('assets/porGeneroAnioPresupuestal.json');
       var data = json.decode(jsonString);
-      print(data.runtimeType);
+      print(data.hashCode);
       if (mounted)
         setState(() {
           jsonSample = jsonDecode(jsonString) as List?;
