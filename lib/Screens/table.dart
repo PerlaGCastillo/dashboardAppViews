@@ -32,7 +32,6 @@ class _LocalTableState extends State<LocalTable> {
               :
           Column(
             children: [
-              //simply pass this json to JsonTable
               JsonTable(
                 jsonSample!,
                 showColumnToggle: true,
@@ -47,7 +46,7 @@ class _LocalTableState extends State<LocalTable> {
               SizedBox(
                 height: 40.0,
               ),
-              //Text((_records[index]['estado']) ),
+              Text('datos'),
             ],
           ),
         ),
