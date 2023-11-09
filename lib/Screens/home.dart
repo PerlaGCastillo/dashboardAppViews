@@ -33,6 +33,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Consulta histórica",
+        ),
+      ),
       body: SafeArea(
         child: Stack(
             alignment: AlignmentDirectional.center,
@@ -47,8 +52,6 @@ class _HomeState extends State<Home> {
 
     );
   }
-
-
 
 
   Padding consultahistorica() {

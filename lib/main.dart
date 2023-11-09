@@ -1,6 +1,5 @@
-import 'package:dgapd/Screens/home.dart';
+import 'package:dgapd/Screens/displayData.dart';
 import 'package:flutter/material.dart';
-//import 'package:management/Screens/home.dart';
 import 'package:dgapd/widgets/bottomnavigationbar.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: MyList(),
       //home: Bottom(),
     );
   }
