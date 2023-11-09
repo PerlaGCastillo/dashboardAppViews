@@ -1,3 +1,4 @@
+import 'package:dgapd/Screens/home.dart';
 import 'package:flutter/material.dart';
 //import 'package:management/Screens/home.dart';
 import 'package:dgapd/widgets/bottomnavigationbar.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Bottom(),
+      home: Home(),
+      //home: Bottom(),
     );
   }
 }
