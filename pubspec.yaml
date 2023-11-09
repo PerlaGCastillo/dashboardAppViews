@@ -25,8 +25,6 @@ dependencies:
   http: ^0.13.5
   faker: ^2.1.0
   json_table: ^2.0.1
- # json_table:
-  #  path: ../
   rxdart: ^0.27.7
 
 dev_dependencies:
