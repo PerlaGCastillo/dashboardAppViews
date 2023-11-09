@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:dgapd/data/model/add_date.dart';
 
-
-
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -14,6 +12,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   var history;
   final box = Hive.box<Add_data>('data');
+  String? selctedItem;
+  String? selctedItemi;
+  String? selctedItemdespliega;
+
   final List<String> day = [
     '2019',
     "2020",
@@ -21,6 +23,21 @@ class _HomeState extends State<Home> {
     "2022",
     '2023'
   ];
+
+  final List<String> _itemdespliega = [
+    'Acumulado',
+    "Por género, por edad",
+    "Por mes pagado",
+    "Por grupos vulnerables",
+    "Centros con beneficiarios",
+    "Por entidad",
+    "Por área de interés",
+    "Por escolaridad",
+    "Vinculados en capacitación",
+    "Por municipio",
+    "Por sector"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,25 +53,18 @@ class _HomeState extends State<Home> {
                     SliverToBoxAdapter(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 15),
-                        child: Row(
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
+                            consultahistorica(),
+                           /* Text(
                               'Histórico',
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 19,
                                 color: Color(0xff1d1d1d),
                               ),
-                            ),
-                            Text(
-                              'Ver todos',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 15,
-                                color: Colors.grey,
-                              ),
-                            ),
+                            ),*/
                           ],
                         ),
                       ),
@@ -73,6 +83,69 @@ class _HomeState extends State<Home> {
               })),
     );
   }
+
+
+
+
+  Padding consultahistorica() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 15),
+        width: MediaQuery.of(context).size.width-50,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            width: 2,
+            color: Color(0xffC5C5C5),
+          ),
+        ),
+        child: DropdownButton<String>(
+          value: selctedItem,
+          onChanged: ((value) {
+            setState(() {
+              selctedItem = value!;
+            });
+          }),
+          items: _itemdespliega
+              .map((e) => DropdownMenuItem(
+            child: Container(
+              alignment: Alignment.center,
+              child: Row(
+                children: [
+                  Text(
+                    e,
+                    style: TextStyle(fontSize: 18),
+                  )
+                ],
+              ),
+            ),
+            value: e,
+          ))
+              .toList(),
+          selectedItemBuilder: (BuildContext context) => _itemdespliega
+              .map((e) => Row(
+            children: [
+              Text(e)
+            ],
+          ))
+              .toList(),
+          hint: Padding(
+            padding: const EdgeInsets.all(5),
+            child: Text(
+              'Consulta Histórica',
+              style: TextStyle(color: Colors.grey),
+            ),
+          ),
+          dropdownColor: Color(0xfff4f4f4),
+
+          isExpanded: true,
+          underline: Container(),
+        ),
+      ),
+    );
+  }
+
 
   Widget getList(Add_data history, int index) {
     return Dismissible(
@@ -167,7 +240,7 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                         Text(
-                          'Roger',
+                          ' ',
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 20,
