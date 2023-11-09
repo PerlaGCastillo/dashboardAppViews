@@ -1,11 +1,9 @@
 import 'package:dgapd/Screens/displayData.dart';
-import 'package:dgapd/Screens/table.dart';
+import 'package:dgapd/Screens/optionList.dart';
 import 'package:flutter/material.dart';
 import 'package:dgapd/Screens/search.dart';
 import 'package:dgapd/Screens/home.dart';
-
 import '../Screens/localdatatbl.dart';
-
 
 class Bottom extends StatefulWidget {
   const Bottom({Key? key}) : super(key: key);
@@ -16,7 +14,7 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index_color = 0;
-  List Screen = [Home(),  dataView(), LocalTable(), CustomDataTable()];
+  List Screen = [Home(), CustomDataTable(), MyList()];
 
   @override
   Widget build(BuildContext context) {
@@ -63,6 +61,7 @@ class _BottomState extends State<Bottom> {
                   color: index_color == 1 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
+
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -73,18 +72,6 @@ class _BottomState extends State<Bottom> {
                   Icons.table_chart,
                   size: 30,
                   color: index_color == 2 ? Color(0xffbc955c) : Colors.grey,
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    index_color = 3;
-                  });
-                },
-                child: Icon(
-                  Icons.table_chart,
-                  size: 30,
-                  color: index_color == 3 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
             ],
