@@ -1,4 +1,4 @@
-import 'package:dgapd/table/generoanio.dart';
+import 'package:data/table/generoanio.dart';
 import 'package:flutter/material.dart';
 
 void main() {

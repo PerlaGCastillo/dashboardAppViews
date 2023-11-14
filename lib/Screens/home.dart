@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:dgapd/data/model/add_date.dart';
+import 'package:data/data/model/add_date.dart';
 
 
 class Home extends StatefulWidget {

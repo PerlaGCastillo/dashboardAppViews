@@ -1,7 +1,7 @@
-import 'package:dgapd/Screens/displayData.dart';
+import 'package:data/Screens/displayData.dart';
 import 'package:flutter/material.dart';
-import 'package:dgapd/Screens/search.dart';
-import 'package:dgapd/Screens/home.dart';
+import 'package:data/Screens/search.dart';
+import 'package:data/Screens/home.dart';
 
 
 class Bottom extends StatefulWidget {

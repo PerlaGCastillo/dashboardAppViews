@@ -1,5 +1,17 @@
 import 'dart:convert';
-import 'package:dgapd/table/generoanio.dart';
+import 'package:data/table/acumulado.dart';
+import 'package:data/table/generoedad.dart';
+import 'package:data/table/generoanio.dart';
+import 'package:data/table/mespagado.dart';
+import 'package:data/table/gpovulnerable.dart';
+import 'package:data/table/centrosbeneficiarios.dart';
+import 'package:data/table/entidad.dart';
+import 'package:data/table/areainteres.dart';
+import 'package:data/table/escolaridad.dart';
+import 'package:data/table/vinculadoscapacitacion.dart';
+import 'package:data/table/municipio.dart';
+import 'package:data/table/sector.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
