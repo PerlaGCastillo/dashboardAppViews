@@ -56,7 +56,7 @@ class _HomeState extends State<Home> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            consultahistorica(),
+                           // consultahistorica(),
                             /* Text(
                               'Histórico',
                               style: TextStyle(
@@ -87,7 +87,7 @@ class _HomeState extends State<Home> {
 
 
 
-  Padding consultahistorica() {
+/*  Padding consultahistorica() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
@@ -144,7 +144,7 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
-  }
+  }*/
 
 
   Widget getList(Add_data history, int index) {
