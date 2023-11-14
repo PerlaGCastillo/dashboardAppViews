@@ -12,62 +12,61 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   final box = Hive.box<Add_data>('data');
   //DateTimeRange date = new DateTimeRange.from;
-  DateTime date = new DateTime.now();
+  //DateTime date = new DateTime.now();
   String? selctedItem;
   String? selctedItemi;
-  String? selctedItembeneficia;
-  String? selctedItementidad;
-  String? selctedItemsectores;
-  String? selctedItemaprendiz;
-  String? selctedItemempresa;
-  String? selctedItemgenero;
-  String? selctedItemedad;
+  String? selctedItemperiodo;
+  String? selctedItemconcepto;
+  String? selctedItemcantidad;
+  String? selctedItemarchivo;
    //final TextEditingController amount_c = TextEditingController();
   //FocusNode amount_ = FocusNode();
-  final List<String> _itembeneficia = [
-    "Beneficiarios",
-    "Egresados"
+
+  final List<String> _itemperiodo = [
+    'Total de beneficiarios histórico: 01/01/2019 - 31/12/2022',
+    "Total de beneficarios hombres: 01/01/2019 - 31/12/2022",
+    "Total de beneficarias mujeres: 01/01/2019 - 31/12/2022",
+    "Total de Inversión apoyo económico: 2019",
+    "Total de Inversión apoyo económico: 2020",
+    "Total de Inversión apoyo económico: 2021",
+    "Total de Inversión apoyo económico: 2022",
+    "Total de Inversión apoyo económico: 2019 - 2022",
+    "Total de Inversión IMSS: 2019",
+    "Total de Inversión IMSS: 2020",
+    "Total de Inversión IMSS: 2021",
+    "Total de Inversión IMSS: 2022",
+    "Total de Inversión IMSS (en el periodo del reporte): 01/01/2019 - 31/12/2022",
+
+  ];
+  final List<String> _itemconcepto = [
+    'Total de beneficiarios histórico',
+    "Total de beneficarios hombres",
+    "Total de beneficarias mujeres",
+    "Total de Inversión apoyo económico",
+    "Total de Inversión IMSS (en el periodo del reporte)",
+  ];
+  final List<String> _itemcantidad = [
+    '\$',
+    "Personas",
   ];
 
-  final List<String> _itementidad = [
-    'Guerrero',
-    "Oaxaca",
-    'CDMX'
-  ];
-  final List<String> _itemsectores = [
-    'Público',
-    "Privado",
-  ];
-
-  final List<String> _itemaprendiz = [
-    'Hombre',
-    "Mujer",
-  ];
-
-  final List<String> _itemempresa = [
-    'Instituciones públicas estatales',
-    "Instituciones privadas",
+  final List<String> _itemarchivo = [
+    'Total de beneficiarios histórico: 01/01/2019 - 31/12/2022',
+    "Total de beneficarios hombres: 01/01/2019 - 31/12/2022",
+    "Total de beneficarias mujeres: 01/01/2019 - 31/12/2022",
+    "Total de Inversión apoyo económico: 2019",
+    "Total de Inversión apoyo económico: 2020",
+    "Total de Inversión apoyo económico: 2021",
+    "Total de Inversión apoyo económico: 2022",
+    "Total de Inversión apoyo económico: 2019 - 2022",
+    "Total de Inversión IMSS: 2019",
+    "Total de Inversión IMSS: 2020",
+    "Total de Inversión IMSS: 2021",
+    "Total de Inversión IMSS: 2022",
+    "Total de Inversión IMSS (en el periodo del reporte): 01/01/2019 - 31/12/2022",
   ];
 
-  final List<String> _itemgenero = [
-    'Hombre',
-    "Mujer",
-  ];
 
-  final List<String> _itemedad = [
-    '18',
-    "19",
-    "20",
-    "21",
-    "22",
-    "23",
-    "24",
-    "25",
-    "26",
-    "27",
-    "28",
-    "29"
-  ];
 
   @override
   void initState() {
@@ -109,21 +108,13 @@ class _SearchScreenState extends State<SearchScreen> {
       child: Column(
         children: [
           SizedBox(height: 25),
-          beneficiarios(),
+          periodo(),
           SizedBox(height: 25),
-          date_time(),
+          concepto(),
           SizedBox(height: 25),
-          entidad(),
+          cantidad(),
           SizedBox(height: 25),
-          sectores(),
-          SizedBox(height: 25),
-          aprendices(),
-          SizedBox(height: 25),
-          empresa(),
-          SizedBox(height: 25),
-          genero(),
-          SizedBox(height: 25),
-          edad(),
+          archivo(),
           Spacer(),
           save(),
           SizedBox(height: 25),
@@ -134,10 +125,7 @@ class _SearchScreenState extends State<SearchScreen> {
   GestureDetector save() {
     return GestureDetector(
       onTap: () {
-        var add = Add_data( selctedItembeneficia! , date,
-            selctedItementidad!, selctedItemsectores!, selctedItemaprendiz!,
-            selctedItemempresa!, selctedItemgenero!, selctedItemedad!
-        );
+        var add = Add_data( selctedItemperiodo! , selctedItemconcepto!, selctedItemcantidad!, selctedItemarchivo!);
         box.add(add);
         Navigator.of(context).pop();
       },
