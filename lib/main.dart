@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 //import 'package:management/Screens/home.dart';
-import 'package:dgapd/widgets/bottomnavigationbar.dart';
+import 'package:data/lib/widgets/bottomnavigationbar.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import 'data/model/add_date.dart';

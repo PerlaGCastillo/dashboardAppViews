@@ -1,8 +1,8 @@
 class Records {
-  String estado;
-  String total;
-  String id_estado;
-  String anio_presupuestal;
+  String? estado;
+  String? total;
+  String? id_estado;
+  String? anio_presupuestal;
 
   Records(this.estado, this.total, this.id_estado, this.anio_presupuestal);
 

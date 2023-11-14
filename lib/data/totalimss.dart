@@ -1,4 +1,4 @@
-import 'package:dgapd/data/historicalClass.dart';
+import 'package:data/data/historicalClass.dart';
 
 List<historico> geter_imss(){
   historico imss19 =  historico();

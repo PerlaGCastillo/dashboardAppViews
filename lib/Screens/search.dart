@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:dgapd/data/model/add_date.dart';
+import 'package:data/data/model/add_date.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class SearchScreen extends StatefulWidget {
