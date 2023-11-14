@@ -17,14 +17,14 @@ class _PorEntidadState extends State<PorEntidad> {
     TextEditingValue(text: jsonSample),
   );
 
-  final _subject = BehaviorSubject<String>();
+  final _subjeect = BehaviorSubject<String>();
 
   @override
   void initState() {
     super.initState();
-    _subject.add(_controller.text);
+    _subjeect.add(_controller.text);
     _controller.addListener(() {
-      _subject.add(_controller.text);
+      _subjeect.add(_controller.text);
     });
   }
 
@@ -33,8 +33,9 @@ class _PorEntidadState extends State<PorEntidad> {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
+        backgroundColor: Color(0xff10312b),
         title: Text(
-          "Por Género, Año Presupuestal",
+          "Por Entidad",
         ),
       ),
       body: Container(
@@ -91,7 +92,7 @@ class _PorEntidadState extends State<PorEntidad> {
   }
 
   Stream<List?> _getStream() {
-    return _subject.transform(new StreamTransformer<String, List?>.fromHandlers(
+    return _subjeect.transform(new StreamTransformer<String, List?>.fromHandlers(
         handleData: (String value, EventSink<List?> sink) {
           sink.add(jsonDecode(value));
         })).asBroadcastStream();
@@ -99,7 +100,7 @@ class _PorEntidadState extends State<PorEntidad> {
 
   @override
   void dispose() {
-    _subject.close();
+    _subjeect.close();
     _controller.dispose();
     super.dispose();
   }

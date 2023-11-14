@@ -17,14 +17,14 @@ class _VinculadosCapacitacionState extends State<VinculadosCapacitacion> {
     TextEditingValue(text: jsonSample),
   );
 
-  final _subject = BehaviorSubject<String>();
+  final _subjecttt = BehaviorSubject<String>();
 
   @override
   void initState() {
     super.initState();
-    _subject.add(_controller.text);
+    _subjecttt.add(_controller.text);
     _controller.addListener(() {
-      _subject.add(_controller.text);
+      _subjecttt.add(_controller.text);
     });
   }
 
@@ -33,8 +33,9 @@ class _VinculadosCapacitacionState extends State<VinculadosCapacitacion> {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
+        backgroundColor: Color(0xff10312b),
         title: Text(
-          "Por Género, Año Presupuestal",
+          "Vinculados en Capacitación",
         ),
       ),
       body: Container(
@@ -91,7 +92,7 @@ class _VinculadosCapacitacionState extends State<VinculadosCapacitacion> {
   }
 
   Stream<List?> _getStream() {
-    return _subject.transform(new StreamTransformer<String, List?>.fromHandlers(
+    return _subjecttt.transform(new StreamTransformer<String, List?>.fromHandlers(
         handleData: (String value, EventSink<List?> sink) {
           sink.add(jsonDecode(value));
         })).asBroadcastStream();
@@ -99,7 +100,7 @@ class _VinculadosCapacitacionState extends State<VinculadosCapacitacion> {
 
   @override
   void dispose() {
-    _subject.close();
+    _subjecttt.close();
     _controller.dispose();
     super.dispose();
   }

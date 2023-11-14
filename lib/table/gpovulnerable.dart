@@ -17,14 +17,14 @@ class _PorGpoVulneraState extends State<PorGpoVulnera> {
     TextEditingValue(text: jsonSample),
   );
 
-  final _subject = BehaviorSubject<String>();
+  final _subjject = BehaviorSubject<String>();
 
   @override
   void initState() {
     super.initState();
-    _subject.add(_controller.text);
+    _subjject.add(_controller.text);
     _controller.addListener(() {
-      _subject.add(_controller.text);
+      _subjject.add(_controller.text);
     });
   }
 
@@ -33,8 +33,9 @@ class _PorGpoVulneraState extends State<PorGpoVulnera> {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
+        backgroundColor: Color(0xff10312b),
         title: Text(
-          "Por Género, Año Presupuestal",
+          "Por Grupos Vulnerables",
         ),
       ),
       body: Container(
@@ -91,7 +92,7 @@ class _PorGpoVulneraState extends State<PorGpoVulnera> {
   }
 
   Stream<List?> _getStream() {
-    return _subject.transform(new StreamTransformer<String, List?>.fromHandlers(
+    return _subjject.transform(new StreamTransformer<String, List?>.fromHandlers(
         handleData: (String value, EventSink<List?> sink) {
           sink.add(jsonDecode(value));
         })).asBroadcastStream();
@@ -99,7 +100,7 @@ class _PorGpoVulneraState extends State<PorGpoVulnera> {
 
   @override
   void dispose() {
-    _subject.close();
+    _subjject.close();
     _controller.dispose();
     super.dispose();
   }

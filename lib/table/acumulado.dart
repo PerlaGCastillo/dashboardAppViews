@@ -34,6 +34,7 @@ class _AcumuladoState extends State<Acumulado> {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
+        backgroundColor: Color(0xff10312b),
         title: Text(
           "Acumulado",
         ),

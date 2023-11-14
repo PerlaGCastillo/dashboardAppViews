@@ -20,14 +20,14 @@ class _PorGeneroEdadState extends State<PorGeneroEdad> {
     TextEditingValue(text: jsonSample),
   );
 
-  final _subject = BehaviorSubject<String>();
+  final _sbjct = BehaviorSubject<String>();
 
   @override
   void initState() {
     super.initState();
-    _subject.add(_controller.text);
+    _sbjct.add(_controller.text);
     _controller.addListener(() {
-      _subject.add(_controller.text);
+      _sbjct.add(_controller.text);
     });
   }
 
@@ -36,8 +36,9 @@ class _PorGeneroEdadState extends State<PorGeneroEdad> {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
+        backgroundColor: Color(0xff10312b),
         title: Text(
-          "Por Género, Año Presupuestal",
+          "Por Género, Por Edad",
         ),
       ),
       body: Container(
@@ -94,7 +95,7 @@ class _PorGeneroEdadState extends State<PorGeneroEdad> {
   }
 
   Stream<List?> _getStream() {
-    return _subject.transform(new StreamTransformer<String, List?>.fromHandlers(
+    return _sbjct.transform(new StreamTransformer<String, List?>.fromHandlers(
         handleData: (String value, EventSink<List?> sink) {
           sink.add(jsonDecode(value));
         })).asBroadcastStream();
@@ -102,7 +103,7 @@ class _PorGeneroEdadState extends State<PorGeneroEdad> {
 
   @override
   void dispose() {
-    _subject.close();
+    _sbjct.close();
     _controller.dispose();
     super.dispose();
   }
