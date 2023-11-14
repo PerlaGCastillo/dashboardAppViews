@@ -48,30 +48,37 @@ class _HomeState extends State<Home> {
                 return CustomScrollView(
                   slivers: [
                     SliverToBoxAdapter(
-                      child: SizedBox(height: 340, child: _head()),
+                      child: SizedBox(height: 335, child: _head(),),
                     ),
                     SliverToBoxAdapter(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15),
-                        child: Column(
+                        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                           // consultahistorica(),
-                            /* Text(
-                              'Histórico',
+                            //consultahistorica(),
+                             Text(
+                              'Consulta Histórica',
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 19,
                                 color: Color(0xff1d1d1d),
                               ),
-                            ),*/
+                            ),
+                            Text(
+                              ' ',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 19,
+                                color: Color(0xc3959595),
+                              ),
+                            ),
                           ],
                         ),
                       ),
                     ),
                     SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                            (context, index) {
+                      delegate: SliverChildBuilderDelegate((context, index) {
                           history = box.values.toList()[index];
                           return getList(history, index);
                         },
@@ -306,7 +313,7 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.only(left: 15),
                   child: Row(
                     children: [
-                      Text('total',
+                      Text('2.633',
                         //'${total()}',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
