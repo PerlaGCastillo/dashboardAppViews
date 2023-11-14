@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:dgapd/data/model/add_date.dart';
 
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -15,6 +16,8 @@ class _HomeState extends State<Home> {
   String? selctedItem;
   String? selctedItemi;
   String? selctedItemdespliega;
+  String? currentItem = " ";
+
 
   final List<String> _itemdespliega = [
     'Acumulado',

@@ -104,13 +104,13 @@ class _DropdownListTutorialState extends State<DropdownListTutorial> {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: Colors.amber,
+              //  color: Colors.amber,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: DropdownButton(
                 alignment: Alignment.topCenter,
                 borderRadius: BorderRadius.circular(8),
-                dropdownColor: Colors.blueAccent,
+                //dropdownColor: Colors.blueAccent,
                 value: currentItem,
                 items: items
                     .map<DropdownMenuItem<String>>(
