@@ -15,7 +15,6 @@ dependencies:
   hive_flutter: ^1.1.0
   intl: ^0.18.1
   cupertino_icons: ^1.0.2
-  syncfusion_flutter_xlsio: ^20.4.54-beta
   path_provider: ^2.1.0
   open_file: ^3.3.2
   io: ^1.0.4
@@ -25,6 +24,7 @@ dependencies:
   rxdart: ^0.27.7
   dropdownfield: ^1.0.3
   google_fonts: ^4.0.4
+  syncfusion_flutter_xlsio: ^20.4.54-beta
 
 dev_dependencies:
   flutter_test:
