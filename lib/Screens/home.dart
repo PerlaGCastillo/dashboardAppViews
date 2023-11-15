@@ -16,13 +16,6 @@ class _HomeState extends State<Home> {
   String? selctedItemi;
   String? selctedItemdespliega;
 
-  final List<String> day = [
-    '2019',
-    "2020",
-    "2021",
-    "2022",
-    '2023'
-  ];
 
   final List<String> _itemdespliega = [
     'Acumulado',
@@ -92,69 +85,7 @@ class _HomeState extends State<Home> {
   }
 
 
-
-
-/*  Padding consultahistorica() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15),
-        width: MediaQuery.of(context).size.width-50,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            width: 2,
-            color: Color(0xffC5C5C5),
-          ),
-        ),
-        child: DropdownButton<String>(
-          value: selctedItem,
-          onChanged: ((value) {
-            setState(() {
-              selctedItem = value!;
-            });
-          }),
-          items: _itemdespliega
-              .map((e) => DropdownMenuItem(
-            child: Container(
-              alignment: Alignment.center,
-              child: Row(
-                children: [
-                  Text(
-                    e,
-                    style: TextStyle(fontSize: 18),
-                  )
-                ],
-              ),
-            ),
-            value: e,
-          ))
-              .toList(),
-          selectedItemBuilder: (BuildContext context) => _itemdespliega
-              .map((e) => Row(
-            children: [
-              Text(e)
-            ],
-          ))
-              .toList(),
-          hint: Padding(
-            padding: const EdgeInsets.all(5),
-            child: Text(
-              'Consulta Histórica',
-              style: TextStyle(color: Colors.grey),
-            ),
-          ),
-          dropdownColor: Color(0xfff4f4f4),
-
-          isExpanded: true,
-          underline: Container(),
-        ),
-      ),
-    );
-  }*/
-
-
-  Widget getList(Add_data history, int index) {
+  Widget getList(history, int index) {
     return Dismissible(
         key: UniqueKey(),
         onDismissed: (direction) {
@@ -170,32 +101,18 @@ class _HomeState extends State<Home> {
         // child: Image.asset('images/${history.name}.png', height: 40),
       ),
       title: Text(
-        history.beneficiarios,
+        history.concepto,
         style: TextStyle(
           fontSize: 17,
           fontWeight: FontWeight.w600,
         ),
       ),
-      subtitle: Text(
-        '${day[history.datetime.weekday - 1]}  ${history.datetime.year}-${history.datetime.day}-${history.datetime.month}',
-        style: TextStyle(
-          fontWeight: FontWeight.w600,
-        ),
-      ),
       trailing: Text(
-        history.entidad,
+        history.archivo,
         style: TextStyle(
           fontWeight: FontWeight.w600,
         ),
       ),
-      /*trailing: Text(
-        history.entidad,
-        style: TextStyle(
-          fontWeight: FontWeight.w600,
-          fontSize: 19,
-          color: history.IN == 'Income' ? Color(0xff10312b) :  Color(0xff691c32),
-        ),
-      ),*/
     );
   }
 
@@ -294,7 +211,7 @@ class _HomeState extends State<Home> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        'Balance Total',
+                        'Total',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 16,

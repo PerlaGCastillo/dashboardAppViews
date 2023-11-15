@@ -15,55 +15,48 @@ class _SearchScreenState extends State<SearchScreen> {
   //DateTime date = new DateTime.now();
   String? selctedItem;
   String? selctedItemi;
-  String? selctedItemperiodo;
   String? selctedItemconcepto;
   String? selctedItemcantidad;
   String? selctedItemarchivo;
    //final TextEditingController amount_c = TextEditingController();
   //FocusNode amount_ = FocusNode();
 
-  final List<String> _itemperiodo = [
-    'Total de beneficiarios histórico: 01/01/2019 - 31/12/2022',
-    "Total de beneficarios hombres: 01/01/2019 - 31/12/2022",
-    "Total de beneficarias mujeres: 01/01/2019 - 31/12/2022",
-    "Total de Inversión apoyo económico: 2019",
-    "Total de Inversión apoyo económico: 2020",
-    "Total de Inversión apoyo económico: 2021",
-    "Total de Inversión apoyo económico: 2022",
-    "Total de Inversión apoyo económico: 2019 - 2022",
-    "Total de Inversión IMSS: 2019",
-    "Total de Inversión IMSS: 2020",
-    "Total de Inversión IMSS: 2021",
-    "Total de Inversión IMSS: 2022",
-    "Total de Inversión IMSS (en el periodo del reporte): 01/01/2019 - 31/12/2022",
+  final List<String> _itemconcepto = [
+    'Total de beneficiarios histórico 01/01/2019 - 31/12/2022',
+    "Total de beneficarios hombres 01/01/2019 - 31/12/2022",
+    "Total de beneficarias mujeres 01/01/2019 - 31/12/2022",
+    "Total de Inversión apoyo económico 2019",
+    "Total de Inversión apoyo económico 2020",
+    "Total de Inversión apoyo económico 2021",
+    "Total de Inversión apoyo económico 2022",
+    "Total de Inversión apoyo económico 2019 - 2022",
+    "Total de Inversión IMSS 2019",
+    "Total de Inversión IMSS 2020",
+    "Total de Inversión IMSS 2021",
+    "Total de Inversión IMSS 2022",
+    "Total de Inversión IMSS (en el período del reporte) 01/01/2019 - 31/12/2022",
 
   ];
-  final List<String> _itemconcepto = [
-    'Total de beneficiarios histórico',
-    "Total de beneficarios hombres",
-    "Total de beneficarias mujeres",
-    "Total de Inversión apoyo económico",
-    "Total de Inversión IMSS (en el periodo del reporte)",
-  ];
+
   final List<String> _itemcantidad = [
     '\$',
     "Personas",
   ];
 
   final List<String> _itemarchivo = [
-    'Total de beneficiarios histórico: 01/01/2019 - 31/12/2022',
-    "Total de beneficarios hombres: 01/01/2019 - 31/12/2022",
-    "Total de beneficarias mujeres: 01/01/2019 - 31/12/2022",
-    "Total de Inversión apoyo económico: 2019",
-    "Total de Inversión apoyo económico: 2020",
-    "Total de Inversión apoyo económico: 2021",
-    "Total de Inversión apoyo económico: 2022",
-    "Total de Inversión apoyo económico: 2019 - 2022",
-    "Total de Inversión IMSS: 2019",
-    "Total de Inversión IMSS: 2020",
-    "Total de Inversión IMSS: 2021",
-    "Total de Inversión IMSS: 2022",
-    "Total de Inversión IMSS (en el periodo del reporte): 01/01/2019 - 31/12/2022",
+    'Total de beneficiarios histórico 01/01/2019 - 31/12/2022',
+    "Total de beneficarios hombres 01/01/2019 - 31/12/2022",
+    "Total de beneficarias mujeres 01/01/2019 - 31/12/2022",
+    "Total de Inversión apoyo económico 2019",
+    "Total de Inversión apoyo económico 2020",
+    "Total de Inversión apoyo económico 2021",
+    "Total de Inversión apoyo económico 2022",
+    "Total de Inversión apoyo económico 2019 - 2022",
+    "Total de Inversión IMSS 2019",
+    "Total de Inversión IMSS 2020",
+    "Total de Inversión IMSS 2021",
+    "Total de Inversión IMSS 2022",
+    "Total de Inversión IMSS (en el periodo del reporte) 01/01/2019 - 31/12/2022",
   ];
 
 
@@ -108,8 +101,6 @@ class _SearchScreenState extends State<SearchScreen> {
       child: Column(
         children: [
           SizedBox(height: 25),
-          periodo(),
-          SizedBox(height: 25),
           concepto(),
           SizedBox(height: 25),
           cantidad(),
@@ -125,7 +116,7 @@ class _SearchScreenState extends State<SearchScreen> {
   GestureDetector save() {
     return GestureDetector(
       onTap: () {
-        var add = Add_data( selctedItemperiodo! , selctedItemconcepto!, selctedItemcantidad!, selctedItemarchivo!);
+        var add = Add_data( selctedItemconcepto!, selctedItemcantidad!, selctedItemarchivo!);
         box.add(add);
         Navigator.of(context).pop();
       },
@@ -150,7 +141,7 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 
-  Padding edad() {
+  Padding concepto() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
@@ -170,7 +161,7 @@ class _SearchScreenState extends State<SearchScreen> {
               selctedItemi = value!;
             });
           }),
-          items: _itemedad
+          items: _itemconcepto
               .map((e) => DropdownMenuItem(
             child: Container(
               alignment: Alignment.center,
@@ -186,7 +177,7 @@ class _SearchScreenState extends State<SearchScreen> {
             value: e,
           ))
               .toList(),
-          selectedItemBuilder: (BuildContext context) => _itemedad
+          selectedItemBuilder: (BuildContext context) => _itemconcepto
               .map((e) => Row(
             children: [Text(e)],
           ))
@@ -194,7 +185,7 @@ class _SearchScreenState extends State<SearchScreen> {
           hint: Padding(
             padding: const EdgeInsets.all(5),
             child: Text(
-              'Edad:',
+              'Concepto:',
               style: TextStyle(color: Colors.grey),
             ),
           ),
@@ -206,7 +197,7 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 
-  Padding genero() {
+  Padding cantidad() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
@@ -226,7 +217,7 @@ class _SearchScreenState extends State<SearchScreen> {
               selctedItemi = value!;
             });
           }),
-          items: _itemgenero
+          items: _itemcantidad
               .map((e) => DropdownMenuItem(
             child: Container(
               alignment: Alignment.center,
@@ -242,7 +233,7 @@ class _SearchScreenState extends State<SearchScreen> {
             value: e,
           ))
               .toList(),
-          selectedItemBuilder: (BuildContext context) => _itemgenero
+          selectedItemBuilder: (BuildContext context) => _itemcantidad
               .map((e) => Row(
             children: [Text(e)],
           ))
@@ -250,7 +241,7 @@ class _SearchScreenState extends State<SearchScreen> {
           hint: Padding(
             padding: const EdgeInsets.all(5),
             child: Text(
-              'Género:',
+              'Cantidad:',
               style: TextStyle(color: Colors.grey),
             ),
           ),
@@ -263,7 +254,7 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 
-  Padding empresa() {
+  Padding archivo() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
@@ -283,7 +274,7 @@ class _SearchScreenState extends State<SearchScreen> {
               selctedItemi = value!;
             });
           }),
-          items: _itemempresa
+          items: _itemarchivo
               .map((e) => DropdownMenuItem(
             child: Container(
               alignment: Alignment.center,
@@ -299,7 +290,7 @@ class _SearchScreenState extends State<SearchScreen> {
             value: e,
           ))
               .toList(),
-          selectedItemBuilder: (BuildContext context) => _itemempresa
+          selectedItemBuilder: (BuildContext context) => _itemarchivo
           // selectedItemBuilder: (BuildContext context) => _itemei
               .map((e) => Row(
             children: [Text(e)],
@@ -308,285 +299,11 @@ class _SearchScreenState extends State<SearchScreen> {
           hint: Padding(
             padding: const EdgeInsets.all(5),
             child: Text(
-              'Tipo de Empresa:',
+              'Archivo xls:',
               style: TextStyle(color: Colors.grey),
             ),
           ),
           dropdownColor: Color(0xfff4f4f4),
-          isExpanded: true,
-          underline: Container(),
-        ),
-      ),
-    );
-  }
-
-  Padding aprendices() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15),
-        width: MediaQuery.of(context).size.width-50,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            width: 2,
-            color: Color(0xffC5C5C5),
-          ),
-        ),
-        child: DropdownButton<String>(
-          value: selctedItemi,
-          onChanged: ((value) {
-            setState(() {
-              selctedItemi = value!;
-            });
-          }),
-          items: _itemaprendiz
-              .map((e) => DropdownMenuItem(
-            child: Container(
-              alignment: Alignment.center,
-              child: Row(
-                children: [
-                  Text(
-                    e,
-                    style: TextStyle(fontSize: 18),
-                  )
-                ],
-              ),
-            ),
-            value: e,
-          ))
-              .toList(),
-          selectedItemBuilder: (BuildContext context) => _itemaprendiz
-              .map((e) => Row(
-            children: [Text(e)],
-          ))
-              .toList(),
-          hint: Padding(
-            padding: const EdgeInsets.all(5),
-            child: Text(
-              'Aprendices:',
-              style: TextStyle(color: Colors.grey),
-            ),
-          ),
-          dropdownColor: Color(0xfff4f4f4),
-          isExpanded: true,
-          underline: Container(),
-        ),
-      ),
-    );
-  }
-
-  Padding sectores() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15),
-        width: MediaQuery.of(context).size.width-50,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            width: 2,
-            color: Color(0xffC5C5C5),
-          ),
-        ),
-        child: DropdownButton<String>(
-          value: selctedItemi,
-          onChanged: ((value) {
-            setState(() {
-              selctedItemi = value!;
-            });
-          }),
-          items: _itemsectores
-              .map((e) => DropdownMenuItem(
-            child: Container(
-              alignment: Alignment.center,
-              child: Row(
-                children: [
-                  Text(
-                    e,
-                    style: TextStyle(fontSize: 18),
-                  )
-                ],
-              ),
-            ),
-            value: e,
-          ))
-              .toList(),
-          selectedItemBuilder: (BuildContext context) => _itemsectores
-              .map((e) => Row(
-            children: [Text(e)],
-          ))
-              .toList(),
-          hint: Padding(
-            padding: const EdgeInsets.all(5),
-            child: Text(
-              ' Sectores:',
-              style: TextStyle(color: Colors.grey),
-            ),
-          ),
-          dropdownColor: Color(0xfff4f4f4),
-
-          isExpanded: true,
-          underline: Container(),
-        ),
-      ),
-    );
-  }
-
-  Padding entidad() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15),
-        width: MediaQuery.of(context).size.width-50,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            width: 2,
-            color: Color(0xffC5C5C5),
-          ),
-        ),
-        child: DropdownButton<String>(
-          value: selctedItemi,
-          onChanged: ((value) {
-            setState(() {
-              selctedItemi = value!;
-            });
-          }),
-          items:  _itementidad
-              .map((e) => DropdownMenuItem(
-            child: Container(
-              alignment: Alignment.center,
-              child: Row(
-                children: [
-                  Text(
-                    e,
-                    style: TextStyle(fontSize: 18),
-                  )
-                ],
-              ),
-            ),
-            value: e,
-          ))
-              .toList(),
-          selectedItemBuilder: (BuildContext context) => _itementidad
-              .map((e) => Row(
-            children: [Text(e)],
-          ))
-              .toList(),
-          hint: Padding(
-            padding: const EdgeInsets.all(5),
-            child: Text(
-              'Selecciona una entidad:',
-              style: TextStyle(color: Colors.grey),
-            ),
-          ),
-          dropdownColor: Color(0xfff4f4f4),
-
-          isExpanded: true,
-          underline: Container(),
-        ),
-      ),
-    );
-  }
-
-  Widget date_time() {
-    return Container(
-      alignment: Alignment.bottomLeft,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(width: 2, color: Color(0xffC5C5C5))),
-      width: MediaQuery.of(context).size.width*0.79,
-      height:50,
-      child: TextButton(
-        onPressed: () async {
-          DateTime? newDate = await showDatePicker(
-              context: context,
-              initialDate: date,
-              firstDate: DateTime(2018),
-              lastDate: DateTime(2032));
-          if (newDate == Null) return;
-          setState(() {
-            date = newDate!;
-          });
-
-          /*
-          * DateTime startDate = new DateTime(2020, 3, 2);
-            DateTime endDate = new DateTime(2020, 3, 10);
-            List<DateTime> days = [];
-            DateTime tmp = DateTime(startDate.year, startDate.month, startDate.day, 12);
-            while(DateTime(tmp.year, tmp.month, tmp.day) != endDate){
-              days.add(DateTime(tmp.year, tmp.month, tmp.day));
-              tmp = tmp.add(new Duration(days: 1));
-            }
-          * */
-        },
-        child: Padding(
-          padding: const EdgeInsets.only(bottom:12.0, left: 8.0),
-          child: Text(
-            'Período : ${date.year} / ${date.day} / ${date.month}',
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.grey,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Padding beneficiarios() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15),
-        width: MediaQuery.of(context).size.width-50,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            width: 2,
-            color: Color(0xffC5C5C5),
-          ),
-        ),
-        child: DropdownButton<String>(
-          value: selctedItem,
-          onChanged: ((value) {
-            setState(() {
-              selctedItem = value!;
-            });
-          }),
-          items: _itembeneficia
-              .map((e) => DropdownMenuItem(
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: Row(
-                        children: [
-                          Text(
-                            e,
-                            style: TextStyle(fontSize: 18),
-                          )
-                        ],
-                      ),
-                    ),
-                    value: e,
-                  ))
-              .toList(),
-          selectedItemBuilder: (BuildContext context) => _itembeneficia
-              .map((e) => Row(
-                    children: [
-                      Text(e)
-                    ],
-                  ))
-              .toList(),
-          hint: Padding(
-            padding: const EdgeInsets.all(5),
-            child: Text(
-              'Beneficiarios o Egresados:',
-              style: TextStyle(color: Colors.grey),
-            ),
-          ),
-          dropdownColor: Color(0xfff4f4f4),
-
           isExpanded: true,
           underline: Container(),
         ),
