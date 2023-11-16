@@ -152,7 +152,7 @@ Column background_containr(BuildContext context) {
         width: double.infinity,
         height: 240,
         decoration: BoxDecoration(
-          color: Color(0xff10312b),
+          color: Color(0xff959595),
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(20),
             bottomRight: Radius.circular(20),

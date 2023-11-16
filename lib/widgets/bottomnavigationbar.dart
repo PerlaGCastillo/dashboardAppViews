@@ -1,6 +1,5 @@
 import 'package:data/Screens/displayData.dart';
 import 'package:flutter/material.dart';
-import 'package:data/Screens/search.dart';
 import 'package:data/Screens/home.dart';
 
 
@@ -19,15 +18,6 @@ class _BottomState extends State<Bottom> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Screen[index_color],
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => SearchScreen()));
-        },
-        child: Icon(Icons.search),
-        backgroundColor: Color(0xc3959595),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         child: Padding(
@@ -47,7 +37,7 @@ class _BottomState extends State<Bottom> {
                   color: index_color == 0 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
-              SizedBox(width: 17),
+             // SizedBox(width: 17),
               GestureDetector(
                 onTap: () {
                   setState(() {

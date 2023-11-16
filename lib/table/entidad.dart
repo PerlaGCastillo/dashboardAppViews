@@ -33,7 +33,7 @@ class _PorEntidadState extends State<PorEntidad> {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
-        backgroundColor: Color(0xff10312b),
+        backgroundColor: Color(0xff450011),
         title: Text(
           "Por Entidad",
         ),
