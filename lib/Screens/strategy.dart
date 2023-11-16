@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'package:data/table/generoanio.dart';
+import 'package:data/table/mespagado.dart';
+import 'package:data/table/gpovulnerable.dart';
+import 'package:data/table/centrosbeneficiarios.dart';
+import 'package:data/table/escolaridad.dart';
+import 'package:data/table/vinculadoscapacitacion.dart';
+
 class Strategy extends StatefulWidget {
   //const Strategy({super.key, required this.title});
   //final String title;
@@ -8,79 +15,93 @@ class Strategy extends StatefulWidget {
 }
 
 class _StrategyState extends State<Strategy> {
+
+  final List<Widget> widgets = [
+    PorGeneroAnio(),
+    PorMesPagado(),
+    PorGpoVulnera(),
+    CentrosBenef(),
+    PorEscolaridad(),
+    VinculadosCapacitacion()
+  ];
+  final List<String> _itemsBtns = [
+    '500 Colonias',
+    "Istmo Tehuantepec",
+    "Pueblos Wixárika",
+    "Pueblo Yaqui",
+    "Tren Maya",
+    "Marginación"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: Text("Estrategias Especiales",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color:Color(0xff691c32), fontSize: 28.0)),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _boton("Colonias", " 500"),
-                  _boton("Istmo Tehuantepec", "IT")
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _boton("Pueblos WIXÁRIKA", "WX"),
-                  _boton("Pueblo Yaqui", "YA")
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [_boton("Tren Maya", "TM"),
-                  _boton("Marginación", "MA")],
-              ),
 
-            ],
-          ),
+      body: SafeArea(
+        child: Stack(
+            alignment: AlignmentDirectional.center,
+            children: [
+              Positioned(
+                top: 90,
+                child: strtgy(),
+              )
+            ]
         ),
       ),
     );
   }
-}
 
-Widget _boton(String nombre, String acronimo) {
-  return InkWell(
-    child: Container(
-      width: 176,
-      height: 180,
-      child: Card(
-          margin: const EdgeInsets.all(20),
-          color: Color(0xff691c32),
-          shape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-          elevation: 10,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                acronimo,
-                style: const TextStyle(color: Color(0xfff4f4f4), fontSize: 27.0),
-              ),
-              Text(
-                nombre,
-                style: const TextStyle( color: Color(0xfff4f4f4)),
-              )
-            ],
-          )),
-    ),
-    onTap: () {
-      print("ok");
-    },
-  );
+  Container strtgy() {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(19.0),
+        color: Color(0xfff4f4f4),
+      ),
+      height: MediaQuery
+          .of(context)
+          .size
+          .height - 180,
+      width: MediaQuery
+          .of(context)
+          .size
+          .width - 40,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+          child: GridView.builder(
+            gridDelegate: const
+          SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: 200,
+      childAspectRatio: 3/2,
+      crossAxisSpacing: 20,
+      mainAxisSpacing: 20),
+          itemCount: widgets.length,
+          itemBuilder: (BuildContext ctx, index){
+            final widget = widgets[index];
+            final item = _itemsBtns[index];
+
+              return ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  //minimumSize: Size.fromHeight(100),
+                  minimumSize: Size(176, 180),
+                  backgroundColor: Color(0xFFBC955C),
+                ),
+                child: Text('${item}',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 17,),
+                ),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => widget),);
+                },
+              );
+          }
+      ),
+      ),
+        ],
+      ),
+    );
+  }
 }

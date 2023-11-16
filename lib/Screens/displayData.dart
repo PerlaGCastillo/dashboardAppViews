@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'dart:convert';
+
 import 'package:data/table/acumulado.dart';
 import 'package:data/table/generoedad.dart';
 import 'package:data/table/generoanio.dart';
@@ -12,7 +14,6 @@ import 'package:data/table/vinculadoscapacitacion.dart';
 import 'package:data/table/municipio.dart';
 import 'package:data/table/sector.dart';
 
-import 'package:flutter/material.dart';
 
 class dataView extends StatelessWidget {
   const dataView({super.key});
