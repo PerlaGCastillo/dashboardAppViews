@@ -13,7 +13,6 @@ import 'package:data/table/municipio.dart';
 import 'package:data/table/sector.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class dataView extends StatelessWidget {
   const dataView({super.key});
@@ -110,35 +109,6 @@ class _displayDataState extends State<displayData> {
               );
             },
           ),),
-         /*Expanded(child: ListView.builder(
-            itemCount: _itemsBtn.length,
-            itemBuilder: (context, index) {
-              final item = _itemsBtn[index];
-              return ListTile(
-                contentPadding: EdgeInsets.only(top: 11, left: 17, right: 17,),
-                title: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: Size.fromHeight(42),
-                        backgroundColor: Color(0xFFBC955C),
-                      ),
-                      child: Text('${item}',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 17,),
-                      ),
-                      onPressed: () {
-                       Navigator.push(context, MaterialPageRoute(builder: (context) => PorGeneroAnio()));
-                      },
-                    )
-                  ],
-                ),
-              );
-            },
-          ),),*/
         ],
       ),
     );
@@ -152,7 +122,7 @@ Column background_containr(BuildContext context) {
         width: double.infinity,
         height: 240,
         decoration: BoxDecoration(
-          color: Color(0xff959595),
+          color: Color(0xff6f1228),
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(20),
             bottomRight: Radius.circular(20),
@@ -180,12 +150,6 @@ Column background_containr(BuildContext context) {
                         fontWeight: FontWeight.w600,
                         color: Colors.white),
                   ),
-/*
-                    Icon(
-                      Icons.download_rounded,
-                      color: Colors.white,
-                    )
-*/
                 ],
               ),
             )
