@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:json_table/json_table.dart';
 import 'package:rxdart/rxdart.dart';
 
-class Babien extends StatefulWidget {
+class Colonias extends StatefulWidget {
   @override
-  _BabienState createState() => _BabienState();
+  _ColoniasState createState() => _ColoniasState();
 }
 
-class _BabienState extends State<Babien> {
-  static String jsonSample = '[{"PERIODO":"01/01/2019 - 31/12/2022","Concepto solicitado (BANCARIZACIÓN BABIEN)":"Total de operativos de entrega de tarjetas","CANTIDAD":"3"},{"PERIODO":"01/01/2019 - 31/12/2022","Concepto solicitado (BANCARIZACIÓN BABIEN)":"Total de tarjetas entregadas en operativos","CANTIDAD":"323,011"},{"PERIODO":"01/01/2019 - 31/12/2022","Concepto solicitado (BANCARIZACIÓN BABIEN)":"Tarjetas solicitadas","CANTIDAD":"323,011"},{"PERIODO":"01/01/2019 - 31/12/2022","Concepto solicitado (BANCARIZACIÓN BABIEN)":"Tarjetas dispersadas","CANTIDAD":"267,417"},{"PERIODO":"01/01/2019 - 31/12/2022","Concepto solicitado (BANCARIZACIÓN BABIEN)":"Tarjetas Pagadas","CANTIDAD":"267,417"}]';
+class _ColoniasState extends State<Colonias> {
+  static String jsonSample = '[{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO":"Beneficiarios en 500 colonias (50 municipios de Seguridad)","BENEFICIARIOS":"308,586","INVERSIÓN":"\$9,855,918,580.64"}]';
   bool toggle = true;
 
   final _controller = TextEditingController.fromValue(
@@ -35,7 +35,7 @@ class _BabienState extends State<Babien> {
       appBar: AppBar(
         backgroundColor: Color(0xff450011),
         title: Text(
-          "Centros con Beneficiarios",
+          "500 Colonias",
         ),
       ),
       body: Container(

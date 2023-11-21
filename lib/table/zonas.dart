@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:json_table/json_table.dart';
 import 'package:rxdart/rxdart.dart';
 
-class Discapacidad extends StatefulWidget {
+class Zona extends StatefulWidget {
   @override
-  _DiscapacidadState createState() => _DiscapacidadState();
+  _ZonaState createState() => _ZonaState();
 }
 
-class _DiscapacidadState extends State<Discapacidad> {
-  static String jsonSample = '[{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO":"Total de beneficiarios con discapacidad","CANTIDAD":"10,884"},{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO":"Total de mujeres beneficiarias con discapacidad","CANTIDAD":"5,197"},{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO":"Total de hombres beneficiarias con discapacidad","CANTIDAD":"5,687"},{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO":"Con discapacidad mental","CANTIDAD":"612"},{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO":"Con discapacidad motriz","CANTIDAD":"2,019"},{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO":"Con discapacidad múltiple","CANTIDAD":"953"},{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO":"Con discapacidad sensorial","CANTIDAD":"7,300"},{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO":"Total de Inversión beneficiarios con discapacidad","CANTIDAD":"\$398,021,983.90"}]';
+class _ZonaState extends State<Zona> {
+  static String jsonSample = '[{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO":"Beneficiarios en zonas urbanas","CANTIDAD":"1,251,226"},{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO":"Beneficiarios  en zonas rurales","CANTIDAD":"1,106,126"}] ';
       bool toggle = true;
 
   final _controller = TextEditingController.fromValue(
@@ -35,7 +35,7 @@ class _DiscapacidadState extends State<Discapacidad> {
       appBar: AppBar(
         backgroundColor: Color(0xff450011),
         title: Text(
-          "Por Municipio",
+          "Zonas",
         ),
       ),
       body: Container(

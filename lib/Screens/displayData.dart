@@ -1,19 +1,21 @@
-import 'package:flutter/material.dart';
-import 'dart:convert';
-
-import 'package:data/table/acumulado.dart';
-import 'package:data/table/generoedad.dart';
-import 'package:data/table/generoanio.dart';
-import 'package:data/table/mespagado.dart';
-import 'package:data/table/gpovulnerable.dart';
-import 'package:data/table/centrosbeneficiarios.dart';
-import 'package:data/table/entidad.dart';
 import 'package:data/table/areainteres.dart';
+import 'package:data/table/babien.dart';
+import 'package:data/table/benefHistorico.dart';
+import 'package:data/table/centros.dart';
+import 'package:data/table/egresados.dart';
+import 'package:data/table/generoedad.dart';
+import 'package:data/table/imss.dart';
+import 'package:data/table/informes.dart';
+import 'package:data/table/municipioBenef.dart';
+import 'package:data/table/nuevosBenef.dart';
+import 'package:data/table/totalBenef.dart';
+import 'package:data/table/totalhistorico.dart';
+import 'package:data/table/zonas.dart';
+import 'package:flutter/material.dart';
+import 'package:data/table/acumulado.dart';
+import 'package:data/table/generoanio.dart';
 import 'package:data/table/escolaridad.dart';
-import 'package:data/table/vinculadoscapacitacion.dart';
 import 'package:data/table/municipio.dart';
-import 'package:data/table/sector.dart';
-
 
 class dataView extends StatelessWidget {
   const dataView({super.key});
@@ -32,20 +34,24 @@ class displayData extends StatefulWidget {
 }
 
 class _displayDataState extends State<displayData> {
-  final List<Widget> widgets = [ Acumulado(), PorGeneroEdad(), PorGeneroAnio(), PorMesPagado(), PorGpoVulnera(), CentrosBenef(), PorEntidad(), PorAreaInteres(),PorEscolaridad(), VinculadosCapacitacion(), PorMunicipio(), PorSector()];
+  final List<Widget> widgets = [ BenefHistorico(), Acumulado(), NuevosBenef(),TotalBenef(), PorMunicipioBenef(), Zona(), Seguro(), PorEscolaridad(), Centros(), PorAreaInteres(), PorGeneroAnio(),
+  PorGeneroEdad(), Egresados(), Babien(), Informe()];
   final List<String> _itemsBtn = [
-    'Acumulado',
-    "Por género, por edad",
+    "Beneficiarios histórico",
+    "Acumulado",
+    "Nuevos beneficiarios",
+    "Total de beneficiarios",
+    "Total de municipios con beneficiarios",
+    "Zona urbana y rural",
+    "Seguro médico",
+    "Escolaridad",
+    "Centros de trabajo",
+    "Área de interés",
     "Por género, por año",
-    "Por mes pagado",
-    "Por grupos vulnerables",
-    "Centros con beneficiarios",
-    "Por entidad",
-    "Por área de interés",
-    "Por escolaridad",
-    "Vinculados en capacitación",
-    "Por municipio",
-    "Por sector"
+    "Por género, por edad",
+    "Histórico egresados por género",
+    "Bancarización BABIEN",
+    "Informe"
   ];
 
   @override
@@ -102,7 +108,6 @@ class _displayDataState extends State<displayData> {
                       ),
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => widget,),);
-                       // Navigator.push(context, MaterialPageRoute(builder: (context) => PorGeneroAnio()));
                       },
                     )
                   ],

@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:json_table/json_table.dart';
 import 'package:rxdart/rxdart.dart';
 
-class Wixarikas extends StatefulWidget {
+class Yaquis extends StatefulWidget {
   @override
-  _WixarikasState createState() => _WixarikasState();
+  _YaquisState createState() => _YaquisState();
 }
 
-class _WixarikasState extends State<Wixarikas> {
-  static String jsonSample = '';
+class _YaquisState extends State<Yaquis> {
+  static String jsonSample = '[{"PERIODO":"01/01/2019 - 31/12/2022","ESTADO":"Sonora","MUNICIPIOS":"Guaymas","CP":"85513","BENEFICIARIOS":"70"},{"PERIODO":"01/01/2019 - 31/12/2022","ESTADO":"Sonora","MUNICIPIOS":"Guaymas","CP":"85507","BENEFICIARIOS":"37"},{"PERIODO":"01/01/2019 - 31/12/2022","ESTADO":"Sonora","MUNICIPIOS":"Guaymas","CP":"85510","BENEFICIARIOS":"35"},{"PERIODO":"01/01/2019 - 31/12/2022","ESTADO":"Sonora","MUNICIPIOS":"Cajeme","CP":"85217","BENEFICIARIOS":"16"},{"PERIODO":"01/01/2019 - 31/12/2022","ESTADO":"Sonora","MUNICIPIOS":"Cajeme","CP":"85200","BENEFICIARIOS":"39"},{"PERIODO":"01/01/2019 - 31/12/2022","ESTADO":"Sonora","MUNICIPIOS":"San Ignacio Río Muerto","CP":"85515","BENEFICIARIOS":"36"},{"PERIODO":"01/01/2019 - 31/12/2022","ESTADO":"Sonora","MUNICIPIOS":"San Ignacio Río Muerto","CP":"85519","BENEFICIARIOS":"60"},{"PERIODO":"01/01/2019 - 31/12/2022","ESTADO":"Sonora","MUNICIPIOS":"Bacúm","CP":"85260","BENEFICIARIOS":"18"},{"PERIODO":"TOTAL","ESTADO":"","MUNICIPIOS":"","CP":"","BENEFICIARIOS":"311"}]';
   bool toggle = true;
 
   final _controller = TextEditingController.fromValue(
@@ -35,7 +35,7 @@ class _WixarikasState extends State<Wixarikas> {
       appBar: AppBar(
         backgroundColor: Color(0xff450011),
         title: Text(
-          "Centros con Beneficiarios",
+          "Pueblo Yaqui",
         ),
       ),
       body: Container(

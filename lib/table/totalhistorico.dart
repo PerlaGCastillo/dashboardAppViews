@@ -4,27 +4,28 @@ import 'package:flutter/material.dart';
 import 'package:json_table/json_table.dart';
 import 'package:rxdart/rxdart.dart';
 
-class Informe extends StatefulWidget {
+class TotalHistorico extends StatefulWidget {
   @override
-  _InformeState createState() => _InformeState();
+  _TotalHistoricoState createState() => _TotalHistoricoState();
 }
 
-class _InformeState extends State<Informe> {
-  static String jsonSample = '[{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO SOLICITADO":"Informe acumulado de pago de apoyo económico","COMENTARIOS/OBSERVACIONES":""},{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO SOLICITADO":"Informes acumulado de pago IMSS","COMENTARIOS/OBSERVACIONES":"\$1,450,579,952.37"},{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO SOLICITADO":"Informe acumulado de Atención al Público a través de Call Center","COMENTARIOS/OBSERVACIONES":""},{"PERIODO":"01/01/2019 - 31/12/2019","CONCEPTO SOLICITADO":"Informe de pago de apoyo económico","COMENTARIOS/OBSERVACIONES":""},{"PERIODO":"01/01/2019 - 31/12/2019","CONCEPTO SOLICITADO":"Informes de pago  IMSS","COMENTARIOS/OBSERVACIONES":"\$356,497,895.78"},{"PERIODO":"01/01/2019 - 31/12/2019","CONCEPTO SOLICITADO":"Informe de Atención al Público a través de Call Center","COMENTARIOS/OBSERVACIONES":""},{"PERIODO":"01/01/2020 - 31/12/2020","CONCEPTO SOLICITADO":"Informe de pago de apoyo económico","COMENTARIOS/OBSERVACIONES":""},{"PERIODO":"01/01/2020 - 31/12/2020","CONCEPTO SOLICITADO":"Informes de pago  IMSS","COMENTARIOS/OBSERVACIONES":"\$793,753,491.66"},{"PERIODO":"01/01/2020 - 31/12/2020","CONCEPTO SOLICITADO":"Informe de Atención al Público a través de Call Center","COMENTARIOS/OBSERVACIONES":""},{"PERIODO":"01/01/2021 - 31/12/2021","CONCEPTO SOLICITADO":"Informe de pago de apoyo económico","COMENTARIOS/OBSERVACIONES":""},{"PERIODO":"01/01/2021 - 31/12/2021","CONCEPTO SOLICITADO":"Informes de pago  IMSS","COMENTARIOS/OBSERVACIONES":"\$1,086,531,444.29"},{"PERIODO":"01/01/2021 - 31/12/2021","CONCEPTO SOLICITADO":"Informe de Atención al Público a través de Call Center","COMENTARIOS/OBSERVACIONES":""},{"PERIODO":"01/01/2022 - 31/12/2022","CONCEPTO SOLICITADO":"Informe de pago de apoyo económico","COMENTARIOS/OBSERVACIONES":""},{"PERIODO":"01/01/2022 - 31/12/2022","CONCEPTO SOLICITADO":"Informes de pago  IMSS","COMENTARIOS/OBSERVACIONES":"\$1,450,579,952.37"},{"PERIODO":"01/01/2022 - 31/12/2022","CONCEPTO SOLICITADO":"Informe de Atención al Público a través de Call Center"}]';
+class _TotalHistoricoState extends State<TotalHistorico> {
+  static String jsonSample = '[{"PERIODO":"(HISTÓRICO DE EGRESADOS)\"","\"CONCEPTO SOLICITADO":"CANTIDAD"},{"PERIODO":"01/01/2019 - 31/12/2022","\"CONCEPTO SOLICITADO":"Histórico de egresados"},{"PERIODO":"01/01/2019 - 31/12/2022","\"CONCEPTO SOLICITADO":"Hombres"},{"PERIODO":"01/01/2019 - 31/12/2022","\"CONCEPTO SOLICITADO":"Mujeres"}]';
+
   bool toggle = true;
 
   final _controller = TextEditingController.fromValue(
     TextEditingValue(text: jsonSample),
   );
 
-  final _tema = BehaviorSubject<String>();
+  final _subjecctt = BehaviorSubject<String>();
 
   @override
   void initState() {
     super.initState();
-    _tema.add(_controller.text);
+    _subjecctt.add(_controller.text);
     _controller.addListener(() {
-      _tema.add(_controller.text);
+      _subjecctt.add(_controller.text);
     });
   }
 
@@ -35,7 +36,7 @@ class _InformeState extends State<Informe> {
       appBar: AppBar(
         backgroundColor: Color(0xff450011),
         title: Text(
-          "Informes",
+          "Por Escolaridad",
         ),
       ),
       body: Container(
@@ -92,7 +93,7 @@ class _InformeState extends State<Informe> {
   }
 
   Stream<List?> _getStream() {
-    return _tema.transform(new StreamTransformer<String, List?>.fromHandlers(
+    return _subjecctt.transform(new StreamTransformer<String, List?>.fromHandlers(
         handleData: (String value, EventSink<List?> sink) {
           sink.add(jsonDecode(value));
         })).asBroadcastStream();
@@ -100,8 +101,9 @@ class _InformeState extends State<Informe> {
 
   @override
   void dispose() {
-    _tema.close();
+    _subjecctt.close();
     _controller.dispose();
     super.dispose();
   }
 }
+

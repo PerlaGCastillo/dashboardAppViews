@@ -1,11 +1,13 @@
+import 'package:data/table/colonias.dart';
+import 'package:data/table/indigena.dart';
+import 'package:data/table/istmo.dart';
+import 'package:data/table/marginal.dart';
+import 'package:data/table/trenmaya.dart';
+import 'package:data/table/violencia.dart';
+import 'package:data/table/wixarikas.dart';
+import 'package:data/table/yaquis.dart';
 import 'package:flutter/material.dart';
-
-import 'package:data/table/generoanio.dart';
-import 'package:data/table/mespagado.dart';
 import 'package:data/table/gpovulnerable.dart';
-import 'package:data/table/centrosbeneficiarios.dart';
-import 'package:data/table/escolaridad.dart';
-import 'package:data/table/vinculadoscapacitacion.dart';
 
 class Strategy extends StatefulWidget {
   //const Strategy({super.key, required this.title});
@@ -17,20 +19,17 @@ class Strategy extends StatefulWidget {
 class _StrategyState extends State<Strategy> {
 
   final List<Widget> widgets = [
-    PorGeneroAnio(),
-    PorMesPagado(),
-    PorGpoVulnera(),
-    CentrosBenef(),
-    PorEscolaridad(),
-    VinculadosCapacitacion()
-  ];
+    Colonias(), Istmo(), Wixarikas(), Yaquis(), Maya(), Marginal(), Violencia(), Indigena(), PorGpoVulnera(),  ];
   final List<String> _itemsBtns = [
     '500 Colonias',
     "Istmo Tehuantepec",
     "Pueblos Wixárika",
     "Pueblo Yaqui",
     "Tren Maya",
-    "Marginación"
+    "Marginación",
+    "Índices de violencia",
+    "Municipios Indígenas",
+    "Discapacidad"
   ];
 
   @override
@@ -60,7 +59,7 @@ class _StrategyState extends State<Strategy> {
       height: MediaQuery
           .of(context)
           .size
-          .height - 180,
+          .height - 90,
       width: MediaQuery
           .of(context)
           .size
@@ -73,10 +72,7 @@ class _StrategyState extends State<Strategy> {
           child: GridView.builder(
             gridDelegate: const
           SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 200,
-      childAspectRatio: 3/2,
-      crossAxisSpacing: 20,
-      mainAxisSpacing: 20),
+                maxCrossAxisExtent: 180, childAspectRatio: 3/1, crossAxisSpacing: 17, mainAxisSpacing: 17),
           itemCount: widgets.length,
           itemBuilder: (BuildContext ctx, index){
             final widget = widgets[index];
@@ -84,14 +80,13 @@ class _StrategyState extends State<Strategy> {
 
               return ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  //minimumSize: Size.fromHeight(100),
-                  minimumSize: Size(176, 180),
+                  minimumSize: Size(100, 100),
                   backgroundColor: Color(0xFFBC955C),
                 ),
                 child: Text('${item}',
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
-                    fontSize: 17,),
+                    fontSize: 14.0,),
                 ),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => widget),);

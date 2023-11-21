@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:json_table/json_table.dart';
 import 'package:rxdart/rxdart.dart';
 
-class Egresados extends StatefulWidget {
+class Babien extends StatefulWidget {
   @override
-  _EgresadosState createState() => _EgresadosState();
+  _BabienState createState() => _BabienState();
 }
 
-class _EgresadosState extends State<Egresados> {
-  static String jsonSample = '[{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO SOLICITADO (HISTÓRICO DE EGRESADOS)":"Histórico de egresados","CANTIDAD":"1,167,714"},{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO SOLICITADO (HISTÓRICO DE EGRESADOS)":"Hombres","CANTIDAD":"460,671"},{"PERIODO":"01/01/2019 - 31/12/2022","CONCEPTO SOLICITADO (HISTÓRICO DE EGRESADOS)":"Mujeres","CANTIDAD":"707,043"}]';
+class _BabienState extends State<Babien> {
+  static String jsonSample = '[{"PERIODO":"01/01/2019 - 31/12/2022","Concepto solicitado (BANCARIZACIÓN BABIEN)":"Total de operativos de entrega de tarjetas","CANTIDAD":"3"},{"PERIODO":"01/01/2019 - 31/12/2022","Concepto solicitado (BANCARIZACIÓN BABIEN)":"Total de tarjetas entregadas en operativos","CANTIDAD":"323,011"},{"PERIODO":"01/01/2019 - 31/12/2022","Concepto solicitado (BANCARIZACIÓN BABIEN)":"Tarjetas solicitadas","CANTIDAD":"323,011"},{"PERIODO":"01/01/2019 - 31/12/2022","Concepto solicitado (BANCARIZACIÓN BABIEN)":"Tarjetas dispersadas","CANTIDAD":"267,417"},{"PERIODO":"01/01/2019 - 31/12/2022","Concepto solicitado (BANCARIZACIÓN BABIEN)":"Tarjetas Pagadas","CANTIDAD":"267,417"}]';
   bool toggle = true;
 
   final _controller = TextEditingController.fromValue(
@@ -35,7 +35,7 @@ class _EgresadosState extends State<Egresados> {
       appBar: AppBar(
         backgroundColor: Color(0xff450011),
         title: Text(
-          "Centros con Beneficiarios",
+          "Bancarización BABIEN",
         ),
       ),
       body: Container(
