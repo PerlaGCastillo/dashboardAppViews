@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import 'package:data/table/colonias.dart';
 import 'package:data/table/indigena.dart';
 import 'package:data/table/istmo.dart';
@@ -6,7 +8,6 @@ import 'package:data/table/trenmaya.dart';
 import 'package:data/table/violencia.dart';
 import 'package:data/table/wixarikas.dart';
 import 'package:data/table/yaquis.dart';
-import 'package:flutter/material.dart';
 import 'package:data/table/gpovulnerable.dart';
 
 class Strategy extends StatefulWidget {
@@ -43,12 +44,14 @@ class _StrategyState extends State<Strategy> {
               Positioned(
                 top: 90,
                 child: strtgy(),
-              )
+              ),
+              //Positioned(child:chrt(),)
             ]
         ),
       ),
     );
   }
+
 
   Container strtgy() {
     return Container(

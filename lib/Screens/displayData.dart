@@ -1,3 +1,5 @@
+
+import 'package:data/Screens/strategy.dart';
 import 'package:data/table/areainteres.dart';
 import 'package:data/table/babien.dart';
 import 'package:data/table/benefHistorico.dart';
@@ -9,13 +11,11 @@ import 'package:data/table/informes.dart';
 import 'package:data/table/municipioBenef.dart';
 import 'package:data/table/nuevosBenef.dart';
 import 'package:data/table/totalBenef.dart';
-import 'package:data/table/totalhistorico.dart';
 import 'package:data/table/zonas.dart';
 import 'package:flutter/material.dart';
 import 'package:data/table/acumulado.dart';
 import 'package:data/table/generoanio.dart';
 import 'package:data/table/escolaridad.dart';
-import 'package:data/table/municipio.dart';
 
 class dataView extends StatelessWidget {
   const dataView({super.key});
@@ -66,12 +66,15 @@ class _displayDataState extends State<displayData> {
               Positioned(
                 top: 90,
                 child: main_containr(),
-              )
+              ),
             ]
         ),
       ),
     );
   }
+
+
+
 
   Container main_containr() {
     return Container(
@@ -150,7 +153,7 @@ Column background_containr(BuildContext context) {
                       child: Icon(Icons.arrow_back, color: Colors.white),
                     ),*/
                   Text(
-                    'Consulta histórica',
+                    'JCF Consulta histórica',
                     style: TextStyle(
                         fontSize: 21,
                         fontWeight: FontWeight.w600,
