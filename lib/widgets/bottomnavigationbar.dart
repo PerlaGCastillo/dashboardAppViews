@@ -1,4 +1,5 @@
 import 'package:data/Screens/displayData.dart';
+import 'package:data/Screens/main/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:data/Screens/home.dart';
 
@@ -12,7 +13,7 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index_color = 0;
-  List Screen = [Home(), dataView() ];
+  List Screen = [Home(), dataView(), MainScreen() ];
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +49,18 @@ class _BottomState extends State<Bottom> {
                   Icons.table_chart,
                   size: 30,
                   color: index_color == 1 ? Color(0xffbc955c) : Colors.grey,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    index_color = 2;
+                  });
+                },
+                child: Icon(
+                  Icons.add_chart_sharp,
+                  size: 30,
+                  color: index_color == 2 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
             ],
