@@ -1,5 +1,5 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:data/data/model/MyFiles.dart';
+import 'package:data/model/MyFiles.dart';
 import 'package:data/Screens/responsive.dart';
 import 'package:flutter/material.dart';
 import '../../constants.dart';

@@ -1,4 +1,4 @@
-import 'package:data/data/model/percentage.dart';
+import 'package:data/model/percentage.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 

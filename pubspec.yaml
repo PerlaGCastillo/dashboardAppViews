@@ -23,7 +23,7 @@ dependencies:
   faker: ^2.1.0
   json_table: ^2.0.1
   rxdart: ^0.27.7
-  dropdownfield: ^1.0.3
+  #dropdownfield: ^1.0.3
   google_fonts: ^4.0.4
   fl_chart: ^0.62.0
   flutter_svg: ^1.1.6

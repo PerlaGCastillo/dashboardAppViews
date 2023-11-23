@@ -1,7 +1,7 @@
 import 'package:data/Screens/responsive.dart';
 import 'package:flutter/material.dart';
 import 'file_info_card.dart';
-import 'package:data/data/model/MyFiles.dart';
+import 'package:data/model/MyFiles.dart';
 import '../../constants.dart';
 
 class MyFiles extends StatelessWidget {

@@ -1,4 +1,5 @@
 import 'package:data/Screens/displayData.dart';
+import 'package:data/Screens/historical.dart';
 import 'package:data/Screens/main/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:data/Screens/home.dart';
@@ -13,7 +14,7 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index_color = 0;
-  List Screen = [Home(), dataView(), MainScreen() ];
+  List Screen = [Home(), dataView(), Historical() ];
 
   @override
   Widget build(BuildContext context) {

@@ -1,11 +1,11 @@
-import 'package:admin/responsive.dart';
+import 'package:data/Screens/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:admin/models/MyFiles.dart';
-import '../../../constants.dart';
-import 'file_info_card.dart';
+import 'acumulado_info_card.dart';
+import 'package:data/model/acumuladomodel.dart';
+import '../../constants.dart';
 
-class MyFiles extends StatelessWidget {
-  const MyFiles({
+class Acumulado extends StatelessWidget {
+  const Acumulado({
     Key? key,
   }) : super(key: key);
 
@@ -21,27 +21,17 @@ class MyFiles extends StatelessWidget {
               "Acumulado",
               style: Theme.of(context).textTheme.subtitle1,
             ),
-            ElevatedButton.icon(
-              style: TextButton.styleFrom(
-                padding: EdgeInsets.symmetric(
-                  horizontal: defaultPadding * 1.5,
-                  vertical:
-                      defaultPadding / (Responsive.isMobile(context) ? 2 : 1),
-                ),
-              ),
-              onPressed: () {},
-            ),
           ],
         ),
         SizedBox(height: defaultPadding),
         Responsive(
-          mobile: FileInfoCardGridView(
-            crossAxisCount: _size.width < 650 ? 2 : 4,
+          mobile: AcumuladoInfoCardGridView(
+            crossAxisCount: _size.width < 650 ? 3 : 3,
             childAspectRatio: _size.width < 650 ? 1.3 : 1,
           ),
-          tablet: FileInfoCardGridView(),
-          desktop: FileInfoCardGridView(
-            childAspectRatio: _size.width < 1400 ? 1.1 : 1.4,
+          tablet: AcumuladoInfoCardGridView(),
+          desktop: AcumuladoInfoCardGridView(
+            childAspectRatio: _size.width < 1400 ? 1.1 : 1.3,
           ),
         ),
       ],
@@ -49,10 +39,10 @@ class MyFiles extends StatelessWidget {
   }
 }
 
-class FileInfoCardGridView extends StatelessWidget {
-  const FileInfoCardGridView({
+class AcumuladoInfoCardGridView extends StatelessWidget {
+  const AcumuladoInfoCardGridView({
     Key? key,
-    this.crossAxisCount = 4,
+    this.crossAxisCount = 3,
     this.childAspectRatio = 1,
   }) : super(key: key);
 
@@ -64,14 +54,14 @@ class FileInfoCardGridView extends StatelessWidget {
     return GridView.builder(
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: demoMyFiles.length,
+      itemCount: demoAcumulado.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
         crossAxisSpacing: defaultPadding,
         mainAxisSpacing: defaultPadding,
         childAspectRatio: childAspectRatio,
       ),
-      itemBuilder: (context, index) => FileInfoCard(info: demoMyFiles[index]),
+      itemBuilder: (context, index) => FileInfoCard(info: demoAcumulado[index]),
     );
   }
 }
