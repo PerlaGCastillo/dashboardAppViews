@@ -26,8 +26,8 @@ class Acumulado extends StatelessWidget {
         SizedBox(height: defaultPadding),
         Responsive(
           mobile: AcumuladoInfoCardGridView(
-            crossAxisCount: _size.width < 650 ? 3 : 3,
-            childAspectRatio: _size.width < 650 ? 1.3 : 1,
+            crossAxisCount: _size.width < 650 ? 3 : 10,
+            childAspectRatio: _size.width < 650 ? 1 : 3,
           ),
           tablet: AcumuladoInfoCardGridView(),
           desktop: AcumuladoInfoCardGridView(
@@ -43,7 +43,7 @@ class AcumuladoInfoCardGridView extends StatelessWidget {
   const AcumuladoInfoCardGridView({
     Key? key,
     this.crossAxisCount = 3,
-    this.childAspectRatio = 1,
+    this.childAspectRatio = 3,
   }) : super(key: key);
 
   final int crossAxisCount;

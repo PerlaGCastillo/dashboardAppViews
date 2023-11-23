@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-class chrt extends StatefulWidget {
-  chrt({Key? key}) : super(key: key);
+class historialLineChart extends StatefulWidget {
+  historialLineChart({Key? key}) : super(key: key);
 
   @override
-  _chrtState createState() => _chrtState();
+  _historialLineChartState createState() => _historialLineChartState();
 }
 
-class _chrtState extends State<chrt> {
+class _historialLineChartState extends State<historialLineChart> {
   late List<GDPData> _chartData;
   late TooltipBehavior _tooltipBehavior;
 
@@ -25,37 +25,34 @@ class _chrtState extends State<chrt> {
         child: Scaffold(
             body: SfCircularChart(
               title:
-              ChartTitle(text: 'Continent wise GDP - 2021 \n (in billions of USD)'),
+              ChartTitle(text: 'Histórico egresados por género \n 01/01/2019 - 31/12/2022'),
               legend:
               Legend(isVisible: true, overflowMode: LegendItemOverflowMode.wrap),
               tooltipBehavior: _tooltipBehavior,
               series: <CircularSeries>[
                 RadialBarSeries<GDPData, String>(
                     dataSource: _chartData,
-                    xValueMapper: (GDPData data, _) => data.continent,
+                    xValueMapper: (GDPData data, _) => data.people,
                     yValueMapper: (GDPData data, _) => data.gdp,
                     dataLabelSettings: DataLabelSettings(isVisible: true),
                     enableTooltip: true,
-                    maximumValue: 40000)
+                    maximumValue: 1200000)
               ],
             )));
   }
 
   List<GDPData> getChartData() {
     final List<GDPData> chartData = [
-      GDPData('Oceania', 1600),
-      GDPData('Africa', 2490),
-      GDPData('S America', 2900),
-      GDPData('Europe', 23050),
-      GDPData('N America', 24880),
-      GDPData('Asia', 34390),
+      GDPData('Hombres', 460671),
+      GDPData('Mujeres', 707043),
+      GDPData('Histórico de egresados', 1167714),
     ];
     return chartData;
   }
 }
 
 class GDPData {
-  GDPData(this.continent, this.gdp);
-  final String continent;
+  GDPData(this.people, this.gdp);
+  final String people;
   final int gdp;
 }

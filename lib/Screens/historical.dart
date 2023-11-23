@@ -1,54 +1,56 @@
-import 'package:data/Screens/dashboard/components/acumulada.dart';
+import 'package:data/Screens/constants.dart';
+import 'package:data/Screens/dashboard/components/acumulado.dart';
+import 'package:data/Screens/dashboard/components/chrtlines.dart';
 import 'package:data/Screens/dashboard/components/my_fields.dart';
+import 'package:data/table/totalBenef.dart';
 import 'package:flutter/material.dart';
 
-class Historical extends StatefulWidget {
-
-  @override
-  State<Historical> createState() => _HistoricalState();
-}
-
-class _HistoricalState extends State<Historical> {
+class Historical extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Stack(
-            alignment: AlignmentDirectional.center,
-            children: [
-              Positioned(
-                top: 90,
-                child: historical(),
-              ),
-            ]
-        ),
-      ),
+      body: historical(),
     );
   }
 
-  Container historical() {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(19.0),
-        color: Color(0xfff4f4f4),
-      ),
-      height: MediaQuery
-          .of(context)
-          .size
-          .height - 90,
-      width: MediaQuery
-          .of(context)
-          .size
-          .width - 40,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-          child: Acumulado(),
-      ),
-        ],
+Widget historical() {
+    return SafeArea(
+      child: SingleChildScrollView(
+        padding: EdgeInsets.all(17.0),
+        child: Column(
+          children: [
+            SizedBox(height: 20.0,),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Column(
+                    children: [
+                     //historialLineChart(),
+                      SizedBox(height: 20.0),
+                      Acumulado(),
+                      SizedBox(height: 20.0),
+                      //TotalBeneficiarias(),
+                      SizedBox(height: 20.0),
+                      //Nuevase(),
+                      // SizedBox(height: 20.0),
+                      //Imsse(),
+                      // SizedBox(height: 20.0),
+                      //Escolaridade(),
+                      // SizedBox(height: 20.0),
+                      //AreaInteres(),
+                      // SizedBox(height: 20.0),
+                      //GeneroAnnio(),
+                      // SizedBox(height: 20.0),
+                      //GeneroEddad(),
+                    ],
+
+                ),),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
