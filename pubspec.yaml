@@ -30,7 +30,8 @@ dependencies:
   provider: ^6.1.1
   adaptive_theme: ^3.2.1
   percent_indicator: ^4.2.3
-  data_table_2: ^2.3.11
+  #data_table_2: ^2.3.11
+  #scrollable_positioned_list: ^0.3.8
 
 dev_dependencies:
   flutter_test:

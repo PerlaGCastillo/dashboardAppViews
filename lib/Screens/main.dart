@@ -7,10 +7,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MySecond());
 }
 
-class MyApp extends StatelessWidget {
+class MySecond extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,5 @@
 import 'package:data/data/model/recentfile.dart';
-import 'package:data_table_2/data_table_2.dart';
+//import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -25,7 +25,7 @@ class RecentFiles extends StatelessWidget {
             "Recent Files",
             style: Theme.of(context).textTheme.subtitle1,
           ),
-          SizedBox(
+         /* SizedBox(
             width: double.infinity,
             child: DataTable2(
               columnSpacing: defaultPadding,
@@ -46,7 +46,7 @@ class RecentFiles extends StatelessWidget {
                 (index) => recentFileDataRow(demoRecentFiles[index]),
               ),
             ),
-          ),
+          ),*/
         ],
       ),
     );
