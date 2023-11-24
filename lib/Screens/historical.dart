@@ -1,5 +1,6 @@
 import 'package:data/Screens/constants.dart';
 import 'package:data/Screens/dashboard/components/acumulado.dart';
+import 'package:data/Screens/dashboard/components/beneficiarios_historico.dart';
 import 'package:data/Screens/dashboard/components/chrtlines.dart';
 import 'package:data/Screens/dashboard/components/my_fields.dart';
 import 'package:data/table/totalBenef.dart';
@@ -30,8 +31,8 @@ Widget historical() {
                      //historialLineChart(),
                       SizedBox(height: 20.0),
                       Acumulado(),
-                      SizedBox(height: 20.0),
-                      //TotalBeneficiarias(),
+                      //SizedBox(height: 320.0),
+                      HistoricalChart(),
                       SizedBox(height: 20.0),
                       //Nuevase(),
                       // SizedBox(height: 20.0),

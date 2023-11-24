@@ -1,11 +1,12 @@
+import 'package:data/Screens/dashboard/components/benef_progress.dart';
 import 'package:data/Screens/responsive.dart';
 import 'package:flutter/material.dart';
-import 'acumulado_info_card.dart';
-import 'package:data/model/acumuladomodel.dart';
+import 'benefhistoric_info_card.dart';
+import 'package:data/model/beneficiarioshistoricomodel.dart';
 import '../../constants.dart';
 
-class Acumulado extends StatelessWidget {
-  const Acumulado({
+class HistoricalChart extends StatelessWidget {
+  const HistoricalChart({
     Key? key,
   }) : super(key: key);
 
@@ -18,7 +19,7 @@ class Acumulado extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Acumulado",
+              "Beneficiarios Histórico",
               style: Theme.of(context).textTheme.subtitle1,
             ),
           ],
@@ -27,14 +28,16 @@ class Acumulado extends StatelessWidget {
         SizedBox(height: defaultPadding),
         Responsive(
           mobile: AcumuladoInfoCardGridView(
-            crossAxisCount: _size.width < 650 ? 3 : 10,
-            childAspectRatio: _size.width < 650 ? 1 : 3,
+            crossAxisCount: _size.width < 650 ? 2 : 3,
+            childAspectRatio: _size.width < 650 ? 1 : 1,
           ),
           tablet: AcumuladoInfoCardGridView(),
           desktop: AcumuladoInfoCardGridView(
             childAspectRatio: _size.width < 1400 ? 1.1 : 1.3,
           ),
         ),
+        SizedBox(height: defaultPadding),
+        BenefProgressChart(),
       ],
     );
   }
@@ -43,8 +46,8 @@ class Acumulado extends StatelessWidget {
 class AcumuladoInfoCardGridView extends StatelessWidget {
   const AcumuladoInfoCardGridView({
     Key? key,
-    this.crossAxisCount = 3,
-    this.childAspectRatio = 3,
+    this.crossAxisCount = 2,
+    this.childAspectRatio = 1,
   }) : super(key: key);
 
   final int crossAxisCount;
@@ -55,14 +58,14 @@ class AcumuladoInfoCardGridView extends StatelessWidget {
     return GridView.builder(
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: demoAcumulado.length,
+      itemCount: demoHistorical.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
         crossAxisSpacing: defaultPadding,
         mainAxisSpacing: defaultPadding,
         childAspectRatio: childAspectRatio,
       ),
-      itemBuilder: (context, index) => FileInfoCard(info: demoAcumulado[index]),
+      itemBuilder: (context, index) => FileInfoCard(info: demoHistorical[index]),
     );
   }
 }
