@@ -35,13 +35,14 @@ class ImssInfoCard extends StatelessWidget {
                   Text(title,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 16.0),
                   ),
-                  Text( date, style: Theme.of(context).textTheme.caption,),
+                  Text( date, style: Theme.of(context).textTheme.bodyMedium,),
                 ],
               ),
             ),
           ),
-          Text(people, style: Theme.of(context).textTheme.bodyText1,)
+          Text(people, style: Theme.of(context).textTheme.bodyLarge,)
         ],
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:data/Screens/dashboard/components/indicator.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -11,9 +12,35 @@ class ImssChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: MediaQuery.of(context).size.height/3,
       child: Stack(
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Indicator(
+                  color: secondaryColor,
+                  text: "2019",
+                  isSquare: false,
+              ),
+              Indicator(
+                  color: greenColor,
+                  text: "2020",
+                  isSquare: false,
+              ),
+              Indicator(
+                  color: redColor,
+                  text: "2021",
+                  isSquare: false,
+              ),
+              Indicator(
+                  color: drColor,
+                  text: "2022",
+                  isSquare: false,
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
           PieChart(
             PieChartData(
               sectionsSpace: 0,
@@ -50,7 +77,7 @@ List<PieChartSectionData> paiChartSelectionDatas = [
     value: 46.7,
     title: '46.7%',
     showTitle: true,
-    radius: 42,
+    radius: 43,
     titleStyle: TextStyle(
       fontSize: 15.0,
       fontWeight: FontWeight.bold,
@@ -58,11 +85,11 @@ List<PieChartSectionData> paiChartSelectionDatas = [
     ),
   ),
   PieChartSectionData(
-    color: bgColor,
+    color: greenColor,
     value: 18.9,
     title: '18.9%',
     showTitle: true,
-    radius:42,
+    radius:43,
     titleStyle: TextStyle(
       fontSize: 15.0,
       fontWeight: FontWeight.bold,
@@ -74,7 +101,7 @@ List<PieChartSectionData> paiChartSelectionDatas = [
     value: 24,
     title: '24%',
     showTitle: true,
-    radius: 42,
+    radius: 43,
     titleStyle: TextStyle(
       fontSize: 15.0,
       fontWeight: FontWeight.bold,
@@ -82,11 +109,11 @@ List<PieChartSectionData> paiChartSelectionDatas = [
     ),
   ),
   PieChartSectionData(
-    color: otroColor,
+    color: drColor,
     value: 10.3,
     title: '10.3%',
     showTitle: true,
-    radius: 42,
+    radius: 43,
     titleStyle: TextStyle(
       fontSize: 15.0,
       fontWeight: FontWeight.bold,

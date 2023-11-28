@@ -1,7 +1,6 @@
 import 'package:data/Screens/dashboard/imss_chart.dart';
 import 'package:flutter/material.dart';
 import '../../constants.dart';
-import 'imsprueba.dart';
 import 'imss_info_card.dart';
 
 class ImssDetails extends StatelessWidget {
@@ -29,7 +28,6 @@ class ImssDetails extends StatelessWidget {
           ),
           SizedBox(height: defaultPadding),
           ImssChart(),
-          PieChartSample2(),
           ImssInfoCard(
             title: "Jóvenes incorporados al IMSS",
             people:  "1,151,804",

@@ -1,11 +1,7 @@
-import 'package:data/Screens/constants.dart';
 import 'package:data/Screens/dashboard/components/acumulado.dart';
 import 'package:data/Screens/dashboard/components/beneficiarios_historico.dart';
-import 'package:data/Screens/dashboard/components/chrtlines.dart';
 import 'package:data/Screens/dashboard/components/imss_details.dart';
-import 'package:data/Screens/dashboard/components/my_fields.dart';
 import 'package:data/Screens/dashboard/components/nuevos.dart';
-import 'package:data/table/totalBenef.dart';
 import 'package:flutter/material.dart';
 
 class Historical extends StatelessWidget {
