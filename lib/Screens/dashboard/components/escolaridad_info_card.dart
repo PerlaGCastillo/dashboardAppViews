@@ -1,10 +1,12 @@
-import 'package:data/model/MyFiles.dart';
+import 'package:data/Screens/dashboard/components/escolaridad_fields.dart';
+import 'package:data/Screens/dashboard/components/escolaridad_fields.dart';
+import 'package:data/model/escolaridadmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../constants.dart';
 
-class FileInfoCard extends StatelessWidget {
-  const FileInfoCard({
+class EscolaridadInfoCard extends StatelessWidget {
+  const EscolaridadInfoCard({
     Key? key,
     required this.info,
   }) : super(key: key);
@@ -16,32 +18,13 @@ class FileInfoCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
-        color: Theme.of(context).canvasColor,
+        color: creamColor,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                padding: EdgeInsets.all(defaultPadding * 0.75),
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                  color: info.color!.withOpacity(0.1),
-                  borderRadius: const BorderRadius.all(Radius.circular(10)),
-                ),
-                child: SvgPicture.asset(
-                  info.svgSrc!,
-                  color: info.color,
-                ),
-              ),
-              Icon(Icons.more_vert, color: Theme.of(context).backgroundColor)
-            ],
-          ),
           Text(
             info.title!,
             maxLines: 1,
@@ -55,7 +38,7 @@ class FileInfoCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "${info.numOfFiles} Files",
+                info.date!,
                 style: Theme.of(context)
                     .textTheme
                     .caption,
@@ -90,7 +73,7 @@ class ProgressLine extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          height: 5,
+          height: 4,
           decoration: BoxDecoration(
             color: color!.withOpacity(0.1),
             borderRadius: BorderRadius.all(Radius.circular(10)),

@@ -1,12 +1,12 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:data/model/MyFiles.dart';
+import 'package:data/model/escolaridadmodel.dart';
 import 'package:data/Screens/responsive.dart';
 import 'package:flutter/material.dart';
 import '../../constants.dart';
-import 'file_info_card.dart';
+import 'escolaridad_info_card.dart';
 
-class MyFiles extends StatelessWidget {
-  const MyFiles({
+class Escolaridad extends StatelessWidget {
+  const Escolaridad({
     Key? key,
   }) : super(key: key);
 
@@ -19,41 +19,8 @@ class MyFiles extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "My Files",
+              "Nivel de Escolaridad",
               style: Theme.of(context).textTheme.subtitle1,
-            ),
-            Row(
-              children: [
-                ElevatedButton.icon(
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: defaultPadding * 1.5,
-                      vertical: defaultPadding /
-                          (Responsive.isMobile(context) ? 2 : 1),
-                    ),
-                  ),
-                  onPressed: () {
-                    AdaptiveTheme.of(context).toggleThemeMode();
-                  },
-                  icon: Icon(Icons.ac_unit_sharp),
-                  label: Text("Change Theme"),
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                ElevatedButton.icon(
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: defaultPadding * 1.5,
-                      vertical: defaultPadding /
-                          (Responsive.isMobile(context) ? 2 : 1),
-                    ),
-                  ),
-                  onPressed: () {},
-                  icon: Icon(Icons.add),
-                  label: Text("Add New"),
-                ),
-              ],
             ),
           ],
         ),
@@ -88,14 +55,14 @@ class FileInfoCardGridView extends StatelessWidget {
     return GridView.builder(
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: demoMyFiles.length,
+      itemCount: demoEscolaridad.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
         crossAxisSpacing: defaultPadding,
         mainAxisSpacing: defaultPadding,
         childAspectRatio: childAspectRatio,
       ),
-      itemBuilder: (context, index) => FileInfoCard(info: demoMyFiles[index]),
+      itemBuilder: (context, index) => EscolaridadInfoCard(info: demoEscolaridad[index]),
     );
   }
 }

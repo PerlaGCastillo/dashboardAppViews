@@ -1,6 +1,7 @@
 import 'package:data/Screens/dashboard/components/acumulado.dart';
 import 'package:data/Screens/dashboard/components/beneficiarios_historico.dart';
 import 'package:data/Screens/dashboard/components/imss_details.dart';
+import 'package:data/Screens/dashboard/components/escolaridad_fields.dart';
 import 'package:data/Screens/dashboard/components/nuevos.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +37,7 @@ Widget historical() {
                       SizedBox(height: 20.0),
                       ImssDetails(),
                       SizedBox(height: 20.0),
+                     Escolaridad(),
 
                       //Nuevase(),
                       // SizedBox(height: 20.0),

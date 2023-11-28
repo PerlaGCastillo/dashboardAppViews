@@ -1,5 +1,5 @@
 import 'package:data/Screens/responsive.dart';
-import 'package:data/Screens/dashboard/components/my_fields.dart';
+import 'package:data/Screens/dashboard/components/escolaridad_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:data/Screens/dashboard/components/progress_chart.dart';
 
@@ -27,7 +27,7 @@ class DashboardScreen extends StatelessWidget {
                     children: [
                       CircleProgressChart(),
                       SizedBox(height: defaultPadding),
-                      MyFiles(),
+                      Escolaridad(),
                       SizedBox(height: defaultPadding),
                       StarageDetails(),
                       if (Responsive.isMobile(context))
