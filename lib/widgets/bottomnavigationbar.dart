@@ -2,6 +2,7 @@ import 'package:data/Screens/displayData.dart';
 import 'package:data/Screens/historical.dart';
 import 'package:data/Screens/hstoric.dart';
 import 'package:data/Screens/main/main_screen.dart';
+import 'package:data/Screens/ubicacion.dart';
 import 'package:flutter/material.dart';
 import 'package:data/Screens/home.dart';
 
@@ -15,7 +16,7 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index_color = 0;
-  List Screen = [Home(), dataView(), Historical(), hstoric() ];
+  List Screen = [Home(), dataView(), Historical(), hstoric(), ubicacion() ];
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +76,18 @@ class _BottomState extends State<Bottom> {
                   Icons.attach_money_outlined,
                   size: 30,
                   color: index_color == 3 ? Color(0xffbc955c) : Colors.grey,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    index_color = 4;
+                  });
+                },
+                child: Icon(
+                  Icons.pin_drop_rounded,
+                  size: 30,
+                  color: index_color == 4 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
             ],
