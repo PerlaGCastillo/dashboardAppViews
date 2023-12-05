@@ -1,12 +1,9 @@
-import 'package:data/model/recentfile.dart';
-//import 'package:data_table_2/data_table_2.dart';
+import 'package:data/model/areainteresmodel.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
 import '../../constants.dart';
 
-class RecentFiles extends StatelessWidget {
-  const RecentFiles({
+class AreaInteres extends StatelessWidget {
+  const AreaInteres({
     Key? key,
   }) : super(key: key);
 
@@ -22,57 +19,60 @@ class RecentFiles extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Recent Files",
+            "Área Interés",
             style: Theme.of(context).textTheme.subtitle1,
           ),
-         /* SizedBox(
+          SizedBox(
             width: double.infinity,
-            child: DataTable2(
+            child: DataTable(
               columnSpacing: defaultPadding,
-              minWidth: 600,
+              //minWidth: 600,
               columns: [
                 DataColumn(
-                  label: Text("File Name"),
+                  label: Text("Periodo"),
                 ),
                 DataColumn(
-                  label: Text("Date"),
+                  label: Text("Área"),
                 ),
                 DataColumn(
-                  label: Text("Size"),
+                  label: Text("Mujeres"),
+                ),
+                DataColumn(
+                  label: Text("Hombres"),
+                ),
+                DataColumn(
+                  label: Text("Total"),
                 ),
               ],
               rows: List.generate(
-                demoRecentFiles.length,
-                (index) => recentFileDataRow(demoRecentFiles[index]),
+                demoAreaInteres.length,
+                (index) => recentFileDataRow(demoAreaInteres[index]),
               ),
             ),
-          ),*/
+          ),
         ],
       ),
     );
   }
 }
 
-DataRow recentFileDataRow(RecentFile fileInfo) {
+DataRow recentFileDataRow(AreaInteresModel fileInfo) {
   return DataRow(
     cells: [
       DataCell(
         Row(
           children: [
-            SvgPicture.asset(
-              fileInfo.icon!,
-              height: 30,
-              width: 30,
-            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-              child: Text(fileInfo.title!),
+              child: Text(fileInfo.date!),
             ),
           ],
         ),
       ),
-      DataCell(Text(fileInfo.date!)),
-      DataCell(Text(fileInfo.size!)),
+      DataCell(Text(fileInfo.area!)),
+      DataCell(Text(fileInfo.women!)),
+      DataCell(Text(fileInfo.men!)),
+      DataCell(Text(fileInfo.total!)),
     ],
   );
 }

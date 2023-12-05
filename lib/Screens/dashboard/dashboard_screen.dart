@@ -5,7 +5,7 @@ import 'package:data/Screens/dashboard/components/progress_chart.dart';
 
 import '../constants.dart';
 import '../dashboard/components/header.dart';
-import '../dashboard/components/recent_files.dart';
+import '../dashboard/components/areainteres.dart';
 import '../dashboard/components/storage_details.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -32,7 +32,7 @@ class DashboardScreen extends StatelessWidget {
                       StarageDetails(),
                       if (Responsive.isMobile(context))
                         SizedBox(height: defaultPadding),
-                      if (Responsive.isMobile(context)) RecentFiles(),
+                      if (Responsive.isMobile(context)) AreaInteres(),
                     ],
                   ),
                 ),

@@ -1,5 +1,7 @@
 import 'package:data/Screens/dashboard/components/acumulado.dart';
+import 'package:data/Screens/dashboard/components/areainteres.dart';
 import 'package:data/Screens/dashboard/components/beneficiarios_historico.dart';
+import 'package:data/Screens/dashboard/components/generoAnnioEdad.dart';
 import 'package:data/Screens/dashboard/components/imss_details.dart';
 import 'package:data/Screens/dashboard/components/escolaridad_fields.dart';
 import 'package:data/Screens/dashboard/components/nuevos.dart';
@@ -27,31 +29,22 @@ Widget historical() {
                 Expanded(
                   child: Column(
                     children: [
-                     //historialLineChart(),
                       SizedBox(height: 20.0),
                       Acumulado(),
-                      //SizedBox(height: 320.0),
+                      SizedBox(height: 20.0),
                       HistoricalChart(),
                       SizedBox(height: 20.0),
                       Nuevos(),
                       SizedBox(height: 20.0),
                       ImssDetails(),
                       SizedBox(height: 20.0),
-                     Escolaridad(),
-
-                      //Nuevase(),
-                      // SizedBox(height: 20.0),
-                      //Imsse(),
-                      // SizedBox(height: 20.0),
-                      //Escolaridade(),
-                      // SizedBox(height: 20.0),
-                      //AreaInteres(),
-                      // SizedBox(height: 20.0),
-                      //GeneroAnnio(),
-                      // SizedBox(height: 20.0),
-                      //GeneroEddad(),
+                      Escolaridad(),
+                      SizedBox(height: 20.0),
+                      AreaInteres(),
+                      SizedBox(height: 20.0),
+                      //tableGen(),
+                      //TODO: agregar 2 tablas: gen, año y gen, edad
                     ],
-
                 ),),
               ],
             ),

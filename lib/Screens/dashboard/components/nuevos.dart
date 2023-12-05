@@ -1,7 +1,6 @@
 import 'package:data/Screens/dashboard/components/nuevos_info_card.dart';
 import 'package:data/Screens/responsive.dart';
 import 'package:flutter/material.dart';
-import 'nuevos_info_card.dart';
 import 'package:data/model/nuevosmodel.dart';
 import '../../constants.dart';
 
@@ -28,7 +27,7 @@ class Nuevos extends StatelessWidget {
         SizedBox(height: defaultPadding),
         Responsive(
           mobile: NuevosInfoCardGridView(
-            crossAxisCount: _size.width < 650 ? 3 : 10,
+            crossAxisCount: _size.width < 650 ? 2 : 4,
             childAspectRatio: _size.width < 650 ? 1 : 3,
           ),
           tablet: NuevosInfoCardGridView(),
