@@ -118,6 +118,7 @@ class _displayDataState extends State<displayData> {
               );
             },
           ),),
+          //Strategy(),
         ],
       ),
     );

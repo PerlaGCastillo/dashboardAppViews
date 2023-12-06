@@ -45,7 +45,6 @@ class _StrategyState extends State<Strategy> {
                 top: 90,
                 child: strtgy(),
               ),
-              //Positioned(child:chrt(),)
             ]
         ),
       ),
