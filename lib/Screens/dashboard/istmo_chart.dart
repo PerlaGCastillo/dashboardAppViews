@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
-class PueblosChart extends StatelessWidget {
-  const PueblosChart({
+class IstmoChart extends StatelessWidget {
+  const IstmoChart({
     Key? key,
   }) : super(key: key);
 
@@ -31,13 +31,13 @@ class PueblosChart extends StatelessWidget {
               children: [
                 SizedBox(height: defaultPadding),
                 Text(
-                  "\$704,188,601.81",
+                  "\$3,490,944,528.12",
                   style: Theme.of(context).textTheme.bodyText1!.copyWith(
                     fontWeight: FontWeight.bold,
                     fontSize: 17
                   ),
                 ),
-                Text("16,977"),
+                Text("85,435"),
                 Text("personas beneficiarias"),
               ],
             ),

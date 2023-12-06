@@ -1,6 +1,9 @@
 import 'package:data/Screens/dashboard/components/centros.dart';
 import 'package:data/Screens/dashboard/components/colonias_details.dart';
+import 'package:data/Screens/dashboard/components/istmo_details.dart';
 import 'package:data/Screens/dashboard/components/pueblos_details.dart';
+import 'package:data/Screens/dashboard/components/tren_details.dart';
+import 'package:data/Screens/dashboard/components/yaqui_details.dart';
 import 'package:data/Screens/dashboard/components/zonas.dart';
 import 'package:flutter/material.dart';
 
@@ -31,6 +34,13 @@ Widget estrategiasWdgt() {
                       ColoniasDetails(),
                       SizedBox(height: 20.0),
                       PueblosDetails(),
+                      SizedBox(height: 20.0),
+                      IstmoDetails(),
+                      SizedBox(height: 20.0),
+                      YaquisDetails(),
+                      SizedBox(height: 20.0),
+                      TrenMayaDetails(),
+                      SizedBox(height: 20.0),
                     ],
                 ),),
               ],
