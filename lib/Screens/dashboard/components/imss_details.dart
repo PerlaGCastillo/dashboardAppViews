@@ -29,27 +29,27 @@ class ImssDetails extends StatelessWidget {
           SizedBox(height: defaultPadding),
           ImssChart(),
           ImssInfoCard(
-            title: "Jóvenes incorporados al IMSS",
+            title: "Jóvenes incorporados\nal IMSS",
             people:  "1,151,804",
             date: "01/01/2019 -31/12/2019",
           ),
           ImssInfoCard(
-            title: "Jóvenes incorporados al IMSS",
+            title: "Jóvenes incorporados\nal IMSS",
             people: "467,526",
             date: "01/01/2020 -31/12/2020",
           ),
           ImssInfoCard(
-            title: "Jóvenes incorporados al IMSS",
+            title: "Jóvenes incorporados\nal IMSS",
             people: "592,013",
             date: "01/01/2021 -31/12/2021",
           ),
           ImssInfoCard(
-            title: "Jóvenes incorporados al IMSS",
+            title: "Jóvenes incorporados\nal IMSS",
             people: "254,501",
             date: "01/01/2022 -31/12/2022",
           ),
           ImssInfoCard(
-            title: "Jóvenes incorporados al IMSS",
+            title: "Jóvenes incorporados\nal IMSS",
             people: "2,465,844",
             date: "01/01/2019 -31/12/2022",
           ),

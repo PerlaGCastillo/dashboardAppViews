@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../constants.dart';
 
-class ImssInfoCard extends StatelessWidget {
-  const ImssInfoCard({
+class ColoniasInfoCard extends StatelessWidget {
+  const ColoniasInfoCard({
     Key? key,
     required this.title,
-    required this.date,
     required this.people,
   }) : super(key: key);
 
-  final String title, date, people;
+  final String title,people;
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +29,10 @@ class ImssInfoCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(title,
-                    maxLines: 2,
+                    maxLines: 4,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 15.0),
                   ),
-                  Text( date, style: Theme.of(context).textTheme.bodyMedium,),
                 ],
               ),
             ),

@@ -27,7 +27,7 @@ class Centro extends StatelessWidget {
         Responsive(
           mobile: CentroInfoCardGridView(
             crossAxisCount: _size.width < 650 ? 2 : 2,
-            childAspectRatio: _size.width < 650 ? 1 : 3,
+            childAspectRatio: _size.width < 650 ? 1.3 : 3,
           ),
           tablet: CentroInfoCardGridView(),
           desktop: CentroInfoCardGridView(

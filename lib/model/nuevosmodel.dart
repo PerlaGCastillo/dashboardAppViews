@@ -19,7 +19,7 @@ List demoNuevos = [
   ),
   NuevosStorage(
     date: "01/01/2019\n31/12/2019",
-    concept: "Nuevos beneficiarios \nMujeres",
+    concept: "Nuevas beneficiarias \nMujeres",
     people: "647,268",
   ),
   NuevosStorage(
@@ -35,7 +35,7 @@ List demoNuevos = [
   ),
   NuevosStorage(
     date: "01/01/2020\n31/12/2020",
-    concept: "Nuevos beneficiarios \nMujeres",
+    concept: "Nuevas beneficiarias \nMujeres",
     people: "251,912",
   ),
   NuevosStorage(
@@ -51,7 +51,7 @@ List demoNuevos = [
   ),
   NuevosStorage(
     date: "01/01/2021\n31/12/2021",
-    concept: "Nuevos beneficiarios \nMujeres",
+    concept: "Nuevas beneficiarias \nMujeres",
     people: "312,584",
   ),
   NuevosStorage(
@@ -67,7 +67,7 @@ List demoNuevos = [
   ),
   NuevosStorage(
     date: "01/01/2022\n31/12/2022",
-    concept: "Nuevos beneficiarios \nMujeres",
+    concept: "Nuevas beneficiarias \nMujeres",
     people: "146,476",
   ),
   NuevosStorage(

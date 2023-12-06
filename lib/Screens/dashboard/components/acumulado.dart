@@ -27,12 +27,12 @@ class Acumulado extends StatelessWidget {
         SizedBox(height: defaultPadding),
         Responsive(
           mobile: AcumuladoInfoCardGridView(
-            crossAxisCount: _size.width < 650 ? 3 : 10,
-            childAspectRatio: _size.width < 650 ? 1 : 3,
+            crossAxisCount: _size.width < 650 ? 3 : 2,
+            childAspectRatio: _size.width < 650 ? 1 : 1,
           ),
           tablet: AcumuladoInfoCardGridView(),
           desktop: AcumuladoInfoCardGridView(
-            childAspectRatio: _size.width < 1400 ? 1.1 : 1.3,
+            childAspectRatio: _size.width < 1400 ? 1 : 1,
           ),
         ),
       ],

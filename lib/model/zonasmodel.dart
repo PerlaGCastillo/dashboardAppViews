@@ -14,12 +14,12 @@ class ZonaStorage {
 List demoZona = [
 
   ZonaStorage(
-    concept: 'Beneficiarios en zonas urbanas',
+    concept: 'Beneficiarios en\nzonas urbanas',
     quantity: '1,251,226',
     date: '01/01/2019 - 31/12/2022',
   ),
   ZonaStorage(
-    concept: 'Beneficiarios  en zonas rurales',
+    concept: 'Beneficiarios en\nzonas rurales',
     quantity: '1,106,126',
     date:'01/01/2019 - 31/12/2022',
   ),

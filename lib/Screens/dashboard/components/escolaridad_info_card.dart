@@ -1,8 +1,6 @@
 import 'package:data/Screens/dashboard/components/escolaridad_fields.dart';
-import 'package:data/Screens/dashboard/components/escolaridad_fields.dart';
 import 'package:data/model/escolaridadmodel.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../constants.dart';
 
 class EscolaridadInfoCard extends StatelessWidget {
@@ -27,8 +25,11 @@ class EscolaridadInfoCard extends StatelessWidget {
         children: [
           Text(
             info.title!,
-            maxLines: 1,
+            maxLines: 2,
             overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontSize: 16,
+            ),
           ),
           ProgressLine(
             color: info.color,
@@ -45,9 +46,7 @@ class EscolaridadInfoCard extends StatelessWidget {
               ),
               Text(
                 info.totalStorage!,
-                style: Theme.of(context)
-                    .textTheme
-                    .caption,
+                style: TextStyle(fontSize: 15,),
               ),
             ],
           )

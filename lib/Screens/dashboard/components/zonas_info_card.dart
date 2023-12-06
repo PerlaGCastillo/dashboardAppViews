@@ -15,7 +15,7 @@ class ZonaInfoCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
-        color: Theme.of(context).canvasColor,
+        color: creamColor,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
@@ -27,9 +27,7 @@ class ZonaInfoCard extends StatelessWidget {
             children: [
               Text(
                 "${info.quantity}",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyLarge,
+                style: TextStyle(fontSize: 16.0),
               ),
             ],
           ),
@@ -40,9 +38,7 @@ class ZonaInfoCard extends StatelessWidget {
                 info.concept!,
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall,
+                style: TextStyle(fontSize: 14.0),
               ),
 
             ],

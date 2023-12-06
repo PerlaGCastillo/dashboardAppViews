@@ -28,11 +28,11 @@ class ZonasChart extends StatelessWidget {
         Responsive(
           mobile: ZonasInfoCardGridView(
             crossAxisCount: _size.width < 650 ? 2 : 3,
-            childAspectRatio: _size.width < 650 ? 1 : 1,
+            childAspectRatio: _size.width < 650 ? 1.3 : 1,
           ),
           tablet: ZonasInfoCardGridView(),
           desktop: ZonasInfoCardGridView(
-            childAspectRatio: _size.width < 1400 ? 1.1 : 1.3,
+            childAspectRatio: _size.width < 1400 ? 1 : 1,
           ),
         ),
         SizedBox(height: defaultPadding),

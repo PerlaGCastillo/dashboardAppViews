@@ -24,16 +24,15 @@ class HistoricalChart extends StatelessWidget {
             ),
           ],
         ),
-
         SizedBox(height: defaultPadding),
         Responsive(
           mobile: AcumuladoInfoCardGridView(
-            crossAxisCount: _size.width < 650 ? 2 : 3,
-            childAspectRatio: _size.width < 650 ? 1 : 1,
+            crossAxisCount: _size.width < 650 ? 2 : 5,
+            childAspectRatio: _size.width < 650 ? 1.3 : 1,
           ),
           tablet: AcumuladoInfoCardGridView(),
           desktop: AcumuladoInfoCardGridView(
-            childAspectRatio: _size.width < 1400 ? 1.1 : 1.3,
+            childAspectRatio: _size.width < 1400 ? 1.2 : 1.3,
           ),
         ),
         SizedBox(height: defaultPadding),
@@ -46,8 +45,8 @@ class HistoricalChart extends StatelessWidget {
 class AcumuladoInfoCardGridView extends StatelessWidget {
   const AcumuladoInfoCardGridView({
     Key? key,
-    this.crossAxisCount = 2,
-    this.childAspectRatio = 1,
+    this.crossAxisCount = 3,
+    this.childAspectRatio = 3,
   }) : super(key: key);
 
   final int crossAxisCount;

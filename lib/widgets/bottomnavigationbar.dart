@@ -1,4 +1,5 @@
 import 'package:data/Screens/displayData.dart';
+import 'package:data/Screens/estrategiaesp.dart';
 import 'package:data/Screens/historical.dart';
 import 'package:data/Screens/hstoric.dart';
 import 'package:data/Screens/main/main_screen.dart';
@@ -16,7 +17,7 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index_color = 0;
-  List Screen = [Home(), dataView(), Historical(), hstoric(), ubicacion() ];
+  List Screen = [Home(), dataView(), Historical(), hstoric(),estrategias(),  ubicacion() ];
 
   @override
   Widget build(BuildContext context) {
@@ -85,9 +86,20 @@ class _BottomState extends State<Bottom> {
                   });
                 },
                 child: Icon(
-                  Icons.pin_drop_rounded,
+                  Icons.handshake_rounded,
                   size: 30,
                   color: index_color == 4 ? Color(0xffbc955c) : Colors.grey,
+                ),),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    index_color = 5;
+                  });
+                },
+                child: Icon(
+                  Icons.pin_drop_rounded,
+                  size: 30,
+                  color: index_color == 5 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
             ],

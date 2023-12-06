@@ -27,9 +27,7 @@ class NuevosInfoCard extends StatelessWidget {
             children: [
               Text(
                 "${info.people}",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyLarge,
+                style: TextStyle(fontSize: 16),
               ),
             ],
           ),
@@ -41,9 +39,8 @@ class NuevosInfoCard extends StatelessWidget {
                 info.concept!,
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall,
+                style: TextStyle(fontSize: 14),
+
               ),
 
             ],
@@ -53,9 +50,7 @@ class NuevosInfoCard extends StatelessWidget {
             children: [
               Text(
                 info.date!,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall,
+                style: TextStyle(fontSize: 13),
               ),
             ],
           ),

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import '../../constants.dart';
 
-class ImssInfoCard extends StatelessWidget {
-  const ImssInfoCard({
+class PueblosInfoCard extends StatelessWidget {
+  const PueblosInfoCard({
     Key? key,
-    required this.title,
-    required this.date,
-    required this.people,
+    required this.periodo,
+    required this.estado,
+    required this.beneficiarios,
+    required this. municipios,
+    required this. inversion,
   }) : super(key: key);
 
-  final String title, date, people;
+  final String periodo, estado, beneficiarios, municipios, inversion;
 
   @override
   Widget build(BuildContext context) {
@@ -29,17 +31,19 @@ class ImssInfoCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title,
+                  Text(estado, style: TextStyle(fontSize: 15.0),),
+                  Text(municipios,style: TextStyle(fontSize: 14.0),),
+                  Text(inversion,style: TextStyle(fontSize: 16.0),),
+                  Text(periodo,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 12.0),
                   ),
-                  Text( date, style: Theme.of(context).textTheme.bodyMedium,),
                 ],
               ),
             ),
           ),
-          Text(people,
+          Text(beneficiarios,
             style: TextStyle(fontSize: 17),)
         ],
       ),

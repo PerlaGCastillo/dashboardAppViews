@@ -22,7 +22,7 @@ class _BenefProgressChartState extends State<BenefProgressChart> {
           final percentList = percnt[index];
           return Container(
             margin: const EdgeInsets.all(10.0),
-            width: MediaQuery.of(context).size.width/2.3,
+            width: MediaQuery.of(context).size.width/2,
             decoration: BoxDecoration(
               color: creamColor,
               borderRadius: BorderRadius.circular(10),
@@ -30,7 +30,7 @@ class _BenefProgressChartState extends State<BenefProgressChart> {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 13,
+                  height: 5,
                 ),
                 Text(
                   "${percentList.date}",
@@ -40,7 +40,7 @@ class _BenefProgressChartState extends State<BenefProgressChart> {
                   ),
                 ),
                 const SizedBox(
-                  height: 9,
+                  height: 5,
                 ),
                 Text(
                   "\$${percentList.quantity}",
@@ -50,7 +50,7 @@ class _BenefProgressChartState extends State<BenefProgressChart> {
                   ),
                 ),
                 const SizedBox(
-                  height: 9,
+                  height: 5,
                 ),
                 CircularPercentIndicator(
                   radius: 25,
@@ -67,19 +67,18 @@ class _BenefProgressChartState extends State<BenefProgressChart> {
                     ),
                   ),
                 ),
-
                 const SizedBox(
-                  height: 9,
+                  height: 5,
                 ),
                 Text(
                   "${percentList.concept}",
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 17,
                   ),
                 ),
                 const SizedBox(
-                  height: 13,
+                  height: 5,
                 ),
               ],
             ),

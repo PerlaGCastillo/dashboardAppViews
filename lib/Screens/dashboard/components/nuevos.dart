@@ -28,7 +28,7 @@ class Nuevos extends StatelessWidget {
         Responsive(
           mobile: NuevosInfoCardGridView(
             crossAxisCount: _size.width < 650 ? 2 : 4,
-            childAspectRatio: _size.width < 650 ? 1 : 3,
+            childAspectRatio: _size.width < 650 ? 1.3 : 3,
           ),
           tablet: NuevosInfoCardGridView(),
           desktop: NuevosInfoCardGridView(
