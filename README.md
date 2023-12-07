@@ -1,2 +1,2 @@
-# historicoApp
-JCF historical data app
+# dashboardAppView
+flutter dashboard and data tables for consulting numberly results
