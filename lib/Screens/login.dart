@@ -1,4 +1,7 @@
+import 'package:data/Screens/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class SignIn extends StatelessWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -11,24 +14,24 @@ class SignIn extends StatelessWidget {
         body: Center(
             child: isSmallScreen
                 ? Column(
-              mainAxisSize: MainAxisSize.min,
-              children: const [
-                _Logo(),
-                _FormContent(),
-              ],
-            )
+                    mainAxisSize: MainAxisSize.min,
+                    children: const [
+                      _Logo(),
+                      _FormContent(),
+                    ],
+                  )
                 : Container(
-              padding: const EdgeInsets.all(32.0),
-              constraints: const BoxConstraints(maxWidth: 800),
-              child: Row(
-                children: const [
-                  Expanded(child: _Logo()),
-                  Expanded(
-                    child: Center(child: _FormContent()),
-                  ),
-                ],
-              ),
-            )));
+                    padding: const EdgeInsets.all(32.0),
+                    constraints: const BoxConstraints(maxWidth: 800),
+                    child: Row(
+                      children: const [
+                        Expanded(child: _Logo()),
+                        Expanded(
+                          child: Center(child: _FormContent()),
+                        ),
+                      ],
+                    ),
+                  )));
   }
 }
 
@@ -42,18 +45,27 @@ class _Logo extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        FlutterLogo(size: isSmallScreen ? 100 : 200),
+        Container(
+           width: 80.0,
+           height: 80.0,
+            decoration: new BoxDecoration(
+                shape: BoxShape.circle,
+                image: new DecorationImage(
+                    fit: BoxFit.fill,
+                    image: new AssetImage('assets/images/logo.png')
+                )
+            )),
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Text(
-            "Bienvenida (o)",
+            "Hola",
             textAlign: TextAlign.center,
             style: isSmallScreen
                 ? Theme.of(context).textTheme.headline5
                 : Theme.of(context)
-                .textTheme
-                .headline4
-                ?.copyWith(color: Color(0xff1d1d1d)),
+                    .textTheme
+                    .headline4
+                    ?.copyWith(color: Color(0xff1d1d1d)),
           ),
         )
       ],
@@ -71,6 +83,8 @@ class _FormContent extends StatefulWidget {
 class __FormContentState extends State<_FormContent> {
   bool _isPasswordVisible = false;
   bool _rememberMe = false;
+  String correo = '';
+  String final_response = '';
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -92,7 +106,7 @@ class __FormContentState extends State<_FormContent> {
                 }
 
                 bool emailValid = RegExp(
-                    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                     .hasMatch(value);
                 if (!emailValid) {
                   return 'Ingresa un correo válido';
@@ -139,6 +153,7 @@ class __FormContentState extends State<_FormContent> {
             _gap(),
             CheckboxListTile(
               value: _rememberMe,
+              activeColor: grColor,
               onChanged: (value) {
                 if (value == null) return;
                 setState(() {
@@ -155,7 +170,7 @@ class __FormContentState extends State<_FormContent> {
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  //color: Color(0xffbc955c),
+                  backgroundColor: grColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4)),
                 ),
@@ -166,9 +181,18 @@ class __FormContentState extends State<_FormContent> {
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ),
-                onPressed: () {
+                onPressed: () async {
                   if (_formKey.currentState?.validate() ?? false) {
                     /// do something
+                    final response =
+                        await http.get(Uri.parse('http://127.0.0.1:5000/'));
+
+                    final decoded =
+                        json.decode(response.body) as Map<String, dynamic>;
+
+                    setState(() {
+                      correo = decoded['correo'];
+                    });
                   }
                 },
               ),

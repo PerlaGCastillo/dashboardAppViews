@@ -1,7 +1,10 @@
 import 'package:data/Screens/displayData.dart';
+import 'package:data/Screens/estrategiaesp.dart';
+import 'package:data/Screens/historical.dart';
+import 'package:data/Screens/hstoric.dart';
+import 'package:data/Screens/login.dart';
+import 'package:data/Screens/ubicacion.dart';
 import 'package:flutter/material.dart';
-import 'package:data/Screens/home.dart';
-
 
 class Bottom extends StatefulWidget {
   const Bottom({Key? key}) : super(key: key);
@@ -12,7 +15,9 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index_color = 0;
-  List Screen = [Home(), dataView() ];
+  List Screen = [SignIn(), Historical(), hstoric(), estrategias(), ubicacion()];
+
+  //List Screen = [dataView(), Historical(), hstoric(),estrategias(),  ubicacion() ];
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +37,12 @@ class _BottomState extends State<Bottom> {
                   });
                 },
                 child: Icon(
-                  Icons.home,
+                  Icons.table_chart,
                   size: 30,
                   color: index_color == 0 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
-             // SizedBox(width: 17),
+              // SizedBox(width: 17),
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -45,9 +50,45 @@ class _BottomState extends State<Bottom> {
                   });
                 },
                 child: Icon(
-                  Icons.table_chart,
+                  Icons.people,
                   size: 30,
                   color: index_color == 1 ? Color(0xffbc955c) : Colors.grey,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    index_color = 2;
+                  });
+                },
+                child: Icon(
+                  Icons.attach_money_rounded,
+                  size: 30,
+                  color: index_color == 2 ? Color(0xffbc955c) : Colors.grey,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    index_color = 3;
+                  });
+                },
+                child: Icon(
+                  Icons.handshake_rounded,
+                  size: 30,
+                  color: index_color == 3 ? Color(0xffbc955c) : Colors.grey,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    index_color = 4;
+                  });
+                },
+                child: Icon(
+                  Icons.pin_drop,
+                  size: 30,
+                  color: index_color == 4 ? Color(0xffbc955c) : Colors.grey,
                 ),
               ),
             ],

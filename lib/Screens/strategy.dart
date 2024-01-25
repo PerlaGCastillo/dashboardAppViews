@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import 'package:data/table/colonias.dart';
 import 'package:data/table/indigena.dart';
 import 'package:data/table/istmo.dart';
@@ -6,7 +8,6 @@ import 'package:data/table/trenmaya.dart';
 import 'package:data/table/violencia.dart';
 import 'package:data/table/wixarikas.dart';
 import 'package:data/table/yaquis.dart';
-import 'package:flutter/material.dart';
 import 'package:data/table/gpovulnerable.dart';
 
 class Strategy extends StatefulWidget {
@@ -43,12 +44,13 @@ class _StrategyState extends State<Strategy> {
               Positioned(
                 top: 90,
                 child: strtgy(),
-              )
+              ),
             ]
         ),
       ),
     );
   }
+
 
   Container strtgy() {
     return Container(
@@ -72,7 +74,10 @@ class _StrategyState extends State<Strategy> {
           child: GridView.builder(
             gridDelegate: const
           SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 180, childAspectRatio: 3/1, crossAxisSpacing: 17, mainAxisSpacing: 17),
+                maxCrossAxisExtent: 180.0,
+                childAspectRatio: 4/1,
+                crossAxisSpacing: 17.0,
+                mainAxisSpacing: 17.0),
           itemCount: widgets.length,
           itemBuilder: (BuildContext ctx, index){
             final widget = widgets[index];
@@ -86,7 +91,7 @@ class _StrategyState extends State<Strategy> {
                 child: Text('${item}',
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
-                    fontSize: 14.0,),
+                    fontSize: 15.0,),
                 ),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => widget),);

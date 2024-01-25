@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../json_table.dart';
-import 'json_utilities.dart';
 import 'json_table.dart';
+import 'json_utilities.dart';
 import 'json_table_column.dart';
 
 class TableColumn extends StatelessWidget {

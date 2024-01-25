@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:data/Screens/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:json_table/src/pagination_box.dart';
 
@@ -23,18 +24,18 @@ class JsonTable extends StatefulWidget {
   final OnRowSelect? onRowSelect;
 
   JsonTable(
-      this.dataList, {
-        Key? key,
-        this.tableHeaderBuilder,
-        this.tableCellBuilder,
-        this.columns,
-        this.showColumnToggle = false,
-        this.allowRowHighlight = false,
-        this.filterTitle = 'ADD FILTERS',
-        this.rowHighlightColor,
-        this.paginationRowCount,
-        this.onRowSelect,
-      }) : super(key: key);
+    this.dataList, {
+    Key? key,
+    this.tableHeaderBuilder,
+    this.tableCellBuilder,
+    this.columns,
+    this.showColumnToggle = false,
+    this.allowRowHighlight = false,
+    this.filterTitle = 'Filtrar',
+    this.rowHighlightColor,
+    this.paginationRowCount,
+    this.onRowSelect,
+  }) : super(key: key);
 
   @override
   _JsonTableState createState() => _JsonTableState();
@@ -95,8 +96,8 @@ class _JsonTableState extends State<JsonTable> {
                 ),
                 children: <Widget>[
                   Wrap(
-                    runSpacing: -12,
-                    direction: Axis.horizontal,
+                   // runSpacing: -12,
+                    //direction: Axis.horizontal,
                     children: <Widget>[
                       for (String? header in headerList)
                         Material(
@@ -106,6 +107,7 @@ class _JsonTableState extends State<JsonTable> {
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
                                 Checkbox(
+                                  activeColor: grColor,
                                   value: this.filterHeaderList.contains(header),
                                   onChanged: null,
                                 ),
@@ -134,40 +136,40 @@ class _JsonTableState extends State<JsonTable> {
             scrollDirection: Axis.horizontal,
             child: (widget.columns != null)
                 ? Row(
-              children: widget.columns!
-                  .where((item) => filterHeaderList.contains(item.field))
-                  .map(
-                    (item) => TableColumn(
-                  item.label,
-                  _getPaginatedData(),
-                  widget.tableHeaderBuilder,
-                  widget.tableCellBuilder,
-                  item,
-                  onRowTap,
-                  highlightedRowIndex,
-                  widget.allowRowHighlight,
-                  widget.rowHighlightColor,
-                ),
-              )
-                  .toList(),
-            )
+                    children: widget.columns!
+                        .where((item) => filterHeaderList.contains(item.field))
+                        .map(
+                          (item) => TableColumn(
+                            item.label,
+                            _getPaginatedData(),
+                            widget.tableHeaderBuilder,
+                            widget.tableCellBuilder,
+                            item,
+                            onRowTap,
+                            highlightedRowIndex,
+                            widget.allowRowHighlight,
+                            widget.rowHighlightColor,
+                          ),
+                        )
+                        .toList(),
+                  )
                 : Row(
-              children: filterHeaderList
-                  .map(
-                    (header) => TableColumn(
-                  header,
-                  _getPaginatedData(),
-                  widget.tableHeaderBuilder,
-                  widget.tableCellBuilder,
-                  null,
-                  onRowTap,
-                  highlightedRowIndex,
-                  widget.allowRowHighlight,
-                  widget.rowHighlightColor,
-                ),
-              )
-                  .toList(),
-            ),
+                    children: filterHeaderList
+                        .map(
+                          (header) => TableColumn(
+                            header,
+                            _getPaginatedData(),
+                            widget.tableHeaderBuilder,
+                            widget.tableCellBuilder,
+                            null,
+                            onRowTap,
+                            highlightedRowIndex,
+                            widget.allowRowHighlight,
+                            widget.rowHighlightColor,
+                          ),
+                        )
+                        .toList(),
+                  ),
           ),
           if (_showPagination())
             PaginationBox(
@@ -175,17 +177,17 @@ class _JsonTableState extends State<JsonTable> {
               pagesCount: pagesCount,
               onLeftButtonTap: _showLeftButton()
                   ? () {
-                setState(() {
-                  pageIndex--;
-                });
-              }
+                      setState(() {
+                        pageIndex--;
+                      });
+                    }
                   : null,
               onRightButtonTap: showRightButton()
                   ? () {
-                setState(() {
-                  pageIndex++;
-                });
-              }
+                      setState(() {
+                        pageIndex++;
+                      });
+                    }
                   : null,
             ),
         ],
@@ -199,7 +201,7 @@ class _JsonTableState extends State<JsonTable> {
       widget.columns!.forEach((item) {
         headers.add(item.field);
         this.headerLabels[item.field] =
-        item.label == null ? item.field : item.label;
+            item.label == null ? item.field : item.label;
       });
     } else {
       widget.dataList.forEach((map) {
@@ -233,7 +235,7 @@ class _JsonTableState extends State<JsonTable> {
     if (paginationRowCount != null) {
       final startIndex = pageIndex == 0 ? 0 : (pageIndex * paginationRowCount!);
       final endIndex =
-      math.min((startIndex + paginationRowCount!), (data!.length - 1));
+          math.min((startIndex + paginationRowCount!), (data!.length - 1));
       if (endIndex == data!.length - 1)
         return data!.sublist(startIndex, endIndex + 1).toList(growable: false);
       else
